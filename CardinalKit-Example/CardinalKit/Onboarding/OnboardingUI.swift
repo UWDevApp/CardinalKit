@@ -107,7 +107,8 @@ enum EnrollMethods: NSString, CustomStringConvertible, CaseIterable {
     case signUp
     case login
     case signInWithApple
-
+    case magicLink
+    
     var description: String {
         switch self {
         case .login:
@@ -116,6 +117,8 @@ enum EnrollMethods: NSString, CustomStringConvertible, CaseIterable {
             return "Sign in with Apple"
         case .signUp:
             return "Sign Up"
+        case .magicLink:
+            return "Magic Link"
         }
     }
 }
@@ -183,8 +186,8 @@ struct OnboardingVC: UIViewControllerRepresentable {
             requestedScopes: [.email]
         )
 
-        // let loginStep = PasswordlessLoginStep(identifier: PasswordlessLoginStep.identifier)
-        // let loginVerificationStep = LoginCustomWaitStep(identifier: LoginCustomWaitStep.identifier)
+         let magicLinkStep = PasswordlessLoginStep(identifier: PasswordlessLoginStep.identifier)
+         let loginVerificationStep = LoginCustomWaitStep(identifier: LoginCustomWaitStep.identifier)
         
         /* **************************************************************
          *  MARK: - STEP (5): ask the user to create a security passcode
@@ -218,7 +221,7 @@ struct OnboardingVC: UIViewControllerRepresentable {
         // and steps regarding login / security
         let emailVerificationSteps = [
             chooseEnrollMethodStep, registerStep, loginStep, signInWithAppleStep,
-            passcodeStep, healthDataStep, completionStep
+            magicLinkStep, loginVerificationStep, passcodeStep, healthDataStep, completionStep
         ]
 
         // let stepsToUse = true // DEBUG ONLY
@@ -236,6 +239,7 @@ struct OnboardingVC: UIViewControllerRepresentable {
         orderedTask.setNavigationRule(toPasscode, forTriggerStepIdentifier: registerStep.identifier)
         orderedTask.setNavigationRule(toPasscode, forTriggerStepIdentifier: loginStep.identifier)
         orderedTask.setNavigationRule(toPasscode, forTriggerStepIdentifier: signInWithAppleStep.identifier)
+        orderedTask.setNavigationRule(toPasscode, forTriggerStepIdentifier: loginVerificationStep.identifier)
 
         let enrollMethodResultSelector = ORKResultSelector(resultIdentifier: chooseEnrollMethodStep.identifier)
         let toRegister = ORKResultPredicate
@@ -247,11 +251,17 @@ struct OnboardingVC: UIViewControllerRepresentable {
         let toSignInWithApple = ORKResultPredicate
             .predicateForChoiceQuestionResult(with: enrollMethodResultSelector,
                                               expectedAnswerValue: EnrollMethods.signInWithApple.rawValue)
-
+        
+        let toMagicLink = ORKResultPredicate
+            .predicateForChoiceQuestionResult(with: enrollMethodResultSelector,
+                                              expectedAnswerValue: EnrollMethods.magicLink.rawValue)
+        
         let toAppropriateEnrollMethod = ORKPredicateStepNavigationRule(resultPredicatesAndDestinationStepIdentifiers: [
             (toRegister, registerStep.identifier),
             (toLogin, loginStep.identifier),
-            (toSignInWithApple, signInWithAppleStep.identifier)
+            (toSignInWithApple, signInWithAppleStep.identifier),
+            (toMagicLink, magicLinkStep.identifier),
+            (toMagicLink, loginVerificationStep.identifier)
         ])
         orderedTask.setNavigationRule(toAppropriateEnrollMethod, forTriggerStepIdentifier: chooseEnrollMethodStep.identifier)
 
