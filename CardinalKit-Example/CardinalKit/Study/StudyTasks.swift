@@ -31,6 +31,7 @@ struct StudyTasks {
         let instructionStep = ORKInstructionStep(identifier: "survey")
         instructionStep.title = "Basic Info Form"
         instructionStep.text = "We'll update your basic informations with this questionnaire."
+        instructionStep.detailText = "To clear out your answer to certain question, click Skip. To keep the same answer, just click Next and you don't need to make any changes to that question."
         steps += [instructionStep]
 
         // Name
@@ -127,6 +128,15 @@ struct StudyTasks {
         
         steps += [instructionStep]
 
+        // Smoking History?
+        let smokingHistoryQuestionStep = ORKQuestionStep(
+            identifier: "smokingHistoryQuestionStep",
+            title: "Smoking History",
+            question: "Have you ever smoked? If yes, please specify which years.",
+            answer: .textAnswerFormat())
+        smokingHistoryQuestionStep.detailText = "If not, Skip this question."
+        steps += [smokingHistoryQuestionStep]
+
         // Stroke History?
         let strokeAnswerFormat = ORKAnswerFormat.booleanAnswerFormat()
         let strokeQuestionStep = ORKQuestionStep(identifier: "strokeQuestionStep", title: "Stroke Question", question: "Have you had a stroke before?", answer: strokeAnswerFormat)
@@ -149,7 +159,8 @@ struct StudyTasks {
         
         //Diagnosis of Cognitive impairment
         let diagnosisAnswerFormat = ORKAnswerFormat.textAnswerFormat()
-        let diagnosisQuestionStep = ORKQuestionStep(identifier: "diagnosisQuestionStep", title: "Previous Cognitive Impariment", question: "Have you ever been diagnosed with a Cognitive Impairment? If yes, please specify.", answer: diagnosisAnswerFormat)
+        let diagnosisQuestionStep = ORKQuestionStep(identifier: "diagnosisQuestionStep", title: "Previous Cognitive Impairment", question: "Have you ever been diagnosed with a Cognitive Impairment? If yes, please specify.", answer: diagnosisAnswerFormat)
+        diagnosisQuestionStep.detailText = "If not, Skip this question."
         steps += [diagnosisQuestionStep]
         
         return ORKOrderedTask(identifier: "Survey", steps: steps)
