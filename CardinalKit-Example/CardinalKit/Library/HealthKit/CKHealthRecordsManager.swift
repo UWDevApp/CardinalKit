@@ -12,13 +12,8 @@ import CareKit
 import CareKitFHIR
 import CareKitStore
 
-class CKHealthRecordsManager: NSObject {
-    
-    static let shared = CKHealthRecordsManager()
-    
-    lazy var healthStore = HKHealthStore()
-    
-    fileprivate let typesById: [HKClinicalTypeIdentifier] = [
+extension HKClinicalTypeIdentifier: CaseIterable {
+    public static var allCases: [HKClinicalTypeIdentifier] = [
         .allergyRecord, // HKClinicalTypeIdentifierAllergyRecord
         .conditionRecord, // HKClinicalTypeIdentifierConditionRecord
         .immunizationRecord, // HKClinicalTypeIdentifierImmunizationRecord
@@ -27,26 +22,26 @@ class CKHealthRecordsManager: NSObject {
         .procedureRecord, // HKClinicalTypeIdentifierProcedureRecord
         .vitalSignRecord // HKClinicalTypeIdentifierVitalSignRecord
     ]
+}
+
+class CKHealthRecordsManager: NSObject {
     
-    fileprivate var types = Set<HKClinicalType>()
+    static let shared = CKHealthRecordsManager()
     
-    override init() {
-        super.init()
-        for id in typesById {
-            print(id.rawValue)
-            guard let record = HKObjectType.clinicalType(forIdentifier: id) else { continue }
-            types.insert(record)
-        }
-    }
+    lazy var healthStore = HKHealthStore()
+
+    static let types: Set<HKClinicalType> = Set(
+        HKClinicalTypeIdentifier.allCases.compactMap(HKObjectType.clinicalType)
+    )
     
     func getAuth(_ completion: @escaping (_ success: Bool, _ error: Error?) -> Void) {
-        healthStore.requestAuthorization(toShare: nil, read: types) { (success, error) in
+        healthStore.requestAuthorization(toShare: nil, read: Self.types) { (success, error) in
             completion(success, error)
         }
     }
     
     func upload(_ onCompletion: ((Bool, Error?) -> Void)? = nil) {
-        for type in types {
+        for type in Self.types {
             let query = HKSampleQuery(sampleType: type, predicate: nil, limit: HKObjectQueryNoLimit, sortDescriptors: nil) { (query, samples, error) in
                 
                 guard let samples = samples as? [HKClinicalRecord] else {

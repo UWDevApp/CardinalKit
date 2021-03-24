@@ -36,8 +36,11 @@ struct ProfileView: View {
     var studyUser: CKStudyUser = .shared
 
     @State
+    var needsHealthRecordsAccess = false
+    @State
     var needsHealthKitAccess = false
 
+    let store = HKHealthStore()
 
     var name: String {
         studyUser.currentUser?.displayName
@@ -126,20 +129,26 @@ struct ProfileView: View {
                 }
         ) {
             HStack {
-                ConsentDocumentButton(title: "Consent Document (Signed)")
+                ConsentDocumentButton(title: "Consent Document")
                 Spacer()
-                Image(systemName: "checkmark")
-            }
-            HStack {
-                Button("EHR Access Permission") {
-                    #warning("TODO")
+                if #available(iOS 14.0, *) {
+                    Label("Signed", systemImage: "checkmark.square.fill")
+                } else {
+                    Text("Signed")
                 }
-                Spacer()
-                Image(systemName: "checkmark")
+            }
+            if needsHealthRecordsAccess {
+                Button("Grant Electronic Health Record (EHR) Access") {
+                    CKHealthRecordsManager.shared.getAuth { success, _ in
+                        if success {
+                            updateHealthRecordsAccessStatus()
+                            CKHealthRecordsManager.shared.upload()
+                        }
+                    }
+                }
             }
             if needsHealthKitAccess {
                 Button("Grant Health Data Access") {
-                    let store = HKHealthStore()
                     store.requestAuthorization(toShare: nil, read: readTypes) { success, error in
                         if success {
                             updateHealthKitAccessStatus()
@@ -187,12 +196,13 @@ struct ProfileView: View {
         .onAppear {
             if HKHealthStore.isHealthDataAvailable() {
                 updateHealthKitAccessStatus()
+                updateHealthRecordsAccessStatus()
             }
         }
     }
 
     func updateHealthKitAccessStatus() {
-        HKHealthStore().getRequestStatusForAuthorization(toShare: [], read: readTypes) { status, error in
+        store.getRequestStatusForAuthorization(toShare: [], read: readTypes) { status, error in
             withAnimation {
                 switch status {
                 case .shouldRequest: needsHealthKitAccess = true
@@ -203,6 +213,20 @@ struct ProfileView: View {
             }
         }
     }
+
+    func updateHealthRecordsAccessStatus() {
+        store.getRequestStatusForAuthorization(toShare: [], read: CKHealthRecordsManager.types) { status, error in
+            withAnimation {
+                switch status {
+                case .shouldRequest: needsHealthRecordsAccess = true
+                case .unknown: print(error ?? CKError.unknownError)
+                case .unnecessary: needsHealthRecordsAccess = false
+                @unknown default: needsHealthRecordsAccess = false
+                }
+            }
+        }
+    }
+
 
     func updateBasicInfo(with taskResult: ORKTaskResult) {
         if let nameResult = taskResult.stepResult(

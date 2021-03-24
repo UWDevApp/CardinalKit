@@ -435,6 +435,8 @@ struct OnboardingVC: UIViewControllerRepresentable {
                 // this step lets us run custom logic to ask for
                 // HealthKit permissions when this step appears on screen.
                 return CKHealthDataStepViewController(step: step)
+            case is CKHealthRecordsStep:
+                return CKHealthRecordsStepViewController(step: step)
             case is LoginCustomWaitStep:
                 // run custom code to send an email for login!
                 return LoginCustomWaitStepViewController(step: step)

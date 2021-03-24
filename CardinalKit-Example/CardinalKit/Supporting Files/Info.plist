@@ -40,21 +40,21 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>Used In ResearchKit Active Tasks.</string>
+	<string>TODO: Used In ResearchKit Active Tasks.</string>
 	<key>NSFaceIDUsageDescription</key>
-	<string>Used for data security purposes.</string>
+	<string>TODO: Used for data security purposes.</string>
 	<key>NSHealthClinicalHealthRecordsShareUsageDescription</key>
 	<string>Your health records will be used to make medical suggestions.</string>
 	<key>NSHealthShareUsageDescription</key>
-	<string>Used for data security purposes.</string>
+	<string>TODO: Used for data security purposes.</string>
 	<key>NSHealthUpdateUsageDescription</key>
-	<string>Used for data security purposes.</string>
+	<string>TODO: Used for data security purposes.</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Used In ResearchKit Active Tasks.</string>
+	<string>TODO: Used In ResearchKit Active Tasks.</string>
 	<key>NSMotionUsageDescription</key>
-	<string>Used In ResearchKit Active Tasks.</string>
+	<string>TODO: Used In ResearchKit Active Tasks.</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>Used In ResearchKit Active Tasks.</string>
+	<string>TODO: Used In ResearchKit Active Tasks.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
