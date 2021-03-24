@@ -9,8 +9,24 @@
 import SwiftUI
 
 struct LaunchContainerView: View {
+    @State var showHomeScreen: Bool = false
+
     var body: some View {
-        OnboardingUI()
+        Group{
+            if showHomeScreen {
+                HomeView()
+                    .environmentObject(NotificationsAndResults())
+            } else {
+                OnboardingUI()
+                    .transition(.slide)
+            }
+        }
+        .onReceive(UserDefaults.standard.publisher(for: \.showHomeScreen))
+        { shouldShowHomeScreen in
+            withAnimation {
+                self.showHomeScreen = shouldShowHomeScreen
+            }
+        }
     }
 }
 

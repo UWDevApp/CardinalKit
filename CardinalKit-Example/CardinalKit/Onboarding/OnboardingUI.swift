@@ -45,61 +45,52 @@ struct OnboardingUI: View {
     }
     @EnvironmentObject var config: CKPropertyReader
     @State var showingDetail = false
-    @State var showHomeScreen: Bool = false
 
     var body: some View {
         VStack(spacing: 10) {
-            if showHomeScreen {
-                HomeView()
-                    .environmentObject(NotificationsAndResults())
-            } else {
+            Spacer()
+
+            Text(config.read(query: "Team Name"))
+                .padding(.horizontal)
+            Text(config.read(query: "Study Title"))
+                .foregroundColor(color)
+                .font(.title)
+                .padding(.horizontal)
+
+            Spacer()
+
+            PageView(onboardingElements.map {
+                infoView(logo: $0.logo,
+                         title: $0.title,
+                         description: $0.description,
+                         color: self.color)
+            })
+
+            Spacer()
+
+            HStack {
                 Spacer()
-
-                Text(config.read(query: "Team Name"))
-                    .padding(.horizontal)
-                Text(config.read(query: "Study Title"))
-                    .foregroundColor(color)
-                    .font(.title)
-                    .padding(.horizontal)
-
-                Spacer()
-
-                PageView(onboardingElements.map {
-                    infoView(logo: $0.logo,
-                             title: $0.title,
-                             description: $0.description,
-                             color: self.color)
+                Button(action: {
+                    self.showingDetail.toggle()
+                }, label: {
+                    Text("Join Study")
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .foregroundColor(.white)
+                        .background(color)
+                        .cornerRadius(15)
+                        .font(.system(size: 20, weight: .bold, design: .default))
                 })
-
-                Spacer()
-                
-                HStack {
-                    Spacer()
-                    Button(action: {
-                        self.showingDetail.toggle()
-                    }, label: {
-                        Text("Join Study")
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .foregroundColor(.white)
-                            .background(color)
-                            .cornerRadius(15)
-                            .font(.system(size: 20, weight: .bold, design: .default))
-                    })
-                    .sheet(isPresented: $showingDetail) {
-                        OnboardingVC()
-                            .edgesIgnoringSafeArea(.all)
-                            .environmentObject(self.config)
-                    }
-                    
-                    Spacer()
+                .sheet(isPresented: $showingDetail) {
+                    OnboardingVC()
+                        .edgesIgnoringSafeArea(.all)
+                        .environmentObject(self.config)
                 }
-                
+
                 Spacer()
             }
-        }
-        .onReceive(UserDefaults.standard.publisher(for: \.showHomeScreen)) {
-            self.showHomeScreen = $0
+
+            Spacer()
         }
     }
 }
@@ -151,11 +142,11 @@ struct OnboardingVC: UIViewControllerRepresentable {
          * MARK: - STEP (3): get permission to collect HealthKit data, read-only
          **************************************************************/
         // see `HealthDataStep` to configure!
-//        let healthDataStep = CKHealthDataStep(identifier: "HealthKit")
+        // let healthDataStep = CKHealthDataStep(identifier: "HealthKit")
 
         /* **************************************************************
-        *  STEP (3.5): get permission to collect HealthKit health records data
-        **************************************************************/
+         *  STEP (3.5): get permission to collect HealthKit health records data
+         **************************************************************/
         let healthRecordsStep = CKHealthRecordsStep(identifier: "HealthRecords")
 
         
@@ -224,7 +215,7 @@ struct OnboardingVC: UIViewControllerRepresentable {
         let emailVerificationSteps = [
             chooseEnrollMethodStep, registerStep, loginStep, signInWithAppleStep,
             passcodeStep,
-//            healthDataStep, // only enable if there are health kit data to read
+            // healthDataStep, // only enable if there are health kit data to read
             healthRecordsStep, completionStep
         ]
 
@@ -340,8 +331,8 @@ struct OnboardingVC: UIViewControllerRepresentable {
                         Auth.auth().createUser(withEmail: email, password: pass) { (_, error) in
                             func showError(_ error: Error, title: String) {
                                 let newAlert = UIAlertController(title: title,
-                                                              message: error.localizedDescription,
-                                                              preferredStyle: .alert)
+                                                                 message: error.localizedDescription,
+                                                                 preferredStyle: .alert)
                                 newAlert.addAction(UIAlertAction(title: "OK", style: .cancel) { _ in
                                     taskViewController.goBackward()
                                 })

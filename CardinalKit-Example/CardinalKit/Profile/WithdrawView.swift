@@ -20,6 +20,7 @@ struct WithdrawView: View {
         .padding(.vertical)
         .sheet(isPresented: $showWithdraw) {
             WithdrawalVC()
+                .edgesIgnoringSafeArea(.all)
         }
     }
 }
