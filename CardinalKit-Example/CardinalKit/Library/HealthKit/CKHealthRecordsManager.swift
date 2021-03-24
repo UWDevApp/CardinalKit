@@ -15,13 +15,13 @@ import CareKitStore
 
 extension HKClinicalTypeIdentifier: CaseIterable {
     public static var allCases: [HKClinicalTypeIdentifier] = [
-        .allergyRecord, // HKClinicalTypeIdentifierAllergyRecord
+//        .allergyRecord, // HKClinicalTypeIdentifierAllergyRecord
         .conditionRecord, // HKClinicalTypeIdentifierConditionRecord
-        .immunizationRecord, // HKClinicalTypeIdentifierImmunizationRecord
+//        .immunizationRecord, // HKClinicalTypeIdentifierImmunizationRecord
         .labResultRecord, // HKClinicalTypeIdentifierLabResultRecord
         .medicationRecord, // HKClinicalTypeIdentifierMedicationRecord
         .procedureRecord, // HKClinicalTypeIdentifierProcedureRecord
-        .vitalSignRecord // HKClinicalTypeIdentifierVitalSignRecord
+//        .vitalSignRecord // HKClinicalTypeIdentifierVitalSignRecord
     ]
 }
 
