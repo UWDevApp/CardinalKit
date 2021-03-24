@@ -151,7 +151,7 @@ struct OnboardingVC: UIViewControllerRepresentable {
          * MARK: - STEP (3): get permission to collect HealthKit data, read-only
          **************************************************************/
         // see `HealthDataStep` to configure!
-        let healthDataStep = CKHealthDataStep(identifier: "HealthKit")
+//        let healthDataStep = CKHealthDataStep(identifier: "HealthKit")
 
         /* **************************************************************
         *  STEP (3.5): get permission to collect HealthKit health records data
@@ -185,7 +185,7 @@ struct OnboardingVC: UIViewControllerRepresentable {
             identifier: "SignInWithApple",
             title: "Sign in with Apple",
             text: "The fast, easy way to sign in. All accounts are protected with two-factor authentication for superior security, and Apple will not track your activity in your app or website.",
-            requestedScopes: [.email]
+            requestedScopes: [.fullName, .email]
         )
 
         // let loginStep = PasswordlessLoginStep(identifier: PasswordlessLoginStep.identifier)
@@ -223,7 +223,9 @@ struct OnboardingVC: UIViewControllerRepresentable {
         // and steps regarding login / security
         let emailVerificationSteps = [
             chooseEnrollMethodStep, registerStep, loginStep, signInWithAppleStep,
-            passcodeStep, healthDataStep, healthRecordsStep, completionStep
+            passcodeStep,
+//            healthDataStep, // only enable if there are health kit data to read
+            healthRecordsStep, completionStep
         ]
 
         // let stepsToUse = true // DEBUG ONLY
@@ -263,7 +265,10 @@ struct OnboardingVC: UIViewControllerRepresentable {
         // wrap that task on a view controller
         let taskViewController = ORKTaskViewController(task: orderedTask, taskRun: nil)
         taskViewController.delegate = context.coordinator // enables `ORKTaskViewControllerDelegate` below
-        
+
+        // Clear existing data, if any
+        try? CKStudyUser.shared.signOut()
+
         // & present the VC!
         return taskViewController
     }
@@ -430,6 +435,8 @@ struct OnboardingVC: UIViewControllerRepresentable {
                 // this step lets us run custom logic to ask for
                 // HealthKit permissions when this step appears on screen.
                 return CKHealthDataStepViewController(step: step)
+            case is CKHealthRecordsStep:
+                return CKHealthRecordsStepViewController(step: step)
             case is LoginCustomWaitStep:
                 // run custom code to send an email for login!
                 return LoginCustomWaitStepViewController(step: step)

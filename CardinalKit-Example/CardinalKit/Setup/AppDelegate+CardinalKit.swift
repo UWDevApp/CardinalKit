@@ -32,8 +32,13 @@ extension AppDelegate {
             CKStudyUser.shared.save()
             
             // (4) then start the requested HK data collection (if any).
-            let manager = CKHealthKitManager.shared
-            manager.getHealthAuthorization { (success, error) in
+            CKHealthKitManager.shared.getHealthAuthorization { (success, error) in
+                if let error = error {
+                    print(error)
+                }
+            }
+
+            CKHealthRecordsManager.shared.getAuth { (success, error) in
                 if let error = error {
                     print(error)
                 }

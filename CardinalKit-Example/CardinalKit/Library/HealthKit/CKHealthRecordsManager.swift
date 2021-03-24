@@ -8,45 +8,53 @@
 
 import Foundation
 import HealthKit
+import CardinalKit
 import CareKit
 import CareKitFHIR
 import CareKitStore
+
+extension HKClinicalTypeIdentifier: CaseIterable {
+    public static var allCases: [HKClinicalTypeIdentifier] = [
+//        .allergyRecord, // HKClinicalTypeIdentifierAllergyRecord
+        .conditionRecord, // HKClinicalTypeIdentifierConditionRecord
+//        .immunizationRecord, // HKClinicalTypeIdentifierImmunizationRecord
+        .labResultRecord, // HKClinicalTypeIdentifierLabResultRecord
+        .medicationRecord, // HKClinicalTypeIdentifierMedicationRecord
+        .procedureRecord, // HKClinicalTypeIdentifierProcedureRecord
+//        .vitalSignRecord // HKClinicalTypeIdentifierVitalSignRecord
+    ]
+}
 
 class CKHealthRecordsManager: NSObject {
     
     static let shared = CKHealthRecordsManager()
     
     lazy var healthStore = HKHealthStore()
-    
-    fileprivate let typesById: [HKClinicalTypeIdentifier] = [
-        .allergyRecord, // HKClinicalTypeIdentifierAllergyRecord
-        .conditionRecord, // HKClinicalTypeIdentifierConditionRecord
-        .immunizationRecord, // HKClinicalTypeIdentifierImmunizationRecord
-        .labResultRecord, // HKClinicalTypeIdentifierLabResultRecord
-        .medicationRecord, // HKClinicalTypeIdentifierMedicationRecord
-        .procedureRecord, // HKClinicalTypeIdentifierProcedureRecord
-        .vitalSignRecord // HKClinicalTypeIdentifierVitalSignRecord
-    ]
-    
-    fileprivate var types = Set<HKClinicalType>()
-    
-    override init() {
-        super.init()
-        for id in typesById {
-            print(id.rawValue)
-            guard let record = HKObjectType.clinicalType(forIdentifier: id) else { continue }
-            types.insert(record)
-        }
-    }
+
+    static let types: Set<HKClinicalType> = Set(
+        HKClinicalTypeIdentifier.allCases.compactMap(HKObjectType.clinicalType)
+    )
     
     func getAuth(_ completion: @escaping (_ success: Bool, _ error: Error?) -> Void) {
-        healthStore.requestAuthorization(toShare: nil, read: types) { (success, error) in
+        healthStore.requestAuthorization(toShare: nil, read: Self.types) { (success, error) in
+            if success {
+                let frequency: HKUpdateFrequency
+                switch CKConfig.shared.read(query: "Background Read Frequency") {
+                case "daily": frequency = .daily
+                case "weekly": frequency = .weekly
+                case "hourly": frequency = .hourly
+                default: frequency = .immediate
+                }
+                HealthKitManager.shared
+                    .startBackgroundDelivery(forTypes: Self.types, withFrequency: frequency)
+                    { _, _ in }
+            }
             completion(success, error)
         }
     }
     
     func upload(_ onCompletion: ((Bool, Error?) -> Void)? = nil) {
-        for type in types {
+        for type in Self.types {
             let query = HKSampleQuery(sampleType: type, predicate: nil, limit: HKObjectQueryNoLimit, sortDescriptors: nil) { (query, samples, error) in
                 
                 guard let samples = samples as? [HKClinicalRecord] else {
@@ -76,5 +84,4 @@ class CKHealthRecordsManager: NSObject {
             healthStore.execute(query)
         }
     }
-    
 }

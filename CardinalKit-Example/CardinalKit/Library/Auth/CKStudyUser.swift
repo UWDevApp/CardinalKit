@@ -8,14 +8,31 @@
 import Foundation
 import Firebase
 import CardinalKit
+import HealthKit
+import EFStorageUserDefaults
+import EFStorageKeychainAccess
 
-class CKStudyUser {
+extension Int: KeychainAccessStorable {
+    public func asKeychainAccessStorable() -> Swift.Result<AsIsKeychainAccessStorable, Error> {
+        return "\(self)".asKeychainAccessStorable()
+    }
+
+    public static func fromKeychain(_ keychain: Keychain, forKey key: String) -> Int? {
+        return String.fromKeychain(keychain, forKey: key).flatMap(Int.init)
+    }
+}
+
+extension Date: KeychainAccessStorable { }
+
+extension HKBiologicalSex: KeychainAccessStorable { }
+
+class CKStudyUser: ObservableObject {
     
     static let shared = CKStudyUser()
     
     /* **************************************************************
      * the current user only resolves if we are logged in
-    **************************************************************/
+     **************************************************************/
     var currentUser: User? {
         // this is a reference to the
         // Firebase + Google Identity User
@@ -25,10 +42,10 @@ class CKStudyUser {
     /* **************************************************************
      * store your Firebase objects under this path in order to
      * be compatible with CardinalKit GCP rules.
-    **************************************************************/
+     **************************************************************/
     var authCollection: String? {
         if let userId = currentUser?.uid,
-            let root = rootAuthCollection {
+           let root = rootAuthCollection {
             return "\(root)\(userId)/"
         }
         
@@ -45,14 +62,93 @@ class CKStudyUser {
 
     var email: String? {
         get {
-            return UserDefaults.standard.string(forKey: Constants.prefUserEmail)
+            return EFStorageKeychainAccessRef<String>
+                .forKey(Constants.prefUserEmail)
+                .content
         }
         set {
-            if let newValue = newValue {
-                UserDefaults.standard.set(newValue, forKey: Constants.prefUserEmail)
-            } else {
-                UserDefaults.standard.removeObject(forKey: Constants.prefUserEmail)
+            objectWillChange.send()
+            EFStorageKeychainAccessRef<String>
+                .forKey(Constants.prefUserEmail)
+                .content = newValue
+        }
+    }
+
+    var name: String? {
+        get {
+            return currentUser?.displayName
+        }
+        set {
+            guard let user = currentUser else { return }
+            let changeRequest = user.createProfileChangeRequest()
+            changeRequest.displayName = newValue
+            changeRequest.commitChanges { [weak self] (error) in
+                if let error = error {
+                    print(error)
+                } else {
+                    self?.objectWillChange.send()
+                }
             }
+        }
+    }
+
+    var sex: HKBiologicalSex {
+        get {
+            return Keychain.efStorage.sex ?? .notSet
+        }
+        set {
+            objectWillChange.send()
+            Keychain.efStorage.sex = newValue
+        }
+    }
+
+    var dateOfBirth: Date? {
+        get {
+            return Keychain.efStorage.dob
+        }
+        set {
+            objectWillChange.send()
+            Keychain.efStorage.dob = newValue
+        }
+    }
+
+    var education: String? {
+        get {
+            return Keychain.efStorage.education
+        }
+        set {
+            objectWillChange.send()
+            Keychain.efStorage.education = newValue
+        }
+    }
+
+    var handedness: String? {
+        get {
+            return Keychain.efStorage.handedness
+        }
+        set {
+            objectWillChange.send()
+            Keychain.efStorage.handedness = newValue
+        }
+    }
+
+    var zipCode: String? {
+        get {
+            return Keychain.efStorage.zipCode
+        }
+        set {
+            objectWillChange.send()
+            Keychain.efStorage.zipCode = newValue
+        }
+    }
+
+    var ethnicity: String? {
+        get {
+            return Keychain.efStorage.ethnicity
+        }
+        set {
+            objectWillChange.send()
+            Keychain.efStorage.ethnicity = newValue
         }
     }
     
@@ -61,14 +157,14 @@ class CKStudyUser {
     }
     
     /**
-    Send a login email to the user.
+     Send a login email to the user.
 
-    At this stage, we do not have a `currentUser` via Google Identity.
+     At this stage, we do not have a `currentUser` via Google Identity.
 
-    - Parameters:
-        - email: validated address that should receive the sign-in link.
-        - completion: callback
-    */
+     - Parameters:
+     - email: validated address that should receive the sign-in link.
+     - completion: callback
+     */
     func sendLoginLink(email: String, completion: @escaping (Bool)->Void) {
         guard !email.isEmpty else {
             completion(false)
@@ -92,12 +188,12 @@ class CKStudyUser {
     }
 
     /**
-    Save a snapshot of our current user into Firestore.
-    */
+     Save a snapshot of our current user into Firestore.
+     */
     func save() {
         if let dataBucket = rootAuthCollection,
-            let email = currentUser?.email,
-            let uid = currentUser?.uid {
+           let email = currentUser?.email,
+           let uid = currentUser?.uid {
             
             CKSession.shared.userId = uid
             
@@ -107,11 +203,10 @@ class CKStudyUser {
     }
     
     /**
-    Remove the current user's auth parameters from storage.
-    */
+     Remove the current user's auth parameters from storage.
+     */
     func signOut() throws {
-        email = nil
+        try Keychain.makeDefault().removeAll()
         try Auth.auth().signOut()
     }
-    
 }

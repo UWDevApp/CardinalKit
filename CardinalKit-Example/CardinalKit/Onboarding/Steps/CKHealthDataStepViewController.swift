@@ -48,7 +48,7 @@ class CKHealthDataStep: ORKInstructionStep {
         **************************************************************/
         
         // handle authorization from the OS
-        CKActivityManager.shared.getHealthAuthorizaton(forTypes: hkTypesToReadInBackground) { (success, error) in
+        CKActivityManager.shared.getHealthAuthorization(forTypes: hkTypesToReadInBackground) { (success, error) in
             if (success) {
                 let config = CKPropertyReader(file: "CKConfiguration")
                 let frequency = config.read(query: "Background Read Frequency")

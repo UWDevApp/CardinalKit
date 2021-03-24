@@ -23,14 +23,14 @@ public class CKActivityManager : NSObject {
             return
         }
         
-        getHealthAuthorizaton(forTypes: self.typesToCollect) { [weak self] (success, error) in
+        getHealthAuthorization(forTypes: self.typesToCollect) { [weak self] (success, error) in
             if (success) {
                 self?.startHealthKitCollectionInBackground(withFrequency: .hourly) // TODO: get last freq
             }
         }
     }
     
-    public func getHealthAuthorizaton(forTypes typesToCollect:Set<HKQuantityType>, _ completion: @escaping (_ success: Bool, _ error: Error?) -> Void) {
+    public func getHealthAuthorization(forTypes typesToCollect: Set<HKQuantityType>, _ completion: @escaping (_ success: Bool, _ error: Error?) -> Void) {
         self.typesToCollect = typesToCollect
         HealthKitManager.shared.getHealthKitAuth(forTypes: self.typesToCollect) { [weak self] (success, error) in
             self?.hasGrantedAuth = success
