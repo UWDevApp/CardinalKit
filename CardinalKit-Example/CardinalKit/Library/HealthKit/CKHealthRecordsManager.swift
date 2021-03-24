@@ -8,6 +8,7 @@
 
 import Foundation
 import HealthKit
+import CardinalKit
 import CareKit
 import CareKitFHIR
 import CareKitStore
@@ -36,6 +37,18 @@ class CKHealthRecordsManager: NSObject {
     
     func getAuth(_ completion: @escaping (_ success: Bool, _ error: Error?) -> Void) {
         healthStore.requestAuthorization(toShare: nil, read: Self.types) { (success, error) in
+            if success {
+                let frequency: HKUpdateFrequency
+                switch CKConfig.shared.read(query: "Background Read Frequency") {
+                case "daily": frequency = .daily
+                case "weekly": frequency = .weekly
+                case "hourly": frequency = .hourly
+                default: frequency = .immediate
+                }
+                HealthKitManager.shared
+                    .startBackgroundDelivery(forTypes: Self.types, withFrequency: frequency)
+                    { _, _ in }
+            }
             completion(success, error)
         }
     }
@@ -71,5 +84,4 @@ class CKHealthRecordsManager: NSObject {
             healthStore.execute(query)
         }
     }
-    
 }

@@ -8,9 +8,9 @@
 
 import HealthKit
 
-class HealthKitManager: SyncDelegate {
+public class HealthKitManager: SyncDelegate {
     
-    static let shared = HealthKitManager()
+    public static let shared = HealthKitManager()
     
     lazy var healthStore: HKHealthStore = HKHealthStore()
     
@@ -73,7 +73,7 @@ class HealthKitManager: SyncDelegate {
         }
     }
     
-    public func startBackgroundDelivery(forTypes types: Set<HKQuantityType>, withFrequency frequency: HKUpdateFrequency, _ completion: ((_ success: Bool, _ error: Error?) -> Void)? = nil) {
+    public func startBackgroundDelivery(forTypes types: Set<HKSampleType>, withFrequency frequency: HKUpdateFrequency, _ completion: ((_ success: Bool, _ error: Error?) -> Void)? = nil) {
         self.setUpBackgroundDeliveryForDataTypes(types: types, frequency: frequency, completion)
     }
     
@@ -90,7 +90,7 @@ class HealthKitManager: SyncDelegate {
 
 extension HealthKitManager {
     
-    fileprivate func setUpBackgroundDeliveryForDataTypes(types: Set<HKQuantityType>, frequency: HKUpdateFrequency, _ completion: ((_ success: Bool, _ error: Error?) -> Void)? = nil) {
+    fileprivate func setUpBackgroundDeliveryForDataTypes(types: Set<HKSampleType>, frequency: HKUpdateFrequency, _ completion: ((_ success: Bool, _ error: Error?) -> Void)? = nil) {
 
         for type in types {
             let query = HKObserverQuery(sampleType: type, predicate: nil, updateHandler: { [weak self] (query, completionHandler, error) in
@@ -128,34 +128,7 @@ extension HealthKitManager {
         }
     }
     
-    //TODO: (delete) running the old data collection solution as a baseline to compare new values
-    @available(*, deprecated)
-    fileprivate func cumulativeBackgroundQuery(forType type: HKQuantityType, completionHandler: @escaping ()->Void) {
-        
-        let supportedTypes = [HKQuantityTypeIdentifier.stepCount.rawValue, HKQuantityTypeIdentifier.flightsClimbed.rawValue, HKQuantityTypeIdentifier.distanceWalkingRunning.rawValue]
-        if (!supportedTypes.contains(type.identifier)) {
-            VLog("No cumulative query will run for type %@", type.identifier)
-            completionHandler()
-            return
-        }
-        
-        guard canQuery(forType: type) else {
-            VLog("Cannot yet query for %@, please try again in a minute.", type.identifier)
-            completionHandler()
-            return
-        }
-        DispatchQueue.main.async { //run on main queue, which exists even if the app is 100% in the background.
-        
-            VLog("[DEPRECATED] cumulative querying for type %@", type.identifier)
-            HealthKitCollector.shared.collectAndSendSinceStartOfDay {
-                VLog("[DEPRECATED] cumulative dollection done with type %@", type.identifier)
-                completionHandler()
-            }
-        }
-        
-    }
-    
-    fileprivate func backgroundQuery(forType type: HKQuantityType, completionHandler: @escaping ()->Void) {
+    fileprivate func backgroundQuery(forType type: HKSampleType, completionHandler: @escaping ()->Void) {
         
         guard canQuery(forType: type) else {
             VLog("Cannot yet query for %{public}@, please try again in a minute.", type.identifier)
@@ -174,7 +147,7 @@ extension HealthKitManager {
         
     }
 
-    fileprivate func canQuery(forType type: HKQuantityType) -> Bool {
+    fileprivate func canQuery(forType type: HKSampleType) -> Bool {
         queryLogMutex.lock()
         defer { queryLogMutex.unlock() }
         

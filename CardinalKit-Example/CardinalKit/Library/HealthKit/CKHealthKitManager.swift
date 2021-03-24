@@ -38,7 +38,7 @@ class CKHealthKitManager : NSObject {
         **************************************************************/
         
         // handle authorization from the OS
-        CKActivityManager.shared.getHealthAuthorizaton(forTypes: hkTypesToReadInBackground) { [weak self] (success, error) in
+        CKActivityManager.shared.getHealthAuthorization(forTypes: hkTypesToReadInBackground) { [weak self] (success, error) in
             if (success) {
                 let frequency = self?.config.read(query: "Background Read Frequency")
 
