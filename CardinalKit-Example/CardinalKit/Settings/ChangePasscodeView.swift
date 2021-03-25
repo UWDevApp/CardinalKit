@@ -18,9 +18,9 @@ struct ChangePasscodeView: View {
                 self.showPasscode.toggle()
             }
         }
-        .padding(.vertical)
         .sheet(isPresented: $showPasscode) {
             PasscodeVC()
+                .edgesIgnoringSafeArea(.all)
         }
     }
 }

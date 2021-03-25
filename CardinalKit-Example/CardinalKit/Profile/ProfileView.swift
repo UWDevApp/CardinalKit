@@ -28,7 +28,6 @@ extension HKBiologicalSex: CustomStringConvertible {
 
 struct ProfileView: View {
     @EnvironmentObject var config: CKPropertyReader
-    let color: Color
 
     @State
     var isEditingBasicInfo: Bool = false
@@ -159,29 +158,12 @@ struct ProfileView: View {
         }
     }
 
-    var footer: some View {
-        Text(config.read(query: "Copyright"))
-            .padding(.top, 16)
-            .frame(maxWidth: .infinity)
-    }
-
     var body: some View {
         NavigationView {
             List {
                 basicInfoSection
 
                 clinicalInfoSection
-
-                //                Section {
-                //                    HelpView(site: config.read(query: "Website"))
-                //                    SupportView(color: color, phone: config.read(query: "Phone"))
-                //                    ReportView(color: color, email: config.read(query: "Email"))
-                //                    ChangePasscodeView()
-                //                }
-
-                Section(footer: footer) {
-                    WithdrawView()
-                }
             }
             .listStyle(GroupedListStyle())
             .navigationBarTitle("Profile")
@@ -316,7 +298,7 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView(color: .accentColor)
+        ProfileView()
             .environmentObject(CKConfig.shared)
     }
 }

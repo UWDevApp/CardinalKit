@@ -1,5 +1,5 @@
 //
-//  SupportView.swift
+//  PhoneView.swift
 //  TrialX
 //
 //  Created by Apollo Zhu on 9/12/20.
@@ -8,16 +8,15 @@
 
 import SwiftUI
 
-struct SupportView: View {
-    let color: Color
+struct PhoneView: View {
     var phone: String
 
     var body: some View {
         HStack {
-            Text("Support")
+            Text("App Support")
             Spacer()
             Text(phone)
-                .foregroundColor(color)
+                .foregroundColor(.accentColor)
         }
         .padding(.vertical)
         .onTapGesture {
@@ -28,8 +27,8 @@ struct SupportView: View {
     }
 }
 
-struct SupportView_Previews: PreviewProvider {
+struct PhoneView_Previews: PreviewProvider {
     static var previews: some View {
-        SupportView(color: .accentColor, phone: "")
+        PhoneView(phone: "123456789")
     }
 }

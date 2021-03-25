@@ -18,7 +18,8 @@ struct HomeView: View {
     var body: some View {
         TabView {
             NavigationView {
-                WelcomeNotificationView(color: color).navigationBarTitle("Home")
+                WelcomeNotificationView(color: color)
+                    .navigationBarTitle("Home")
             }
             .tabItem {
                 Image(systemName: "house")
@@ -27,7 +28,8 @@ struct HomeView: View {
             }
             
             NavigationView {
-                StatisticsView(color: color).navigationBarTitle("Statistics")
+                StatisticsView(color: color)
+                    .navigationBarTitle("Statistics")
             }
             .tabItem {
                 Image(systemName: "gauge")
@@ -42,11 +44,18 @@ struct HomeView: View {
 //                    Text("Testing Activities")
 //                }
 
-            ProfileView(color: color)
+            ProfileView()
                 .tabItem {
                     Image("tab_profile")
                         .renderingMode(.template)
                     Text("Profile")
+                }
+
+            SettingsView()
+                .tabItem {
+                    Image(systemName: "gear")
+                        .renderingMode(.template)
+                    Text("Settings")
                 }
         }
         .accentColor(color)
