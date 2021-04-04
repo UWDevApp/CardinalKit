@@ -42,7 +42,7 @@ struct ActivityView: View {
     var description: String
     let tasks: ORKOrderedTask
     @State var showingDetail = false
-
+    
     var body: some View {
         Button(action: {
             self.showingDetail.toggle()
@@ -65,6 +65,7 @@ struct ActivityView: View {
         .padding(.vertical)
         .sheet(isPresented: $showingDetail) {
             TaskVC(tasks: self.tasks)
+                .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
         }
     }
 }
