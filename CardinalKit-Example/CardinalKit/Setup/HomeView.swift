@@ -19,7 +19,6 @@ struct HomeView: View {
             WelcomeNotificationView()
             .tabItem {
                 Image(systemName: "house")
-                    .renderingMode(.template)
                 Text("Home")
             }
             
@@ -34,7 +33,6 @@ struct HomeView: View {
             }
             .tabItem {
                 Image(systemName: "gauge")
-                    .renderingMode(.template)
                 Text("Statistics")
             }
 
@@ -59,15 +57,17 @@ struct HomeView: View {
 
             ProfileView()
                 .tabItem {
-                    Image("tab_profile")
-                        .renderingMode(.template)
+                    Image(systemName: "person.crop.circle")
                     Text("Profile")
                 }
 
             SettingsView()
                 .tabItem {
-                    Image(systemName: "gear")
-                        .renderingMode(.template)
+                    if #available(iOS 14, *) {
+                        Image(systemName: "gearshape")
+                    } else {
+                        Image(systemName: "gear")
+                    }
                     Text("Settings")
                 }
         }

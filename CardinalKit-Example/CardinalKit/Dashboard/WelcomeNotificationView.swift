@@ -14,8 +14,6 @@ struct WelcomeNotificationView: View {
     @State private var showingTestDetail = false
     @State private var currentNotification: Notification? = nil
 
-    let date = DateFormatter.mediumDate.string(from: Date())
-
     var contacts: some View {
         Group {
             // TODO: Figure out how to layout this correctly.
@@ -98,7 +96,7 @@ struct WelcomeNotificationView: View {
                         contacts
                     }
                 }
-                .navigationBarItems(trailing: Text(date).foregroundColor(.accentColor))
+                .navigationBarItems(trailing: CurrentDate())
                 .navigationBarTitle("Home")
             }
         }

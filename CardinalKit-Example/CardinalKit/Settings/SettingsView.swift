@@ -54,6 +54,7 @@ struct SettingsView: View {
                     .frame(maxWidth: .infinity)
             }
         }
+        .navigationBarItems(trailing: CurrentDate())
         .navigationBarTitle("Settings")
     }
 

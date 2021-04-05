@@ -60,7 +60,13 @@ struct ProfileView: View {
                 isEditingBasicInfo = true
             }, label: {
                 if #available(iOS 14.0, *) {
-                    Label("Edit", systemImage: "square.and.pencil")
+                    Label {
+                        Text("Edit")
+                            .fontWeight(.bold)
+                    } icon: {
+                        Text(Image(systemName: "square.and.pencil"))
+                            .fontWeight(.bold)
+                    }
                 } else {
                     Text("Edit")
                         .fontWeight(.bold)
@@ -164,6 +170,7 @@ struct ProfileView: View {
 
             clinicalInfoSection
         }
+        .navigationBarItems(trailing: CurrentDate())
         .navigationBarTitle("Profile")
     }
 
