@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 import ResearchKit
 
 enum StudyTableItem: Int, CaseIterable {
@@ -64,20 +65,34 @@ enum StudyTableItem: Int, CaseIterable {
         }
     }
 
-    var image: UIImage? {
+    var image: Image? {
         switch self {
         case .survey:
-            return UIImage(named: "survey.png")!
-        case .trailMakingA:
-            return UIImage(named: "trailA.png")!
-        case .trailMakingB:
-            return UIImage(named: "trailB.png")!
+            return Image(systemName: "doc.plaintext")
+        case .trailMakingA, .trailMakingB:
+            if #available(iOS 14, *) {
+                return Image(systemName: "point.fill.topleft.down.curvedto.point.fill.bottomright.up")
+            } else {
+                return Image(systemName: "scribble")
+            }
         case .spatial:
-            return UIImage(named: "spatial.png")!
+            if #available(iOS 14, *) {
+                return Image(systemName: "square.grid.3x3.middleright.fill")
+            } else {
+                return Image(systemName: "circle.grid.3x3")
+            }
         case .speechRecognition:
-            return UIImage(named: "speech.png")!
+            if #available(iOS 14, *) {
+                return Image(systemName: "rectangle.3.offgrid.bubble.left")
+            } else {
+                return Image(systemName: "mic")
+            }
         case .amslerGrid:
-            return UIImage(named: "amsler.png")!
+            if #available(iOS 14, *) {
+                return Image(systemName: "dot.squareshape.split.2x2")
+            } else {
+                return Image(systemName: "dot.square")
+            }
         }
     }
 }

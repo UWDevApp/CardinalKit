@@ -7,10 +7,11 @@
 //
 
 import ResearchKit
+import SwiftUI
 
 struct StudyItem: Identifiable {
     let id = UUID()
-    let image: UIImage
+    let image: Image
     let title: String
     let description: String
     let task: ORKOrderedTask
