@@ -22,7 +22,6 @@
 		8EBE6F9C24B3C0E60093D07C /* AppDelegate+CardinalKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBE6F9B24B3C0E60093D07C /* AppDelegate+CardinalKit.swift */; };
 		A04B9C59250D8D1F006D0D3F /* UIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04B9C58250D8D1F006D0D3F /* UIData.swift */; };
 		A04B9C5B250D9162006D0D3F /* WelcomeNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04B9C5A250D9162006D0D3F /* WelcomeNotificationView.swift */; };
-		A04B9C5D250DEB61006D0D3F /* NotificationBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04B9C5C250DEB61006D0D3F /* NotificationBubble.swift */; };
 		A04B9C5F250E9597006D0D3F /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04B9C5E250E9597006D0D3F /* StatisticsView.swift */; };
 		A04B9C61250E96DE006D0D3F /* StatisticsBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04B9C60250E96DE006D0D3F /* StatisticsBubble.swift */; };
 		A04B9C63250E9B57006D0D3F /* DetailGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04B9C62250E9B57006D0D3F /* DetailGraphView.swift */; };
@@ -113,7 +112,6 @@
 		8EBE6F9B24B3C0E60093D07C /* AppDelegate+CardinalKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+CardinalKit.swift"; sourceTree = "<group>"; };
 		A04B9C58250D8D1F006D0D3F /* UIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIData.swift; sourceTree = "<group>"; };
 		A04B9C5A250D9162006D0D3F /* WelcomeNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeNotificationView.swift; sourceTree = "<group>"; };
-		A04B9C5C250DEB61006D0D3F /* NotificationBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBubble.swift; sourceTree = "<group>"; };
 		A04B9C5E250E9597006D0D3F /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		A04B9C60250E96DE006D0D3F /* StatisticsBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsBubble.swift; sourceTree = "<group>"; };
 		A04B9C62250E9B57006D0D3F /* DetailGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGraphView.swift; sourceTree = "<group>"; };
@@ -513,7 +511,6 @@
 			isa = PBXGroup;
 			children = (
 				A04B9C5A250D9162006D0D3F /* WelcomeNotificationView.swift */,
-				A04B9C5C250DEB61006D0D3F /* NotificationBubble.swift */,
 				A04B9C5E250E9597006D0D3F /* StatisticsView.swift */,
 				A04B9C60250E96DE006D0D3F /* StatisticsBubble.swift */,
 				A04B9C62250E9B57006D0D3F /* DetailGraphView.swift */,
@@ -756,7 +753,6 @@
 				D283AB0326094C8900637663 /* Errors.swift in Sources */,
 				D286ECB8250E087F00815EED /* HomeView.swift in Sources */,
 				D253D117250CA73100A363E4 /* ChangePasscodeView.swift in Sources */,
-				A04B9C5D250DEB61006D0D3F /* NotificationBubble.swift in Sources */,
 				D283AAF526094C8900637663 /* CKTaskViewController.swift in Sources */,
 				8E0A43C3244A4A0400656518 /* LoginCustomWaitStepViewController.swift in Sources */,
 				A04B9C59250D8D1F006D0D3F /* UIData.swift in Sources */,

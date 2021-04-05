@@ -18,6 +18,21 @@ struct Notification: Identifiable {
     let action: Bool
 }
 
+extension Notification {
+    var studyItem: StudyItem {
+        switch testName {
+        case "User Survey": return StudyItem(study: .survey)
+        case "Trailmaking A": return StudyItem(study: .trailMakingA)
+        case "Trailmaking B": return StudyItem(study: .trailMakingB)
+        case "Spatial Memory": return StudyItem(study: .spatial)
+        case "Speech Recognition": return StudyItem(study: .speechRecognition)
+        case "Amsler Grid": return StudyItem(study: .amslerGrid)
+        default:
+            fatalError("Unrecognized test \(testName)")
+        }
+    }
+}
+
 struct Result: Identifiable {
     let id = UUID()
     let testName: String
@@ -28,6 +43,7 @@ class NotificationsAndResults: ObservableObject {
     @Published var currNotifications: [Notification]
     @Published var upcomingNotifications: [Notification]
     @Published var results: [Result] = []
+    @Published var done = Set<UUID>()
 
     init() {
         currNotifications = [
@@ -109,19 +125,6 @@ class NotificationsAndResults: ObservableObject {
                     }
                     .sorted { $0.testName < $1.testName }
             }
-    }
-    
-    func getTestIndex(testName: String) -> Int {
-        switch testName {
-            case "User Survey": return 0
-            case "Trailmaking A": return 1
-            case "Trailmaking B": return 2
-            case "Spatial Memory": return 3
-            case "Speech Recognition": return 4
-            case "Amsler Grid": return 5
-            default:
-                fatalError("Unrecognized test \(testName)")
-        }
     }
     
     func getLastestScore<T>(scores: [T]) -> T {

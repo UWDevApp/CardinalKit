@@ -7,58 +7,74 @@
 //
 
 import SwiftUI
+import CareKitUI
 
 struct WelcomeNotificationView: View {
     @EnvironmentObject var data: NotificationsAndResults
-    @State private var showingPopup = false
     @State private var showingTestDetail = false
-    @State private var currTestIndex = 0
+    @State private var currentNotification: Notification? = nil
     let date = DateFormatter.mediumDate.string(from: Date())
-    let activities = StudyTableItem.allCases.map { StudyItem(study: $0) }
-
-    let color: Color
 
     var body: some View {
         PlainList {
-            Section(header: Text("Avaliable Test(s)")) {
-                ForEach(self.data.currNotifications) { notification in
-                    NotificationBubble(
-                        showingPopup: self.$showingPopup,
-                        showingTestDetail: self.$showingTestDetail,
-                        currTestIndex: self.$currTestIndex,
-                        notification: notification,
-                        backGroundColor: self.color,
-                        textColor: .white
+            // Optional state doesn't update unless displayed.
+            // https://developer.apple.com/forums/thread/652080
+            Text(currentNotification?.testName ?? "")
+                .frame(maxHeight: 0)
+                .hidden()
+
+            Section(header: Text("Available Tests")) {
+                ForEach(data.currNotifications) { notification in
+                    InstructionsTaskView(
+                        title: Text(notification.testName),
+                        detail: Text(notification.text),
+                        instructions: nil,
+                        isComplete: data.done.contains(notification.id),
+                        action: {
+                            currentNotification = notification
+                            showingTestDetail = true
+                        }
                     )
-                    .padding(4)
                 }
             }
-            
-            Section(header: Text("Upcoming Tests and Cautions")) {
+
+            Section(header: Text("Upcoming Tests and Cautions").padding(.top)) {
                 ForEach(self.data.upcomingNotifications) { notification in
-                    NotificationBubble(
-                        showingPopup: self.$showingPopup,
-                        showingTestDetail: self.$showingTestDetail,
-                        currTestIndex: self.$currTestIndex,
-                        notification: notification,
-                        backGroundColor: .white,
-                        textColor: self.color
-                    )
-                    .padding(3)
+                    SimpleTaskView(
+                        title: Text(notification.testName),
+                        detail: Text(notification.text)
+                    ) {
+                        notification.studyItem.image
+                            .resizable()
+                            .imageScale(.large)
+                            .frame(width: 32, height: 32, alignment: .center)
+                            .padding()
+                            .foregroundColor(.accentColor)
+                    }
                 }
             }
         }
-        .navigationBarItems(trailing: Text(date).foregroundColor(color))
+        .navigationBarItems(trailing: Text(date).foregroundColor(.accentColor))
         .sheet(isPresented: $showingTestDetail) {
-            TaskVC(tasks: self.activities[self.currTestIndex].task)
-                .edgesIgnoringSafeArea(.all)
+            let notification = currentNotification!
+            let study = notification.studyItem
+            TaskVC(tasks: study.task) { result in
+                switch result {
+                case .success:
+                    data.done.insert(notification.id)
+                case .failure:
+                    break // nothing to do
+                }
+            }
+            .edgesIgnoringSafeArea(.all)
         }
     }
 }
 
 struct WelcomeNotificationView_Previews: PreviewProvider {
     static var previews: some View {
-        WelcomeNotificationView(color: Color(UIColor(netHex: 0x41803d)))
+        WelcomeNotificationView()
+            .accentColor(Color(UIColor(netHex: 0x41803d)))
             .environmentObject(NotificationsAndResults())
     }
 }

@@ -21,7 +21,7 @@ struct HomeView: View {
                     Color(UIColor.systemGroupedBackground)
                         .edgesIgnoringSafeArea(.all)
 
-                    WelcomeNotificationView(color: color)
+                    WelcomeNotificationView()
                         .navigationBarTitle("Home")
                 }
             }
@@ -46,12 +46,24 @@ struct HomeView: View {
                 Text("Statistics")
             }
 
-//            ActivitiesView(color: color)
-//                .tabItem {
-//                    Image("tab_activities")
-//                        .renderingMode(.template)
-//                    Text("Testing Activities")
-//                }
+            ScheduleViewControllerRepresentable()
+                .tabItem {
+                    Image("tab_schedule").renderingMode(.template)
+                    Text("Schedule")
+                }
+
+            CareTeamViewControllerRepresentable()
+                .tabItem {
+                    Image("tab_care").renderingMode(.template)
+                    Text("Contact")
+                }
+
+            //            ActivitiesView(color: color)
+            //                .tabItem {
+            //                    Image("tab_activities")
+            //                        .renderingMode(.template)
+            //                    Text("Testing Activities")
+            //                }
 
             ProfileView()
                 .tabItem {
