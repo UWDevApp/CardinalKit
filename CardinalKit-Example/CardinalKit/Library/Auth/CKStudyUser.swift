@@ -29,6 +29,19 @@ extension HKBiologicalSex: KeychainAccessStorable { }
 class CKStudyUser: ObservableObject {
     
     static let shared = CKStudyUser()
+
+    let handle: NSObjectProtocol?
+    private init() {
+        handle = Auth.auth().addStateDidChangeListener { auth, user in
+            if user != nil {
+                loadBasicInfo()
+            }
+        }
+    }
+
+    deinit {
+        handle.map(Auth.auth().removeStateDidChangeListener)
+    }
     
     /* **************************************************************
      * the current user only resolves if we are logged in
