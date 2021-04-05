@@ -221,6 +221,7 @@ PODS:
   - CardinalKit (1.0.0):
     - ObjectMapper (~> 3.3.0)
     - ReachabilitySwift (~> 3)
+    - Realm (~> 10.7.2)
     - RealmSwift (~> 10.7.2)
     - SAMKeychain (~> 1.5.2)
     - SwiftyJSON (~> 4.1.0)
@@ -383,7 +384,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
-  CardinalKit: 2ea089443b158f4a8e98557ee9dba453c557372d
+  CardinalKit: 46ba0b996d460b4bf4469f9bde404dd065e34da2
   Firebase: d8bd6bd34b4c7ed57bfdd056c66ff5adcdde53ab
   FirebaseAuth: 20625f04fdd213995249a82375b3dab39b1c136c
   FirebaseCore: 0798738ad1ae0fda67e17c7b9081241c431c6859
