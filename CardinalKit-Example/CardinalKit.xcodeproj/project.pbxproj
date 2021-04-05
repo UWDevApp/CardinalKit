@@ -22,11 +22,11 @@
 		8EBE6F9C24B3C0E60093D07C /* AppDelegate+CardinalKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBE6F9B24B3C0E60093D07C /* AppDelegate+CardinalKit.swift */; };
 		A04B9C59250D8D1F006D0D3F /* UIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04B9C58250D8D1F006D0D3F /* UIData.swift */; };
 		A04B9C5B250D9162006D0D3F /* WelcomeNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04B9C5A250D9162006D0D3F /* WelcomeNotificationView.swift */; };
-		A04B9C5D250DEB61006D0D3F /* NotificationBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04B9C5C250DEB61006D0D3F /* NotificationBubble.swift */; };
 		A04B9C5F250E9597006D0D3F /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04B9C5E250E9597006D0D3F /* StatisticsView.swift */; };
 		A04B9C61250E96DE006D0D3F /* StatisticsBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04B9C60250E96DE006D0D3F /* StatisticsBubble.swift */; };
 		A04B9C63250E9B57006D0D3F /* DetailGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04B9C62250E9B57006D0D3F /* DetailGraphView.swift */; };
 		D2093CCA250EC8FF001583A8 /* PlainNavigationLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2093CC9250EC8FF001583A8 /* PlainNavigationLink.swift */; };
+		D244F4F7261ACB7A0027D011 /* CareKitContactViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D244F4F6261ACB7A0027D011 /* CareKitContactViews.swift */; };
 		D24ED841260BAA27004A454F /* EFStorageUserDefaults in Frameworks */ = {isa = PBXBuildFile; productRef = D24ED840260BAA27004A454F /* EFStorageUserDefaults */; };
 		D24ED844260C01B0004A454F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24ED843260C01B0004A454F /* SettingsView.swift */; };
 		D253D115250CA2FF00A363E4 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D253D114250CA2FF00A363E4 /* ProfileView.swift */; };
@@ -58,10 +58,6 @@
 		D283AB0226094C8900637663 /* CKCareKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D283AAF026094C8900637663 /* CKCareKitManager.swift */; };
 		D283AB0326094C8900637663 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D283AAF126094C8900637663 /* Errors.swift */; };
 		D283AB0426094C8900637663 /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D283AAF226094C8900637663 /* Metrics.swift */; };
-		D283AB0726094F4F00637663 /* CareKitFHIR in Frameworks */ = {isa = PBXBuildFile; productRef = D283AB0626094F4F00637663 /* CareKitFHIR */; };
-		D283AB0926094F4F00637663 /* CareKit in Frameworks */ = {isa = PBXBuildFile; productRef = D283AB0826094F4F00637663 /* CareKit */; };
-		D283AB0B26094F4F00637663 /* CareKitStore in Frameworks */ = {isa = PBXBuildFile; productRef = D283AB0A26094F4F00637663 /* CareKitStore */; };
-		D283AB0D26094F4F00637663 /* CareKitUI in Frameworks */ = {isa = PBXBuildFile; productRef = D283AB0C26094F4F00637663 /* CareKitUI */; };
 		D283AB152609586500637663 /* SceneDelegate+CardinalKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D283AB112609586500637663 /* SceneDelegate+CardinalKit.swift */; };
 		D283AB19260A0B7100637663 /* CKHealthRecordsStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D283AB18260A0B7100637663 /* CKHealthRecordsStepViewController.swift */; };
 		D286EC97250DC02F00815EED /* LaunchContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D286EC96250DC02F00815EED /* LaunchContainerView.swift */; };
@@ -72,6 +68,15 @@
 		D286ECC0250E0A6500815EED /* DocumentPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = D286ECBF250E0A6500815EED /* DocumentPreview.swift */; };
 		D286ECC3250E0ABF00815EED /* TaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D286ECC2250E0ABF00815EED /* TaskVC.swift */; };
 		D286ECC5250E0E0700815EED /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D286ECC4250E0E0700815EED /* Extensions.swift */; };
+		D28BBAD8261A915A0074C560 /* CareTeamViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28BBAD1261A91590074C560 /* CareTeamViewControllerRepresentable.swift */; };
+		D28BBAD9261A915A0074C560 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28BBAD3261A915A0074C560 /* ScheduleViewController.swift */; };
+		D28BBADA261A915A0074C560 /* ScheduleViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28BBAD4261A915A0074C560 /* ScheduleViewControllerRepresentable.swift */; };
+		D28BBADB261A915A0074C560 /* TipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28BBAD6261A915A0074C560 /* TipView.swift */; };
+		D28BBADC261A915A0074C560 /* SurveyItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28BBAD7261A915A0074C560 /* SurveyItemViewController.swift */; };
+		D28BBADF261AA0F50074C560 /* CareKitFHIR in Frameworks */ = {isa = PBXBuildFile; productRef = D28BBADE261AA0F50074C560 /* CareKitFHIR */; };
+		D28BBAE1261AA0F50074C560 /* CareKit in Frameworks */ = {isa = PBXBuildFile; productRef = D28BBAE0261AA0F50074C560 /* CareKit */; };
+		D28BBAE3261AA0F50074C560 /* CareKitStore in Frameworks */ = {isa = PBXBuildFile; productRef = D28BBAE2261AA0F50074C560 /* CareKitStore */; };
+		D28BBAE5261AA0F50074C560 /* CareKitUI in Frameworks */ = {isa = PBXBuildFile; productRef = D28BBAE4261AA0F50074C560 /* CareKitUI */; };
 		D2BF1B7E260AB3D200B28CDC /* EFStorageKeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = D2BF1B7D260AB3D200B28CDC /* EFStorageKeychainAccess */; };
 		E235077724F7082700CC1899 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E235077624F7082700CC1899 /* SceneDelegate.swift */; };
 		E290FB1D24FF4BBA00D19BE9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E290FB1C24FF4BBA00D19BE9 /* GoogleService-Info.plist */; };
@@ -108,13 +113,13 @@
 		8EBE6F9B24B3C0E60093D07C /* AppDelegate+CardinalKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+CardinalKit.swift"; sourceTree = "<group>"; };
 		A04B9C58250D8D1F006D0D3F /* UIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIData.swift; sourceTree = "<group>"; };
 		A04B9C5A250D9162006D0D3F /* WelcomeNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeNotificationView.swift; sourceTree = "<group>"; };
-		A04B9C5C250DEB61006D0D3F /* NotificationBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBubble.swift; sourceTree = "<group>"; };
 		A04B9C5E250E9597006D0D3F /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		A04B9C60250E96DE006D0D3F /* StatisticsBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsBubble.swift; sourceTree = "<group>"; };
 		A04B9C62250E9B57006D0D3F /* DetailGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGraphView.swift; sourceTree = "<group>"; };
 		CB97C14C759E56B88E4E3941 /* Pods_CardinalKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardinalKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE9A73F2B93DE400D855AADD /* Pods-TrialX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrialX.release.xcconfig"; path = "Target Support Files/Pods-TrialX/Pods-TrialX.release.xcconfig"; sourceTree = "<group>"; };
 		D2093CC9250EC8FF001583A8 /* PlainNavigationLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainNavigationLink.swift; sourceTree = "<group>"; };
+		D244F4F6261ACB7A0027D011 /* CareKitContactViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareKitContactViews.swift; sourceTree = "<group>"; };
 		D24ED843260C01B0004A454F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		D253D114250CA2FF00A363E4 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		D253D116250CA73100A363E4 /* ChangePasscodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasscodeView.swift; sourceTree = "<group>"; };
@@ -156,6 +161,11 @@
 		D286ECBF250E0A6500815EED /* DocumentPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPreview.swift; sourceTree = "<group>"; };
 		D286ECC2250E0ABF00815EED /* TaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskVC.swift; sourceTree = "<group>"; };
 		D286ECC4250E0E0700815EED /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		D28BBAD1261A91590074C560 /* CareTeamViewControllerRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CareTeamViewControllerRepresentable.swift; sourceTree = "<group>"; };
+		D28BBAD3261A915A0074C560 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		D28BBAD4261A915A0074C560 /* ScheduleViewControllerRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewControllerRepresentable.swift; sourceTree = "<group>"; };
+		D28BBAD6261A915A0074C560 /* TipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipView.swift; sourceTree = "<group>"; };
+		D28BBAD7261A915A0074C560 /* SurveyItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyItemViewController.swift; sourceTree = "<group>"; };
 		DF8FAFB3C7221261A7397AFD /* Pods-TrialX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrialX.debug.xcconfig"; path = "Target Support Files/Pods-TrialX/Pods-TrialX.debug.xcconfig"; sourceTree = "<group>"; };
 		E235077624F7082700CC1899 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E290FB1C24FF4BBA00D19BE9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -171,14 +181,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D28BBAE3261AA0F50074C560 /* CareKitStore in Frameworks */,
+				D28BBAE1261AA0F50074C560 /* CareKit in Frameworks */,
+				D28BBAE5261AA0F50074C560 /* CareKitUI in Frameworks */,
 				8E0A43D5244A693D00656518 /* HealthKit.framework in Frameworks */,
 				D2BF1B7E260AB3D200B28CDC /* EFStorageKeychainAccess in Frameworks */,
-				D283AB0726094F4F00637663 /* CareKitFHIR in Frameworks */,
-				D283AB0D26094F4F00637663 /* CareKitUI in Frameworks */,
 				D24ED841260BAA27004A454F /* EFStorageUserDefaults in Frameworks */,
-				D283AB0926094F4F00637663 /* CareKit in Frameworks */,
+				D28BBADF261AA0F50074C560 /* CareKitFHIR in Frameworks */,
 				69DC6BB1DB8FF78AE696891C /* Pods_TrialX.framework in Frameworks */,
-				D283AB0B26094F4F00637663 /* CareKitStore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +234,8 @@
 				D286EC98250DC03D00815EED /* Setup */,
 				8E0A4399244A4A0400656518 /* Onboarding */,
 				8E0A438D244A4A0400656518 /* Study */,
+				D28BBAD0261A91590074C560 /* Care Team */,
+				D28BBAD2261A915A0074C560 /* Schedule */,
 				E29143FA24E74AB700EE97B2 /* Dashboard */,
 				8E0A4379244A4A0400656518 /* Profile */,
 				D24ED842260C01A3004A454F /* Settings */,
@@ -466,15 +478,42 @@
 				D2093CC9250EC8FF001583A8 /* PlainNavigationLink.swift */,
 				D286ECBF250E0A6500815EED /* DocumentPreview.swift */,
 				D286ECC2250E0ABF00815EED /* TaskVC.swift */,
+				D244F4F6261ACB7A0027D011 /* CareKitContactViews.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		D28BBAD0261A91590074C560 /* Care Team */ = {
+			isa = PBXGroup;
+			children = (
+				D28BBAD1261A91590074C560 /* CareTeamViewControllerRepresentable.swift */,
+			);
+			path = "Care Team";
+			sourceTree = "<group>";
+		};
+		D28BBAD2261A915A0074C560 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				D28BBAD3261A915A0074C560 /* ScheduleViewController.swift */,
+				D28BBAD4261A915A0074C560 /* ScheduleViewControllerRepresentable.swift */,
+				D28BBAD5261A915A0074C560 /* Views */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		D28BBAD5261A915A0074C560 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D28BBAD6261A915A0074C560 /* TipView.swift */,
+				D28BBAD7261A915A0074C560 /* SurveyItemViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		E29143FA24E74AB700EE97B2 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
 				A04B9C5A250D9162006D0D3F /* WelcomeNotificationView.swift */,
-				A04B9C5C250DEB61006D0D3F /* NotificationBubble.swift */,
 				A04B9C5E250E9597006D0D3F /* StatisticsView.swift */,
 				A04B9C60250E96DE006D0D3F /* StatisticsBubble.swift */,
 				A04B9C62250E9B57006D0D3F /* DetailGraphView.swift */,
@@ -501,12 +540,12 @@
 			);
 			name = TrialX;
 			packageProductDependencies = (
-				D283AB0626094F4F00637663 /* CareKitFHIR */,
-				D283AB0826094F4F00637663 /* CareKit */,
-				D283AB0A26094F4F00637663 /* CareKitStore */,
-				D283AB0C26094F4F00637663 /* CareKitUI */,
 				D2BF1B7D260AB3D200B28CDC /* EFStorageKeychainAccess */,
 				D24ED840260BAA27004A454F /* EFStorageUserDefaults */,
+				D28BBADE261AA0F50074C560 /* CareKitFHIR */,
+				D28BBAE0261AA0F50074C560 /* CareKit */,
+				D28BBAE2261AA0F50074C560 /* CareKitStore */,
+				D28BBAE4261AA0F50074C560 /* CareKitUI */,
 			);
 			productName = CardinalKit;
 			productReference = 607FACD01AFB9204008FA782 /* CardinalKit Example.app */;
@@ -539,8 +578,8 @@
 			);
 			mainGroup = 607FACC71AFB9204008FA782;
 			packageReferences = (
-				D283AB0526094F4F00637663 /* XCRemoteSwiftPackageReference "CareKit" */,
 				D2BF1B7C260AB3D200B28CDC /* XCRemoteSwiftPackageReference "EFStorage" */,
+				D28BBADD261AA0F50074C560 /* XCRemoteSwiftPackageReference "CareKit" */,
 			);
 			productRefGroup = 607FACD11AFB9204008FA782 /* Products */;
 			projectDirPath = "";
@@ -662,6 +701,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D28BBADA261A915A0074C560 /* ScheduleViewControllerRepresentable.swift in Sources */,
 				D283AB19260A0B7100637663 /* CKHealthRecordsStepViewController.swift in Sources */,
 				D283AAFB26094C8900637663 /* CKHealthKitManager.swift in Sources */,
 				E2DF9F0A2500C9CE00A93B93 /* LoginViewController.swift in Sources */,
@@ -682,10 +722,12 @@
 				D286ECBC250E0A1500815EED /* ActivitiesView.swift in Sources */,
 				D283AAF326094C8900637663 /* CKConfig.swift in Sources */,
 				D253D12B250CD16400A363E4 /* PageView.swift in Sources */,
+				D28BBADC261A915A0074C560 /* SurveyItemViewController.swift in Sources */,
 				D283AB152609586500637663 /* SceneDelegate+CardinalKit.swift in Sources */,
 				A04B9C61250E96DE006D0D3F /* StatisticsBubble.swift in Sources */,
 				D286ECB6250DE9EF00815EED /* PlainList.swift in Sources */,
 				D283AB0226094C8900637663 /* CKCareKitManager.swift in Sources */,
+				D28BBAD9261A915A0074C560 /* ScheduleViewController.swift in Sources */,
 				8E0A43B3244A4A0400656518 /* StudyTasks.swift in Sources */,
 				D283AAFE26094C8900637663 /* Extensions+UIColor.swift in Sources */,
 				D283AAFD26094C8900637663 /* CKSendHelper.swift in Sources */,
@@ -695,6 +737,7 @@
 				D253D129250CBF2800A363E4 /* PhoneView.swift in Sources */,
 				8E0A43B9244A4A0400656518 /* AppDelegate.swift in Sources */,
 				D283AAF426094C8900637663 /* CKPropertyReader.swift in Sources */,
+				D28BBADB261A915A0074C560 /* TipView.swift in Sources */,
 				D286ECC5250E0E0700815EED /* Extensions.swift in Sources */,
 				D253D115250CA2FF00A363E4 /* ProfileView.swift in Sources */,
 				A04B9C63250E9B57006D0D3F /* DetailGraphView.swift in Sources */,
@@ -707,12 +750,13 @@
 				D283AAF726094C8900637663 /* ConsentDocument.swift in Sources */,
 				8E0A43AD244A4A0400656518 /* Constants.swift in Sources */,
 				D2093CCA250EC8FF001583A8 /* PlainNavigationLink.swift in Sources */,
+				D244F4F7261ACB7A0027D011 /* CareKitContactViews.swift in Sources */,
+				D28BBAD8261A915A0074C560 /* CareTeamViewControllerRepresentable.swift in Sources */,
 				D24ED844260C01B0004A454F /* SettingsView.swift in Sources */,
 				8E0A43BE244A4A0400656518 /* CKHealthDataStepViewController.swift in Sources */,
 				D283AB0326094C8900637663 /* Errors.swift in Sources */,
 				D286ECB8250E087F00815EED /* HomeView.swift in Sources */,
 				D253D117250CA73100A363E4 /* ChangePasscodeView.swift in Sources */,
-				A04B9C5D250DEB61006D0D3F /* NotificationBubble.swift in Sources */,
 				D283AAF526094C8900637663 /* CKTaskViewController.swift in Sources */,
 				8E0A43C3244A4A0400656518 /* LoginCustomWaitStepViewController.swift in Sources */,
 				A04B9C59250D8D1F006D0D3F /* UIData.swift in Sources */,
@@ -919,9 +963,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D283AB0526094F4F00637663 /* XCRemoteSwiftPackageReference "CareKit" */ = {
+		D28BBADD261AA0F50074C560 /* XCRemoteSwiftPackageReference "CareKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/carekit-apple/CareKit.git";
+			repositoryURL = "https://github.com/ApolloZhu/CareKit.git";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -943,24 +987,24 @@
 			package = D2BF1B7C260AB3D200B28CDC /* XCRemoteSwiftPackageReference "EFStorage" */;
 			productName = EFStorageUserDefaults;
 		};
-		D283AB0626094F4F00637663 /* CareKitFHIR */ = {
+		D28BBADE261AA0F50074C560 /* CareKitFHIR */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D283AB0526094F4F00637663 /* XCRemoteSwiftPackageReference "CareKit" */;
+			package = D28BBADD261AA0F50074C560 /* XCRemoteSwiftPackageReference "CareKit" */;
 			productName = CareKitFHIR;
 		};
-		D283AB0826094F4F00637663 /* CareKit */ = {
+		D28BBAE0261AA0F50074C560 /* CareKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D283AB0526094F4F00637663 /* XCRemoteSwiftPackageReference "CareKit" */;
+			package = D28BBADD261AA0F50074C560 /* XCRemoteSwiftPackageReference "CareKit" */;
 			productName = CareKit;
 		};
-		D283AB0A26094F4F00637663 /* CareKitStore */ = {
+		D28BBAE2261AA0F50074C560 /* CareKitStore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D283AB0526094F4F00637663 /* XCRemoteSwiftPackageReference "CareKit" */;
+			package = D28BBADD261AA0F50074C560 /* XCRemoteSwiftPackageReference "CareKit" */;
 			productName = CareKitStore;
 		};
-		D283AB0C26094F4F00637663 /* CareKitUI */ = {
+		D28BBAE4261AA0F50074C560 /* CareKitUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D283AB0526094F4F00637663 /* XCRemoteSwiftPackageReference "CareKit" */;
+			package = D28BBADD261AA0F50074C560 /* XCRemoteSwiftPackageReference "CareKit" */;
 			productName = CareKitUI;
 		};
 		D2BF1B7D260AB3D200B28CDC /* EFStorageKeychainAccess */ = {

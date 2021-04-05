@@ -7,58 +7,121 @@
 //
 
 import SwiftUI
+import CareKitUI
 
 struct WelcomeNotificationView: View {
     @EnvironmentObject var data: NotificationsAndResults
-    @State private var showingPopup = false
     @State private var showingTestDetail = false
-    @State private var currTestIndex = 0
+    @State private var currentNotification: Notification? = nil
+
     let date = DateFormatter.mediumDate.string(from: Date())
-    let activities = StudyTableItem.allCases.map { StudyItem(study: $0) }
 
-    let color: Color
-
-    var body: some View {
-        PlainList {
-            Section(header: Text("Avaliable Test(s)")) {
-                ForEach(self.data.currNotifications) { notification in
-                    NotificationBubble(
-                        showingPopup: self.$showingPopup,
-                        showingTestDetail: self.$showingTestDetail,
-                        currTestIndex: self.$currTestIndex,
-                        notification: notification,
-                        backGroundColor: self.color,
-                        textColor: .white
-                    )
-                    .padding(4)
-                }
+    var contacts: some View {
+        Group {
+            // TODO: Figure out how to layout this correctly.
+            Section(header: Text(data.shouldSeeDoctor ? "Your tests' performances suggest that you should visit your doctor" : "Stay Connected")) {
             }
-            
-            Section(header: Text("Upcoming Tests and Cautions")) {
-                ForEach(self.data.upcomingNotifications) { notification in
-                    NotificationBubble(
-                        showingPopup: self.$showingPopup,
-                        showingTestDetail: self.$showingTestDetail,
-                        currTestIndex: self.$currTestIndex,
-                        notification: notification,
-                        backGroundColor: .white,
-                        textColor: self.color
-                    )
-                    .padding(3)
+            GeometryReader { geometry in
+                DetailedContactView(contactID: "oliver")
+                    .frame(width: geometry.size.width)
+            }
+            .frame(height: 320)
+        }
+    }
+
+    var currentTests: some View {
+        Section(header: Text("Available Tests")) {
+            ForEach(data.currNotifications) { notification in
+                InstructionsTaskView(
+                    title: Text(notification.testName),
+                    detail: Text(notification.text),
+                    instructions: nil,
+                    isComplete: data.done.contains(notification.id),
+                    action: {
+                        currentNotification = notification
+                        showingTestDetail = true
+                    }
+                )
+            }
+        }
+    }
+
+    var futureTests: some View {
+        Section(header: Text("Upcoming Tests and Cautions")) {
+            ForEach(self.data.upcomingNotifications) { notification in
+                SimpleTaskView(
+                    title: Text(notification.testName),
+                    detail: Text(notification.text)
+                ) {
+                    notification.studyItem.image
+                        .resizable()
+                        .imageScale(.large)
+                        .frame(width: 32, height: 32, alignment: .center)
+                        .padding()
+                        .foregroundColor(.accentColor)
                 }
             }
         }
-        .navigationBarItems(trailing: Text(date).foregroundColor(color))
+    }
+
+    var tests: some View {
+        Group {
+            currentTests
+            Spacer()
+                .padding(.bottom)
+            futureTests
+        }
+    }
+
+    var body: some View {
+        NavigationView {
+            ZStack {
+                Color(UIColor.systemGroupedBackground)
+                    .edgesIgnoringSafeArea(.all)
+
+                PlainList {
+                    // Optional state doesn't update unless displayed.
+                    // https://developer.apple.com/forums/thread/652080
+                    Text(currentNotification?.testName ?? "")
+                        .frame(maxHeight: 0)
+                        .hidden()
+
+                    if data.shouldSeeDoctor {
+                        contacts
+                        Spacer()
+                            .padding(.bottom)
+                        tests
+                    } else {
+                        tests
+                        Spacer()
+                            .padding(.bottom)
+                        contacts
+                    }
+                }
+                .navigationBarItems(trailing: Text(date).foregroundColor(.accentColor))
+                .navigationBarTitle("Home")
+            }
+        }
         .sheet(isPresented: $showingTestDetail) {
-            TaskVC(tasks: self.activities[self.currTestIndex].task)
-                .edgesIgnoringSafeArea(.all)
+            let notification = currentNotification!
+            let study = notification.studyItem
+            TaskVC(tasks: study.task) { result in
+                switch result {
+                case .success:
+                    data.done.insert(notification.id)
+                case .failure:
+                    break // nothing to do
+                }
+            }
+            .edgesIgnoringSafeArea(.all)
         }
     }
 }
 
 struct WelcomeNotificationView_Previews: PreviewProvider {
     static var previews: some View {
-        WelcomeNotificationView(color: Color(UIColor(netHex: 0x41803d)))
-            .environmentObject(NotificationsAndResults())
+        WelcomeNotificationView()
+            .accentColor(Color(UIColor(netHex: 0x41803d)))
+            .environmentObject(NotificationsAndResults.shared)
     }
 }

@@ -37,7 +37,7 @@ struct ActivitiesView: View {
 }
 
 struct ActivityView: View {
-    let icon: UIImage
+    let icon: Image
     var title: String
     var description: String
     let tasks: ORKOrderedTask
@@ -48,7 +48,7 @@ struct ActivityView: View {
             self.showingDetail.toggle()
         }, label: {
             HStack(spacing: 8) {
-                Image(uiImage: self.icon)
+                icon
                     .resizable()
                     .frame(width: 32, height: 32)
                     .cornerRadius(8)
