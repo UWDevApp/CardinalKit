@@ -16,15 +16,7 @@ struct HomeView: View {
 
     var body: some View {
         TabView {
-            NavigationView {
-                ZStack {
-                    Color(UIColor.systemGroupedBackground)
-                        .edgesIgnoringSafeArea(.all)
-
-                    WelcomeNotificationView()
-                        .navigationBarTitle("Home")
-                }
-            }
+            WelcomeNotificationView()
             .tabItem {
                 Image(systemName: "house")
                     .renderingMode(.template)
@@ -46,17 +38,17 @@ struct HomeView: View {
                 Text("Statistics")
             }
 
-            ScheduleViewControllerRepresentable()
-                .tabItem {
-                    Image("tab_schedule").renderingMode(.template)
-                    Text("Schedule")
-                }
+//            ScheduleViewControllerRepresentable()
+//                .tabItem {
+//                    Image("tab_schedule").renderingMode(.template)
+//                    Text("Schedule")
+//                }
 
-            CareTeamViewControllerRepresentable()
-                .tabItem {
-                    Image("tab_care").renderingMode(.template)
-                    Text("Contact")
-                }
+//            CareTeamViewControllerRepresentable()
+//                .tabItem {
+//                    Image("tab_care").renderingMode(.template)
+//                    Text("Contact")
+//                }
 
             //            ActivitiesView(color: color)
             //                .tabItem {
@@ -80,7 +72,7 @@ struct HomeView: View {
                 }
         }
         .accentColor(color)
-        .environmentObject(NotificationsAndResults())
+        .environmentObject(NotificationsAndResults.shared)
     }
 }
 
