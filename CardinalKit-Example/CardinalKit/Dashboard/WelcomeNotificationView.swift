@@ -19,8 +19,7 @@ struct WelcomeNotificationView: View {
     var contacts: some View {
         Group {
             // TODO: Figure out how to layout this correctly.
-            Section(header: Text("Stay Connected")) {
-
+            Section(header: Text(data.shouldSeeDoctor ? "Your tests' performances suggest that you should visit your doctor" : "Stay Connected")) {
             }
             GeometryReader { geometry in
                 DetailedContactView(contactID: "oliver")
@@ -65,6 +64,15 @@ struct WelcomeNotificationView: View {
         }
     }
 
+    var tests: some View {
+        Group {
+            currentTests
+            Spacer()
+                .padding(.bottom)
+            futureTests
+        }
+    }
+
     var body: some View {
         NavigationView {
             ZStack {
@@ -78,13 +86,17 @@ struct WelcomeNotificationView: View {
                         .frame(maxHeight: 0)
                         .hidden()
 
-                    currentTests
-                    Spacer()
-                        .padding(.bottom)
-                    futureTests
-                    Spacer()
-                        .padding(.bottom)
-                    contacts
+                    if data.shouldSeeDoctor {
+                        contacts
+                        Spacer()
+                            .padding(.bottom)
+                        tests
+                    } else {
+                        tests
+                        Spacer()
+                            .padding(.bottom)
+                        contacts
+                    }
                 }
                 .navigationBarItems(trailing: Text(date).foregroundColor(.accentColor))
                 .navigationBarTitle("Home")

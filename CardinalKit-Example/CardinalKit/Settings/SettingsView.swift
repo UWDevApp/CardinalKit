@@ -22,13 +22,13 @@ struct SettingsView: View {
             .infoDictionary?["CFBundleShortVersionString"] as? String
     }
 
-    @State
-    var isPushNotificationEnabled = false
+    @ObservedObject
+    var data = NotificationsAndResults.shared
 
-    #warning("TODO: implement push notification")
+    #warning("TODO: implement push notification instead")
     var notificationToggle: some View {
         Toggle("Push Notifications",
-               isOn: $isPushNotificationEnabled)
+               isOn: $data.shouldSeeDoctor)
     }
 
     var list: some View {

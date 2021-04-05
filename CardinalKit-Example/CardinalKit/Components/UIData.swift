@@ -44,10 +44,12 @@ class NotificationsAndResults: ObservableObject {
     @Published var upcomingNotifications: [Notification]
     @Published var results: [Result] = []
     @Published var done = Set<UUID>()
+    @Published var shouldSeeDoctor = false
 
     public static let shared = NotificationsAndResults()
 
     private init() {
+        #warning("TODO: Integrate with CareKit scheduling")
         currNotifications = [
             Notification(testName: "User Survey", text: "Test is ready to be taken.", action: true),
             Notification(testName: "Trailmaking B", text: "Test is ready to be taken.", action: true)
