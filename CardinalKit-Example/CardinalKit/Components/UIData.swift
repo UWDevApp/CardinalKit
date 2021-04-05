@@ -236,6 +236,7 @@ func populateCKCareKitManager(store: OCKStore) {
     createContacts(store: store)
 }
 
+#warning("TODO: replace with actual contact information")
 fileprivate func createContacts(store: OCKStore) {
     var contact1 = OCKContact(id: "oliver", givenName: "Oliver",
                               familyName: "Aalami", carePlanUUID: nil)
