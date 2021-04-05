@@ -10,7 +10,7 @@ import SwiftUI
 
 struct PlainList<Content: View>: View {
     var iOS13: some View {
-        List(content: content)
+        List(content: { return content })
             .onAppear{
                 UITableView.appearance().separatorStyle = .none
             }
@@ -24,7 +24,8 @@ struct PlainList<Content: View>: View {
         Group {
             if #available(iOS 14, *) {
                 ScrollView(showsIndicators: false) {
-                    LazyVStack(content: content)
+                    LazyVStack(alignment: .leading,
+                               content: { return content })
                         .padding()
                 }
             } else {
@@ -36,10 +37,10 @@ struct PlainList<Content: View>: View {
         #endif
     }
 
-    let content: () -> Content
+    let content: Content
 
-    public init(@ViewBuilder content: @escaping () -> Content) {
-        self.content = content
+    public init(@ViewBuilder content: () -> Content) {
+        self.content = content()
     }
 }
 

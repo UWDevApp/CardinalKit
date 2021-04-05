@@ -40,7 +40,8 @@ class NotificationsAndResults: ObservableObject {
             Notification(testName: "Amsler Grid", text: "test is coming up 'Date', please be mindful of eyes usage", action: false)
         ]
         guard let authCollection = CKStudyUser.shared.authCollection else {
-            fatalError("Not signed in")
+            print("Not signed in")
+            return
         }
         let db = Firestore.firestore()
         listener = db.collection(authCollection + "\(Constants.dataBucketSurveys)")
@@ -214,8 +215,8 @@ class NotificationsAndResults: ObservableObject {
         }
     }
 
-    var listener: ListenerRegistration!
+    var listener: ListenerRegistration?
     deinit {
-        listener.remove()
+        listener?.remove()
     }
 }

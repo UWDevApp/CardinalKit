@@ -18,41 +18,36 @@ struct NotificationBubble: View {
     let textColor: Color
     
     var body: some View {
-        VStack(spacing: 10) {
-            Text(notification.testName)
-                .foregroundColor(textColor)
-                .font(Font.title.weight(.heavy))
-            Text(notification.text)
-                .foregroundColor(textColor)
+        HStack {
+            VStack(alignment: .leading) {
+                Text(notification.testName)
+                    .foregroundColor(textColor)
+                    .font(.title)
+                    .fontWeight(.bold)
+                Text(notification.text)
+                    .foregroundColor(textColor)
+            }
+
+            Spacer()
 
             if notification.action {
-                Button(action: {self.showingPopup = true}) {
-                    Text("Take Test")
-                        .fixedSize()
+                Button("Take Test") {
+                    withAnimation {
+                        self.currTestIndex = self.data.getTestIndex(testName: self.notification.testName)
+                        self.showingTestDetail = true
+                    }
                 }
                 .foregroundColor(.black)
                 .padding(10)
                 .background(Color.white)
                 .cornerRadius(8)
-                .alert(isPresented: self.$showingPopup) {
-                    Alert(
-                        title: Text("Are you sure you want to take the test?"),
-                        message: Text("You may only take the test if you are in an adequate mental state"),
-                        primaryButton: .default(Text("Take Test"), action: {
-                            self.currTestIndex = self.data.getTestIndex(testName: self.notification.testName)
-                            self.showingTestDetail = true
-                        }),
-                        secondaryButton: .cancel())
-                }
             }
         }
-        .padding(.vertical)
-        .padding(.horizontal, 20)
+        .padding()
         .frame(maxWidth: .infinity)
         .background(self.backGroundColor)
         .cornerRadius(15)
         .shadow(radius: 5)
-        .blur(radius: self.showingPopup ? 4 : 0)
     }
 }
 

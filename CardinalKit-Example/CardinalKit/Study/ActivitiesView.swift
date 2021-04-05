@@ -72,6 +72,7 @@ struct ActivityView: View {
 
 struct ActivitiesView_Previews: PreviewProvider {
     static var previews: some View {
-        ActivitiesView(color: .accentColor)
+        ActivitiesView(color: Color(UIColor(netHex: 0x41803d)))
+            .environmentObject(CKPropertyReader(file: "CKConfiguration"))
     }
 }

@@ -10,7 +10,6 @@ import SwiftUI
 
 struct WelcomeNotificationView: View {
     @EnvironmentObject var data: NotificationsAndResults
-    @EnvironmentObject var config: CKPropertyReader
     @State private var showingPopup = false
     @State private var showingTestDetail = false
     @State private var currTestIndex = 0
@@ -35,31 +34,31 @@ struct WelcomeNotificationView: View {
                 }
             }
             
-            Section(header: Text("Upcoming Test(s) and Cautions")) {
+            Section(header: Text("Upcoming Tests and Cautions")) {
                 ForEach(self.data.upcomingNotifications) { notification in
                     NotificationBubble(
                         showingPopup: self.$showingPopup,
                         showingTestDetail: self.$showingTestDetail,
                         currTestIndex: self.$currTestIndex,
                         notification: notification,
-                        backGroundColor: .white /*Color(UIColor.systemGroupedBackground)*/,
+                        backGroundColor: .white,
                         textColor: self.color
                     )
                     .padding(3)
                 }
             }
         }
-        .environmentObject(NotificationsAndResults())
         .navigationBarItems(trailing: Text(date).foregroundColor(color))
         .sheet(isPresented: $showingTestDetail) {
             TaskVC(tasks: self.activities[self.currTestIndex].task)
+                .edgesIgnoringSafeArea(.all)
         }
     }
 }
 
 struct WelcomeNotificationView_Previews: PreviewProvider {
     static var previews: some View {
-        WelcomeNotificationView(color: .gray)
+        WelcomeNotificationView(color: Color(UIColor(netHex: 0x41803d)))
             .environmentObject(NotificationsAndResults())
     }
 }

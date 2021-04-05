@@ -23,7 +23,7 @@ struct StatisticsView: View {
                 }
             }
         }
-        .environmentObject(NotificationsAndResults())
+        .background(Color(UIColor.systemGroupedBackground))
         .navigationBarItems(trailing: Text(date).foregroundColor(color))
     }
 }

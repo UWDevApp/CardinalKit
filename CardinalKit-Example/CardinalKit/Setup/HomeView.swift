@@ -10,7 +10,6 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var config: CKPropertyReader
-    @EnvironmentObject var data: NotificationsAndResults
     var color: Color {
         return Color(config.readColor(query: "Primary Color"))
     }
@@ -18,8 +17,13 @@ struct HomeView: View {
     var body: some View {
         TabView {
             NavigationView {
-                WelcomeNotificationView(color: color)
-                    .navigationBarTitle("Home")
+                ZStack {
+                    Color(UIColor.systemGroupedBackground)
+                        .edgesIgnoringSafeArea(.all)
+
+                    WelcomeNotificationView(color: color)
+                        .navigationBarTitle("Home")
+                }
             }
             .tabItem {
                 Image(systemName: "house")
@@ -28,8 +32,13 @@ struct HomeView: View {
             }
             
             NavigationView {
-                StatisticsView(color: color)
-                    .navigationBarTitle("Statistics")
+                ZStack {
+                    Color(UIColor.systemGroupedBackground)
+                        .edgesIgnoringSafeArea(.all)
+
+                    StatisticsView(color: color)
+                        .navigationBarTitle("Statistics")
+                }
             }
             .tabItem {
                 Image(systemName: "gauge")
@@ -59,11 +68,13 @@ struct HomeView: View {
                 }
         }
         .accentColor(color)
+        .environmentObject(NotificationsAndResults())
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .environmentObject(CKPropertyReader(file: "CKConfiguration"))
     }
 }

@@ -158,15 +158,24 @@ struct ProfileView: View {
         }
     }
 
+    var list: some View {
+        List {
+            basicInfoSection
+
+            clinicalInfoSection
+        }
+        .navigationBarTitle("Profile")
+    }
+
     var body: some View {
         NavigationView {
-            List {
-                basicInfoSection
-
-                clinicalInfoSection
+            if #available(iOS 14.0, *) {
+                list
+                    .listStyle(InsetGroupedListStyle())
+            } else {
+                list
+                    .listStyle(GroupedListStyle())
             }
-            .listStyle(GroupedListStyle())
-            .navigationBarTitle("Profile")
         }
         .sheet(isPresented: $isEditingBasicInfo) {
             TaskVC(tasks: StudyTasks.basicInfoSurvey, onComplete: { result in

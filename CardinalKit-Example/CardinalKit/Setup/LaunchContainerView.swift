@@ -15,7 +15,6 @@ struct LaunchContainerView: View {
         Group{
             if showHomeScreen {
                 HomeView()
-                    .environmentObject(NotificationsAndResults())
             } else {
                 OnboardingUI()
                     .transition(.slide)

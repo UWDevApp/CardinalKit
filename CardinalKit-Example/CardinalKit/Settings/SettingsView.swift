@@ -31,32 +31,41 @@ struct SettingsView: View {
                isOn: $isPushNotificationEnabled)
     }
 
+    var list: some View {
+        List {
+            Section(header: Text("General")) {
+                if #available(iOS 14.0, *) {
+                    notificationToggle
+                        .toggleStyle(SwitchToggleStyle(tint: .accentColor))
+                } else {
+                    notificationToggle
+                }
+                ChangePasscodeView()
+            }
+
+            Section(header: Text("App \(appVersion.map { "version v\($0)" } ?? "")")) {
+                WebsiteView(site: config.read(query: "Website"))
+                EmailView(title: "Contact Developers",
+                          email: config.read(query: "Email"))
+            }
+
+            Section(footer: footer) {
+                WithdrawView()
+                    .frame(maxWidth: .infinity)
+            }
+        }
+        .navigationBarTitle("Settings")
+    }
+
     var body: some View {
         NavigationView {
-            List {
-                Section(header: Text("General")) {
-                    if #available(iOS 14.0, *) {
-                        notificationToggle
-                            .toggleStyle(SwitchToggleStyle(tint: .accentColor))
-                    } else {
-                        notificationToggle
-                    }
-                    ChangePasscodeView()
-                }
-
-                Section(header: Text("App \(appVersion.map { "version v\($0)" } ?? "")")) {
-                    WebsiteView(site: config.read(query: "Website"))
-                    EmailView(title: "Contact Developers",
-                              email: config.read(query: "Email"))
-                }
-
-                Section(footer: footer) {
-                    WithdrawView()
-                        .frame(maxWidth: .infinity)
-                }
+            if #available(iOS 14.0, *) {
+                list
+                    .listStyle(InsetGroupedListStyle())
+            } else {
+                list
+                    .listStyle(GroupedListStyle())
             }
-            .listStyle(GroupedListStyle())
-            .navigationBarTitle("Settings")
         }
     }
 }
