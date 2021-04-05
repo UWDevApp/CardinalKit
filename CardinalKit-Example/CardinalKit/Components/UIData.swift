@@ -31,13 +31,13 @@ class NotificationsAndResults: ObservableObject {
 
     init() {
         currNotifications = [
-            Notification(testName: "User Survey", text: "is ready to be taken", action: true),
-            Notification(testName: "Trailmaking B", text: "is ready to be taken", action: true)
+            Notification(testName: "User Survey", text: "Test is ready to be taken.", action: true),
+            Notification(testName: "Trailmaking B", text: "Test is ready to be taken.", action: true)
         ]
         upcomingNotifications = [
-            Notification(testName: "Trailmaking A", text: "test can be taken starting 'Date'", action: false),
-            Notification(testName: "Spatial Memory", text: "test is coming up 'Date', please consume a moderate amount of caffine only", action: false),
-            Notification(testName: "Amsler Grid", text: "test is coming up 'Date', please be mindful of eyes usage", action: false)
+            Notification(testName: "Trailmaking A", text: "Test can be taken starting tomorrow.", action: false),
+            Notification(testName: "Spatial Memory", text: "Test is coming up in 3 days, please consume a moderate amount of caffeine only.", action: false),
+            Notification(testName: "Amsler Grid", text: "Test is coming up next week, please be mindful of eyes usage.", action: false)
         ]
         guard let authCollection = CKStudyUser.shared.authCollection else {
             print("Not signed in")
