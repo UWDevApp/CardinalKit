@@ -37,6 +37,7 @@ extension SceneDelegate: ORKPasscodeDelegate {
         let config = CKConfig.shared
         
         let passcodeViewController = ORKPasscodeViewController.passcodeAuthenticationViewController(withText: config.read(query: "Passcode On Return Text"), delegate: self)
+        passcodeViewController.navigationBar.barTintColor = .secondarySystemBackground
         passcodeViewController.isModalInPresentation = true
         passcodeViewController.modalPresentationStyle = .fullScreen
         
