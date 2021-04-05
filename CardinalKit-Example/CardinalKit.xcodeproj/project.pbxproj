@@ -75,10 +75,10 @@
 		D28BBADA261A915A0074C560 /* ScheduleViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28BBAD4261A915A0074C560 /* ScheduleViewControllerRepresentable.swift */; };
 		D28BBADB261A915A0074C560 /* TipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28BBAD6261A915A0074C560 /* TipView.swift */; };
 		D28BBADC261A915A0074C560 /* SurveyItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28BBAD7261A915A0074C560 /* SurveyItemViewController.swift */; };
-		D28BBADF261AA0F50074C560 /* CareKitFHIR in Frameworks */ = {isa = PBXBuildFile; productRef = D28BBADE261AA0F50074C560 /* CareKitFHIR */; };
-		D28BBAE1261AA0F50074C560 /* CareKit in Frameworks */ = {isa = PBXBuildFile; productRef = D28BBAE0261AA0F50074C560 /* CareKit */; };
-		D28BBAE3261AA0F50074C560 /* CareKitStore in Frameworks */ = {isa = PBXBuildFile; productRef = D28BBAE2261AA0F50074C560 /* CareKitStore */; };
-		D28BBAE5261AA0F50074C560 /* CareKitUI in Frameworks */ = {isa = PBXBuildFile; productRef = D28BBAE4261AA0F50074C560 /* CareKitUI */; };
+		D2B2A0CB261BB14600A9A790 /* CareKitFHIR in Frameworks */ = {isa = PBXBuildFile; productRef = D2B2A0CA261BB14600A9A790 /* CareKitFHIR */; };
+		D2B2A0CD261BB14600A9A790 /* CareKit in Frameworks */ = {isa = PBXBuildFile; productRef = D2B2A0CC261BB14600A9A790 /* CareKit */; };
+		D2B2A0CF261BB14600A9A790 /* CareKitStore in Frameworks */ = {isa = PBXBuildFile; productRef = D2B2A0CE261BB14600A9A790 /* CareKitStore */; };
+		D2B2A0D1261BB14600A9A790 /* CareKitUI in Frameworks */ = {isa = PBXBuildFile; productRef = D2B2A0D0261BB14600A9A790 /* CareKitUI */; };
 		D2BF1B7E260AB3D200B28CDC /* EFStorageKeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = D2BF1B7D260AB3D200B28CDC /* EFStorageKeychainAccess */; };
 		E235077724F7082700CC1899 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E235077624F7082700CC1899 /* SceneDelegate.swift */; };
 		E290FB1D24FF4BBA00D19BE9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E290FB1C24FF4BBA00D19BE9 /* GoogleService-Info.plist */; };
@@ -185,13 +185,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D28BBAE3261AA0F50074C560 /* CareKitStore in Frameworks */,
-				D28BBAE1261AA0F50074C560 /* CareKit in Frameworks */,
-				D28BBAE5261AA0F50074C560 /* CareKitUI in Frameworks */,
+				D2B2A0CF261BB14600A9A790 /* CareKitStore in Frameworks */,
+				D2B2A0CD261BB14600A9A790 /* CareKit in Frameworks */,
+				D2B2A0D1261BB14600A9A790 /* CareKitUI in Frameworks */,
 				8E0A43D5244A693D00656518 /* HealthKit.framework in Frameworks */,
 				D2BF1B7E260AB3D200B28CDC /* EFStorageKeychainAccess in Frameworks */,
 				D24ED841260BAA27004A454F /* EFStorageUserDefaults in Frameworks */,
-				D28BBADF261AA0F50074C560 /* CareKitFHIR in Frameworks */,
+				D2B2A0CB261BB14600A9A790 /* CareKitFHIR in Frameworks */,
 				69DC6BB1DB8FF78AE696891C /* Pods_TrialX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -548,10 +548,10 @@
 			packageProductDependencies = (
 				D2BF1B7D260AB3D200B28CDC /* EFStorageKeychainAccess */,
 				D24ED840260BAA27004A454F /* EFStorageUserDefaults */,
-				D28BBADE261AA0F50074C560 /* CareKitFHIR */,
-				D28BBAE0261AA0F50074C560 /* CareKit */,
-				D28BBAE2261AA0F50074C560 /* CareKitStore */,
-				D28BBAE4261AA0F50074C560 /* CareKitUI */,
+				D2B2A0CA261BB14600A9A790 /* CareKitFHIR */,
+				D2B2A0CC261BB14600A9A790 /* CareKit */,
+				D2B2A0CE261BB14600A9A790 /* CareKitStore */,
+				D2B2A0D0261BB14600A9A790 /* CareKitUI */,
 			);
 			productName = CardinalKit;
 			productReference = 607FACD01AFB9204008FA782 /* CardinalKit Example.app */;
@@ -585,7 +585,7 @@
 			mainGroup = 607FACC71AFB9204008FA782;
 			packageReferences = (
 				D2BF1B7C260AB3D200B28CDC /* XCRemoteSwiftPackageReference "EFStorage" */,
-				D28BBADD261AA0F50074C560 /* XCRemoteSwiftPackageReference "CareKit" */,
+				D2B2A0C9261BB14600A9A790 /* XCRemoteSwiftPackageReference "CareKit" */,
 			);
 			productRefGroup = 607FACD11AFB9204008FA782 /* Products */;
 			projectDirPath = "";
@@ -971,9 +971,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D28BBADD261AA0F50074C560 /* XCRemoteSwiftPackageReference "CareKit" */ = {
+		D2B2A0C9261BB14600A9A790 /* XCRemoteSwiftPackageReference "CareKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ApolloZhu/CareKit.git";
+			repositoryURL = "https://github.com/carekit-apple/CareKit.git";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -995,24 +995,24 @@
 			package = D2BF1B7C260AB3D200B28CDC /* XCRemoteSwiftPackageReference "EFStorage" */;
 			productName = EFStorageUserDefaults;
 		};
-		D28BBADE261AA0F50074C560 /* CareKitFHIR */ = {
+		D2B2A0CA261BB14600A9A790 /* CareKitFHIR */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D28BBADD261AA0F50074C560 /* XCRemoteSwiftPackageReference "CareKit" */;
+			package = D2B2A0C9261BB14600A9A790 /* XCRemoteSwiftPackageReference "CareKit" */;
 			productName = CareKitFHIR;
 		};
-		D28BBAE0261AA0F50074C560 /* CareKit */ = {
+		D2B2A0CC261BB14600A9A790 /* CareKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D28BBADD261AA0F50074C560 /* XCRemoteSwiftPackageReference "CareKit" */;
+			package = D2B2A0C9261BB14600A9A790 /* XCRemoteSwiftPackageReference "CareKit" */;
 			productName = CareKit;
 		};
-		D28BBAE2261AA0F50074C560 /* CareKitStore */ = {
+		D2B2A0CE261BB14600A9A790 /* CareKitStore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D28BBADD261AA0F50074C560 /* XCRemoteSwiftPackageReference "CareKit" */;
+			package = D2B2A0C9261BB14600A9A790 /* XCRemoteSwiftPackageReference "CareKit" */;
 			productName = CareKitStore;
 		};
-		D28BBAE4261AA0F50074C560 /* CareKitUI */ = {
+		D2B2A0D0261BB14600A9A790 /* CareKitUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D28BBADD261AA0F50074C560 /* XCRemoteSwiftPackageReference "CareKit" */;
+			package = D2B2A0C9261BB14600A9A790 /* XCRemoteSwiftPackageReference "CareKit" */;
 			productName = CareKitUI;
 		};
 		D2BF1B7D260AB3D200B28CDC /* EFStorageKeychainAccess */ = {
