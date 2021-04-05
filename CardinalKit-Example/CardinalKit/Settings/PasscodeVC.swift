@@ -27,6 +27,7 @@ struct PasscodeVC: UIViewControllerRepresentable {
             .passcodeEditingViewController(withText: "",
                                            delegate: context.coordinator,
                                            passcodeType: passcodeType)
+        editPasscodeViewController.navigationBar.barTintColor = .secondarySystemBackground
         return editPasscodeViewController
     }
 
