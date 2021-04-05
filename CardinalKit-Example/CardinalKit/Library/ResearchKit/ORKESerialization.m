@@ -233,7 +233,16 @@ static NSDictionary *dictionaryFromCircularRegion(CLCircularRegion *region) {
 }
 
 static NSDictionary *dictionaryFromPostalAddress(CNPostalAddress *address) {
-   return @{ @"city": address.city, @"street": address.street };
+   return @{
+       @"street": address.street,
+       @"subLocality": address.subLocality,
+       @"city": address.city,
+       @"subAdministrativeArea": address.subAdministrativeArea,
+       @"state": address.state,
+       @"postalCode": address.postalCode,
+       @"country": address.country,
+       @"countryCode": address.ISOCountryCode,
+   };
 }
 
 static NSString *identifierFromClinicalType(HKClinicalType *type) {
@@ -347,8 +356,14 @@ static UITextInputPasswordRules *passwordRulesFromDictionary(NSDictionary *dict)
 
 static CNPostalAddress *postalAddressFromDictionary(NSDictionary *dict) {
     CNMutablePostalAddress *postalAddress = [[CNMutablePostalAddress alloc] init];
-    postalAddress.city = dict[@"city"];
     postalAddress.street = dict[@"street"];
+    postalAddress.subLocality = dict[@"subLocality"];
+    postalAddress.city  = dict[@"city"];
+    postalAddress.subAdministrativeArea  = dict[@"subAdministrativeArea"];
+    postalAddress.state  = dict[@"state"];
+    postalAddress.postalCode  = dict[@"postalCode"];
+    postalAddress.country  = dict[@"country"];
+    postalAddress.ISOCountryCode  = dict[@"countryCode"];
     return [postalAddress copy];
 }
 
