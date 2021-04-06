@@ -236,41 +236,39 @@ func populateCKCareKitManager(store: OCKStore) {
     createContacts(store: store)
 }
 
-#warning("TODO: replace with actual contact information")
+extension OCKContact {
+    enum ID: String {
+        case KathleenPoston
+    }
+}
+
 fileprivate func createContacts(store: OCKStore) {
-    var contact1 = OCKContact(id: "oliver", givenName: "Oliver",
-                              familyName: "Aalami", carePlanUUID: nil)
-    contact1.asset = "OliverAalami"
-    contact1.title = "Vascular Surgeon"
-    contact1.role = "Dr. Aalami is the director of the CardinalKit project."
-    contact1.emailAddresses = [OCKLabeledValue(label: CNLabelEmailiCloud, value: "aalami@stanford.edu")]
-    contact1.phoneNumbers = [OCKLabeledValue(label: CNLabelWork, value: "(111) 111-1111")]
-    contact1.messagingNumbers = [OCKLabeledValue(label: CNLabelWork, value: "(111) 111-1111")]
+    var name = PersonNameComponents()
+    name.givenName = "Kathleen"
+    name.familyName = "Poston"
+    name.nameSuffix = "MD"
+    var contact1 = OCKContact(id: OCKContact.ID.KathleenPoston.rawValue,
+                              name: name, carePlanUUID: nil)
+    // Turns out that this image is not used at all, well well well.
+    // contact1.asset = "https://udallcenter.stanford.edu/wp-content/uploads/2016/10/Poston-Kathleen-MD.jpg"
+    contact1.title = "Neurologist"
+    contact1.role = "Dr. Poston evaluates your test results."
+    // Communications should be done in some other ways
+    // https://github.com/UWDevApp/TrialX/issues/23#issuecomment-814303494
+    // contact1.emailAddresses = [OCKLabeledValue(label: CNLabelEmailiCloud, value: "udallcenter@stanford.edu")]
+    // contact1.phoneNumbers = [OCKLabeledValue(label: CNLabelWork, value: "(111) 111-1111")]
+    // contact1.messagingNumbers = [OCKLabeledValue(label: CNLabelWork, value: "(111) 111-1111")]
+    contact1.organization = "Pacific Udall Center"
 
     contact1.address = {
         let address = OCKPostalAddress()
-        address.street = "318 Campus Drive"
+        address.street = "300 Pasteur Drive, Lane 235"
         address.city = "Stanford"
         address.state = "CA"
         address.postalCode = "94305"
         return address
     }()
 
-    var contact2 = OCKContact(id: "johnny", givenName: "Johnny",
-                              familyName: "Appleseed", carePlanUUID: nil)
-    contact2.asset = "JohnnyAppleseed"
-    contact2.title = "OBGYN"
-    contact2.role = "Dr. Appleseed is an OBGYN with 13 years of experience."
-    contact2.phoneNumbers = [OCKLabeledValue(label: CNLabelWork, value: "(324) 555-7415")]
-    contact2.messagingNumbers = [OCKLabeledValue(label: CNLabelWork, value: "(324) 555-7415")]
-    contact2.address = {
-        let address = OCKPostalAddress()
-        address.street = "318 Campus Drive"
-        address.city = "Stanford"
-        address.state = "CA"
-        address.postalCode = "94305"
-        return address
-    }()
-
-    store.addContacts([contact2, contact1])
+    store.addContact(contact1)
+    store.updateContact(contact1)
 }
