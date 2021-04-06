@@ -11,8 +11,6 @@ import SwiftUI
 struct SettingsView: View {
     @EnvironmentObject var config: CKPropertyReader
 
-
-
     var appVersion: String? {
         return Bundle.main
             .infoDictionary?["CFBundleShortVersionString"] as? String
@@ -64,8 +62,12 @@ struct SettingsView: View {
                             title: "Mobile Development Club",
                             description: "RSO at University of Washington",
                             icon: Image(systemName: "hammer"))
-//                EmailView(title: "Contact Developers",
-//                          email: config.read(query: "Email"))
+
+                NavigationLink("Acknowledgments",
+                               destination: AcknowledgementsView())
+
+                // EmailView(title: "Contact Developers",
+                //           email: config.read(query: "Email"))
             }
         }
         .navigationBarItems(trailing: CurrentDate())
