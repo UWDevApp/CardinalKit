@@ -26,13 +26,33 @@ extension HKBiologicalSex: CustomStringConvertible {
     }
 }
 
+struct TapToReveal<Content: View>: View {
+    @Binding
+    var redactDetails: Bool
+
+    @ViewBuilder
+    let content: () -> Content
+
+    var body: some View {
+        if #available(iOS 14.0, *), redactDetails {
+            content()
+                .redacted(reason: .placeholder)
+        } else {
+            content()
+        }
+    }
+}
+
 struct ProfileView: View {
-    @EnvironmentObject var config: CKPropertyReader
+    @EnvironmentObject
+    var config: CKPropertyReader
+    @ObservedObject
+    var studyUser: CKStudyUser = .shared
 
     @State
     var isEditingBasicInfo: Bool = false
-    @ObservedObject
-    var studyUser: CKStudyUser = .shared
+    @State
+    var redactDetails = true
 
     @State
     var needsHealthRecordsAccess = false
@@ -52,8 +72,8 @@ struct ProfileView: View {
         HKCharacteristicType.characteristicType(forIdentifier: .dateOfBirth)!,
     ]
 
-    var basicInfoSection: some View {
-        Section(header: HStack {
+    var editHeader: some View {
+        HStack {
             Text("Basic Information")
             Spacer()
             Button(action: {
@@ -72,50 +92,73 @@ struct ProfileView: View {
                         .fontWeight(.bold)
                 }
             })
-        }) {
+        }
+    }
+
+    var basicInfoSection: some View {
+        Section(header: editHeader) {
             HStack {
                 Text("Name")
+                    .fontWeight(.bold)
                 Spacer()
                 Text(name)
                     .foregroundColor(.secondary)
             }
             HStack {
                 Text("Date of Birth")
+                    .fontWeight(.bold)
                 Spacer()
-                Text(studyUser.dateOfBirth.flatMap {
-                    DateFormatter.mediumDate.string(from: $0)
-                } ?? "Unknown")
-                .foregroundColor(.secondary)
+                TapToReveal(redactDetails: $redactDetails) {
+                    Text(studyUser.dateOfBirth.flatMap {
+                        DateFormatter.mediumDate.string(from: $0)
+                    } ?? "Unknown")
+                    .foregroundColor(.secondary)
+                }
             }
             HStack {
                 Text("Sex Assigned at Birth")
+                    .fontWeight(.bold)
                 Spacer()
-                Text(studyUser.sex.description)
-                    .foregroundColor(.secondary)
+                TapToReveal(redactDetails: $redactDetails) {
+                    Text(studyUser.sex.description)
+                        .foregroundColor(.secondary)
+                }
             }
             HStack {
                 Text("Handedness")
+                    .fontWeight(.bold)
                 Spacer()
-                Text(studyUser.handedness ?? "Unknown")
-                    .foregroundColor(.secondary)
+                TapToReveal(redactDetails: $redactDetails) {
+                    Text(studyUser.handedness ?? "Unknown")
+                        .foregroundColor(.secondary)
+                }
             }
             HStack {
                 Text("Ethnicity")
+                    .fontWeight(.bold)
                 Spacer()
-                Text(studyUser.ethnicity ?? "Unknown")
-                    .foregroundColor(.secondary)
+                TapToReveal(redactDetails: $redactDetails) {
+                    Text(studyUser.ethnicity ?? "Unknown")
+                        .foregroundColor(.secondary)
+                }
             }
             HStack {
                 Text("Education")
+                    .fontWeight(.bold)
                 Spacer()
-                Text(studyUser.education ?? "Unknown")
-                    .foregroundColor(.secondary)
+                TapToReveal(redactDetails: $redactDetails) {
+                    Text(studyUser.education ?? "Unknown")
+                        .foregroundColor(.secondary)
+                }
             }
             HStack {
                 Text("Postal Code")
+                    .fontWeight(.bold)
                 Spacer()
-                Text(studyUser.zipCode ?? "Unknown")
-                    .foregroundColor(.secondary)
+                TapToReveal(redactDetails: $redactDetails) {
+                    Text(studyUser.zipCode ?? "Unknown")
+                        .foregroundColor(.secondary)
+                }
             }
         }
     }
@@ -164,6 +207,9 @@ struct ProfileView: View {
     var list: some View {
         List {
             basicInfoSection
+                .onTapGesture {
+                    redactDetails.toggle()
+                }
 
             clinicalInfoSection
 
