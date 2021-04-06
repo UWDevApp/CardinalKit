@@ -42,6 +42,7 @@
 		D253D129250CBF2800A363E4 /* PhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D253D128250CBF2800A363E4 /* PhoneView.swift */; };
 		D253D12B250CD16400A363E4 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D253D12A250CD16400A363E4 /* PageView.swift */; };
 		D253D12D250CF9C400A363E4 /* CKSignInWithAppleStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = D253D12C250CF9C400A363E4 /* CKSignInWithAppleStep.swift */; };
+		D2752F45261CEFAD0083AF27 /* Image+SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2752F44261CEFAD0083AF27 /* Image+SFSymbol.swift */; };
 		D283AAF326094C8900637663 /* CKConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D283AADB26094C8900637663 /* CKConfig.swift */; };
 		D283AAF426094C8900637663 /* CKPropertyReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D283AADC26094C8900637663 /* CKPropertyReader.swift */; };
 		D283AAF526094C8900637663 /* CKTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D283AADE26094C8900637663 /* CKTaskViewController.swift */; };
@@ -136,6 +137,7 @@
 		D253D128250CBF2800A363E4 /* PhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneView.swift; sourceTree = "<group>"; };
 		D253D12A250CD16400A363E4 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		D253D12C250CF9C400A363E4 /* CKSignInWithAppleStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKSignInWithAppleStep.swift; sourceTree = "<group>"; };
+		D2752F44261CEFAD0083AF27 /* Image+SFSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+SFSymbol.swift"; sourceTree = "<group>"; };
 		D283AADB26094C8900637663 /* CKConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKConfig.swift; sourceTree = "<group>"; };
 		D283AADC26094C8900637663 /* CKPropertyReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKPropertyReader.swift; sourceTree = "<group>"; };
 		D283AADE26094C8900637663 /* CKTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKTaskViewController.swift; sourceTree = "<group>"; };
@@ -485,6 +487,7 @@
 				D286ECC2250E0ABF00815EED /* TaskVC.swift */,
 				D244F4F6261ACB7A0027D011 /* CareKitContactViews.swift */,
 				D244F561261B8EBA0027D011 /* CurrentDate.swift */,
+				D2752F44261CEFAD0083AF27 /* Image+SFSymbol.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -743,6 +746,7 @@
 				8EBE6F9C24B3C0E60093D07C /* AppDelegate+CardinalKit.swift in Sources */,
 				D253D129250CBF2800A363E4 /* PhoneView.swift in Sources */,
 				8E0A43B9244A4A0400656518 /* AppDelegate.swift in Sources */,
+				D2752F45261CEFAD0083AF27 /* Image+SFSymbol.swift in Sources */,
 				D283AAF426094C8900637663 /* CKPropertyReader.swift in Sources */,
 				D28BBADB261A915A0074C560 /* TipView.swift in Sources */,
 				D286ECC5250E0E0700815EED /* Extensions.swift in Sources */,

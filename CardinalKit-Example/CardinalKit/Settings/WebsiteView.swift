@@ -11,16 +11,20 @@ import SwiftUI
 struct WebsiteView: View {
     let site: String
 
+    let title: LocalizedStringKey
+    let description: LocalizedStringKey
+    let icon: Image
+
     var body: some View {
         HStack() {
             VStack(alignment: .leading) {
-                Text("Visit TrialX Website")
-                Text("Learn more about TrialX and the team")
+                Text(title)
+                Text(description)
                     .font(.subheadline)
                     .foregroundColor(.secondary)
             }
             Spacer()
-            Image(systemName: "globe")
+            icon
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
                 .accessibility(addTraits: .isButton)
@@ -36,6 +40,11 @@ struct WebsiteView: View {
 
 struct WebsiteView_Previews: PreviewProvider {
     static var previews: some View {
-        WebsiteView(site: "apple.com")
+        List {
+            WebsiteView(site: "apple.com",
+                        title: "Apple",
+                        description: "SwiftUI Rocks",
+                        icon: Image(systemName: "applelogo"))
+        }
     }
 }

@@ -12,12 +12,17 @@ struct WithdrawView: View {
     @State var showWithdraw = false
 
     var body: some View {
-        Button("Withdraw from Study") {
-            self.showWithdraw.toggle()
-        }
+        Button(action: {
+            showWithdraw.toggle()
+        }, label: {
+            if #available(iOS 14.0, *) {
+                Label("Withdraw from Study", systemImage: "exclamationmark.triangle")
+            } else {
+                Text("⚠️ Withdraw from Study")
+            }
+        })
         .font(Font.body.bold())
         .foregroundColor(.red)
-        .padding(.vertical)
         .sheet(isPresented: $showWithdraw) {
             WithdrawalVC()
                 .edgesIgnoringSafeArea(.all)

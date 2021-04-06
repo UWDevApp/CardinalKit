@@ -83,10 +83,7 @@ struct ProfileView: View {
                 Text("Date of Birth")
                 Spacer()
                 Text(studyUser.dateOfBirth.flatMap {
-                    DateFormatter
-                        .localizedString(from: $0,
-                                         dateStyle: .short,
-                                         timeStyle: .none)
+                    DateFormatter.mediumDate.string(from: $0)
                 } ?? "Unknown")
                 .foregroundColor(.secondary)
             }
@@ -169,6 +166,9 @@ struct ProfileView: View {
             basicInfoSection
 
             clinicalInfoSection
+
+            WithdrawView()
+                .frame(maxWidth: .infinity)
         }
         .navigationBarItems(trailing: CurrentDate())
         .navigationBarTitle("Profile")
