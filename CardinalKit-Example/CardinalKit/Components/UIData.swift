@@ -69,6 +69,7 @@ class NotificationsAndResults: ObservableObject {
                 guard let snapshot = querySnapshot else {
                     return
                 }
+                #warning("TODO: handle diff instead of entire collection")
                 let studies: [Study] = snapshot.documents.compactMap { document in
                     let payload = document.data()["payload"] as! [String: Any]
                     switch payload["identifier"] as! String {
@@ -110,6 +111,8 @@ class NotificationsAndResults: ObservableObject {
                         return nil
                     case "Survey":
                         return .survey(info: Info(payload))
+                    case "BasicInfo":
+                        return nil // nothing to report for this
                     default:
                         print(payload)
                         return nil
