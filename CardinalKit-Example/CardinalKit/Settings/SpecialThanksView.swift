@@ -11,7 +11,6 @@ import SwiftUI
 struct SpecialThanksView: View {
     var body: some View {
         List {
-
             WebsiteView(
                 site: "https://cardinalkit.org/blog/2020/09/25/cardinalkit-buildathon",
                 title: "CardinalKit Buildathon 2020",
