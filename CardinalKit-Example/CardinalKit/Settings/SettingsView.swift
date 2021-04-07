@@ -66,6 +66,9 @@ struct SettingsView: View {
                 NavigationLink("Acknowledgments",
                                destination: AcknowledgementsView())
 
+                NavigationLink("Special Thanks",
+                               destination: SpecialThanksView())
+
                 // EmailView(title: "Contact Developers",
                 //           email: config.read(query: "Email"))
             }

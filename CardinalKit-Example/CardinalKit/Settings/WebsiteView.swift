@@ -30,6 +30,7 @@ struct WebsiteView: View {
                 .accessibility(addTraits: .isButton)
                 .accessibility(value: Text(site))
         }
+        .contentShape(Rectangle())
         .onTapGesture {
             if let url = URL(string: self.site) {
                 UIApplication.shared.open(url)

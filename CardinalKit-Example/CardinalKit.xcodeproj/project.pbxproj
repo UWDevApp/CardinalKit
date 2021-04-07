@@ -85,6 +85,8 @@
 		D2B2A0CF261BB14600A9A790 /* CareKitStore in Frameworks */ = {isa = PBXBuildFile; productRef = D2B2A0CE261BB14600A9A790 /* CareKitStore */; };
 		D2B2A0D1261BB14600A9A790 /* CareKitUI in Frameworks */ = {isa = PBXBuildFile; productRef = D2B2A0D0261BB14600A9A790 /* CareKitUI */; };
 		D2BF1B7E260AB3D200B28CDC /* EFStorageKeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = D2BF1B7D260AB3D200B28CDC /* EFStorageKeychainAccess */; };
+		D2E95303261D2F8B00BD147B /* List+GroupedStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E95302261D2F8B00BD147B /* List+GroupedStyle.swift */; };
+		D2E95305261D317600BD147B /* SpecialThanksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E95304261D317600BD147B /* SpecialThanksView.swift */; };
 		E235077724F7082700CC1899 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E235077624F7082700CC1899 /* SceneDelegate.swift */; };
 		E290FB1D24FF4BBA00D19BE9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E290FB1C24FF4BBA00D19BE9 /* GoogleService-Info.plist */; };
 		E29143FC24E74AD100EE97B2 /* OnboardingUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29143FB24E74AD100EE97B2 /* OnboardingUI.swift */; };
@@ -144,7 +146,7 @@
 		D2752F44261CEFAD0083AF27 /* Image+SFSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+SFSymbol.swift"; sourceTree = "<group>"; };
 		D2752F49261CFEEB0083AF27 /* Pods-TrialX-acknowledgements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "Pods-TrialX-acknowledgements.plist"; path = "Pods/Target Support Files/Pods-TrialX/Pods-TrialX-acknowledgements.plist"; sourceTree = SOURCE_ROOT; };
 		D2752F4B261D07C30083AF27 /* AcknowledgementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementsView.swift; sourceTree = "<group>"; };
-		D2752F4D261D13C60083AF27 /* Package.resolved */ = {isa = PBXFileReference; lastKnownFileType = file; name = Package.resolved; path = CardinalKit.xcworkspace/xcshareddata/swiftpm/Package.resolved; sourceTree = SOURCE_ROOT; };
+		D2752F4D261D13C60083AF27 /* Package.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; name = Package.resolved; path = CardinalKit.xcworkspace/xcshareddata/swiftpm/Package.resolved; sourceTree = SOURCE_ROOT; };
 		D283AADB26094C8900637663 /* CKConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKConfig.swift; sourceTree = "<group>"; };
 		D283AADC26094C8900637663 /* CKPropertyReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKPropertyReader.swift; sourceTree = "<group>"; };
 		D283AADE26094C8900637663 /* CKTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKTaskViewController.swift; sourceTree = "<group>"; };
@@ -179,6 +181,8 @@
 		D28BBAD4261A915A0074C560 /* ScheduleViewControllerRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewControllerRepresentable.swift; sourceTree = "<group>"; };
 		D28BBAD6261A915A0074C560 /* TipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipView.swift; sourceTree = "<group>"; };
 		D28BBAD7261A915A0074C560 /* SurveyItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyItemViewController.swift; sourceTree = "<group>"; };
+		D2E95302261D2F8B00BD147B /* List+GroupedStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "List+GroupedStyle.swift"; sourceTree = "<group>"; };
+		D2E95304261D317600BD147B /* SpecialThanksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialThanksView.swift; sourceTree = "<group>"; };
 		DF8FAFB3C7221261A7397AFD /* Pods-TrialX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrialX.debug.xcconfig"; path = "Target Support Files/Pods-TrialX/Pods-TrialX.debug.xcconfig"; sourceTree = "<group>"; };
 		E235077624F7082700CC1899 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E290FB1C24FF4BBA00D19BE9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -370,6 +374,7 @@
 				D253D124250CB3AF00A363E4 /* EmailView.swift */,
 				D253D122250CB31F00A363E4 /* WithdrawView.swift */,
 				D253D126250CB57600A363E4 /* WithdrawalVC.swift */,
+				D2E95304261D317600BD147B /* SpecialThanksView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -499,6 +504,7 @@
 				D244F561261B8EBA0027D011 /* CurrentDate.swift */,
 				D2752F44261CEFAD0083AF27 /* Image+SFSymbol.swift */,
 				D2752F4B261D07C30083AF27 /* AcknowledgementsView.swift */,
+				D2E95302261D2F8B00BD147B /* List+GroupedStyle.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -751,6 +757,7 @@
 				D283AB152609586500637663 /* SceneDelegate+CardinalKit.swift in Sources */,
 				A04B9C61250E96DE006D0D3F /* StatisticsBubble.swift in Sources */,
 				D286ECB6250DE9EF00815EED /* PlainList.swift in Sources */,
+				D2E95303261D2F8B00BD147B /* List+GroupedStyle.swift in Sources */,
 				D283AB0226094C8900637663 /* CKCareKitManager.swift in Sources */,
 				D28BBAD9261A915A0074C560 /* ScheduleViewController.swift in Sources */,
 				8E0A43B3244A4A0400656518 /* StudyTasks.swift in Sources */,
@@ -781,6 +788,7 @@
 				D28BBAD8261A915A0074C560 /* CareTeamViewControllerRepresentable.swift in Sources */,
 				D24ED844260C01B0004A454F /* SettingsView.swift in Sources */,
 				8E0A43BE244A4A0400656518 /* CKHealthDataStepViewController.swift in Sources */,
+				D2E95305261D317600BD147B /* SpecialThanksView.swift in Sources */,
 				D283AB0326094C8900637663 /* Errors.swift in Sources */,
 				D286ECB8250E087F00815EED /* HomeView.swift in Sources */,
 				D253D117250CA73100A363E4 /* ChangePasscodeView.swift in Sources */,

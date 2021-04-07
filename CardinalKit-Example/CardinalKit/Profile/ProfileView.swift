@@ -207,6 +207,7 @@ struct ProfileView: View {
     var list: some View {
         List {
             basicInfoSection
+                .contentShape(Rectangle())
                 .onTapGesture {
                     redactDetails.toggle()
                 }
