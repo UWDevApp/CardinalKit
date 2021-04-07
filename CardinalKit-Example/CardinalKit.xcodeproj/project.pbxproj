@@ -42,6 +42,11 @@
 		D253D129250CBF2800A363E4 /* PhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D253D128250CBF2800A363E4 /* PhoneView.swift */; };
 		D253D12B250CD16400A363E4 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D253D12A250CD16400A363E4 /* PageView.swift */; };
 		D253D12D250CF9C400A363E4 /* CKSignInWithAppleStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = D253D12C250CF9C400A363E4 /* CKSignInWithAppleStep.swift */; };
+		D2752F45261CEFAD0083AF27 /* Image+SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2752F44261CEFAD0083AF27 /* Image+SFSymbol.swift */; };
+		D2752F48261CFD8B0083AF27 /* AcknowList in Frameworks */ = {isa = PBXBuildFile; productRef = D2752F47261CFD8B0083AF27 /* AcknowList */; };
+		D2752F4A261CFEEB0083AF27 /* Pods-TrialX-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2752F49261CFEEB0083AF27 /* Pods-TrialX-acknowledgements.plist */; };
+		D2752F4C261D07C30083AF27 /* AcknowledgementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2752F4B261D07C30083AF27 /* AcknowledgementsView.swift */; };
+		D2752F4E261D13C60083AF27 /* Package.resolved in Resources */ = {isa = PBXBuildFile; fileRef = D2752F4D261D13C60083AF27 /* Package.resolved */; };
 		D283AAF326094C8900637663 /* CKConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D283AADB26094C8900637663 /* CKConfig.swift */; };
 		D283AAF426094C8900637663 /* CKPropertyReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D283AADC26094C8900637663 /* CKPropertyReader.swift */; };
 		D283AAF526094C8900637663 /* CKTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D283AADE26094C8900637663 /* CKTaskViewController.swift */; };
@@ -80,6 +85,8 @@
 		D2B2A0CF261BB14600A9A790 /* CareKitStore in Frameworks */ = {isa = PBXBuildFile; productRef = D2B2A0CE261BB14600A9A790 /* CareKitStore */; };
 		D2B2A0D1261BB14600A9A790 /* CareKitUI in Frameworks */ = {isa = PBXBuildFile; productRef = D2B2A0D0261BB14600A9A790 /* CareKitUI */; };
 		D2BF1B7E260AB3D200B28CDC /* EFStorageKeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = D2BF1B7D260AB3D200B28CDC /* EFStorageKeychainAccess */; };
+		D2E95303261D2F8B00BD147B /* List+GroupedStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E95302261D2F8B00BD147B /* List+GroupedStyle.swift */; };
+		D2E95305261D317600BD147B /* SpecialThanksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E95304261D317600BD147B /* SpecialThanksView.swift */; };
 		E235077724F7082700CC1899 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E235077624F7082700CC1899 /* SceneDelegate.swift */; };
 		E290FB1D24FF4BBA00D19BE9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E290FB1C24FF4BBA00D19BE9 /* GoogleService-Info.plist */; };
 		E29143FC24E74AD100EE97B2 /* OnboardingUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29143FB24E74AD100EE97B2 /* OnboardingUI.swift */; };
@@ -136,6 +143,10 @@
 		D253D128250CBF2800A363E4 /* PhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneView.swift; sourceTree = "<group>"; };
 		D253D12A250CD16400A363E4 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		D253D12C250CF9C400A363E4 /* CKSignInWithAppleStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKSignInWithAppleStep.swift; sourceTree = "<group>"; };
+		D2752F44261CEFAD0083AF27 /* Image+SFSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+SFSymbol.swift"; sourceTree = "<group>"; };
+		D2752F49261CFEEB0083AF27 /* Pods-TrialX-acknowledgements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "Pods-TrialX-acknowledgements.plist"; path = "Pods/Target Support Files/Pods-TrialX/Pods-TrialX-acknowledgements.plist"; sourceTree = SOURCE_ROOT; };
+		D2752F4B261D07C30083AF27 /* AcknowledgementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementsView.swift; sourceTree = "<group>"; };
+		D2752F4D261D13C60083AF27 /* Package.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; name = Package.resolved; path = CardinalKit.xcworkspace/xcshareddata/swiftpm/Package.resolved; sourceTree = SOURCE_ROOT; };
 		D283AADB26094C8900637663 /* CKConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKConfig.swift; sourceTree = "<group>"; };
 		D283AADC26094C8900637663 /* CKPropertyReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKPropertyReader.swift; sourceTree = "<group>"; };
 		D283AADE26094C8900637663 /* CKTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKTaskViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +181,8 @@
 		D28BBAD4261A915A0074C560 /* ScheduleViewControllerRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewControllerRepresentable.swift; sourceTree = "<group>"; };
 		D28BBAD6261A915A0074C560 /* TipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipView.swift; sourceTree = "<group>"; };
 		D28BBAD7261A915A0074C560 /* SurveyItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyItemViewController.swift; sourceTree = "<group>"; };
+		D2E95302261D2F8B00BD147B /* List+GroupedStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "List+GroupedStyle.swift"; sourceTree = "<group>"; };
+		D2E95304261D317600BD147B /* SpecialThanksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialThanksView.swift; sourceTree = "<group>"; };
 		DF8FAFB3C7221261A7397AFD /* Pods-TrialX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrialX.debug.xcconfig"; path = "Target Support Files/Pods-TrialX/Pods-TrialX.debug.xcconfig"; sourceTree = "<group>"; };
 		E235077624F7082700CC1899 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E290FB1C24FF4BBA00D19BE9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -186,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2B2A0CF261BB14600A9A790 /* CareKitStore in Frameworks */,
+				D2752F48261CFD8B0083AF27 /* AcknowList in Frameworks */,
 				D2B2A0CD261BB14600A9A790 /* CareKit in Frameworks */,
 				D2B2A0D1261BB14600A9A790 /* CareKitUI in Frameworks */,
 				8E0A43D5244A693D00656518 /* HealthKit.framework in Frameworks */,
@@ -279,6 +293,8 @@
 				8E0A43C9244A4C6500656518 /* Info.plist */,
 				E290FB1C24FF4BBA00D19BE9 /* GoogleService-Info.plist */,
 				E2F1FD7724D62064006C39DF /* CKConfiguration.plist */,
+				D2752F49261CFEEB0083AF27 /* Pods-TrialX-acknowledgements.plist */,
+				D2752F4D261D13C60083AF27 /* Package.resolved */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -358,6 +374,7 @@
 				D253D124250CB3AF00A363E4 /* EmailView.swift */,
 				D253D122250CB31F00A363E4 /* WithdrawView.swift */,
 				D253D126250CB57600A363E4 /* WithdrawalVC.swift */,
+				D2E95304261D317600BD147B /* SpecialThanksView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -485,6 +502,9 @@
 				D286ECC2250E0ABF00815EED /* TaskVC.swift */,
 				D244F4F6261ACB7A0027D011 /* CareKitContactViews.swift */,
 				D244F561261B8EBA0027D011 /* CurrentDate.swift */,
+				D2752F44261CEFAD0083AF27 /* Image+SFSymbol.swift */,
+				D2752F4B261D07C30083AF27 /* AcknowledgementsView.swift */,
+				D2E95302261D2F8B00BD147B /* List+GroupedStyle.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -552,6 +572,7 @@
 				D2B2A0CC261BB14600A9A790 /* CareKit */,
 				D2B2A0CE261BB14600A9A790 /* CareKitStore */,
 				D2B2A0D0261BB14600A9A790 /* CareKitUI */,
+				D2752F47261CFD8B0083AF27 /* AcknowList */,
 			);
 			productName = CardinalKit;
 			productReference = 607FACD01AFB9204008FA782 /* CardinalKit Example.app */;
@@ -586,6 +607,7 @@
 			packageReferences = (
 				D2BF1B7C260AB3D200B28CDC /* XCRemoteSwiftPackageReference "EFStorage" */,
 				D2B2A0C9261BB14600A9A790 /* XCRemoteSwiftPackageReference "CareKit" */,
+				D2752F46261CFD8B0083AF27 /* XCRemoteSwiftPackageReference "AcknowList" */,
 			);
 			productRefGroup = 607FACD11AFB9204008FA782 /* Products */;
 			projectDirPath = "";
@@ -603,7 +625,9 @@
 			files = (
 				8E0A43AF244A4A0400656518 /* Assets.xcassets in Resources */,
 				8E0A43B0244A4A0400656518 /* LaunchScreen.storyboard in Resources */,
+				D2752F4E261D13C60083AF27 /* Package.resolved in Resources */,
 				E2F1FD7824D62064006C39DF /* CKConfiguration.plist in Resources */,
+				D2752F4A261CFEEB0083AF27 /* Pods-TrialX-acknowledgements.plist in Resources */,
 				8E0A43C1244A4A0400656518 /* LoginCustomWaitStepView.xib in Resources */,
 				E290FB1D24FF4BBA00D19BE9 /* GoogleService-Info.plist in Resources */,
 			);
@@ -733,6 +757,7 @@
 				D283AB152609586500637663 /* SceneDelegate+CardinalKit.swift in Sources */,
 				A04B9C61250E96DE006D0D3F /* StatisticsBubble.swift in Sources */,
 				D286ECB6250DE9EF00815EED /* PlainList.swift in Sources */,
+				D2E95303261D2F8B00BD147B /* List+GroupedStyle.swift in Sources */,
 				D283AB0226094C8900637663 /* CKCareKitManager.swift in Sources */,
 				D28BBAD9261A915A0074C560 /* ScheduleViewController.swift in Sources */,
 				8E0A43B3244A4A0400656518 /* StudyTasks.swift in Sources */,
@@ -743,6 +768,7 @@
 				8EBE6F9C24B3C0E60093D07C /* AppDelegate+CardinalKit.swift in Sources */,
 				D253D129250CBF2800A363E4 /* PhoneView.swift in Sources */,
 				8E0A43B9244A4A0400656518 /* AppDelegate.swift in Sources */,
+				D2752F45261CEFAD0083AF27 /* Image+SFSymbol.swift in Sources */,
 				D283AAF426094C8900637663 /* CKPropertyReader.swift in Sources */,
 				D28BBADB261A915A0074C560 /* TipView.swift in Sources */,
 				D286ECC5250E0E0700815EED /* Extensions.swift in Sources */,
@@ -762,6 +788,7 @@
 				D28BBAD8261A915A0074C560 /* CareTeamViewControllerRepresentable.swift in Sources */,
 				D24ED844260C01B0004A454F /* SettingsView.swift in Sources */,
 				8E0A43BE244A4A0400656518 /* CKHealthDataStepViewController.swift in Sources */,
+				D2E95305261D317600BD147B /* SpecialThanksView.swift in Sources */,
 				D283AB0326094C8900637663 /* Errors.swift in Sources */,
 				D286ECB8250E087F00815EED /* HomeView.swift in Sources */,
 				D253D117250CA73100A363E4 /* ChangePasscodeView.swift in Sources */,
@@ -769,6 +796,7 @@
 				8E0A43C3244A4A0400656518 /* LoginCustomWaitStepViewController.swift in Sources */,
 				A04B9C59250D8D1F006D0D3F /* UIData.swift in Sources */,
 				A04B9C5B250D9162006D0D3F /* WelcomeNotificationView.swift in Sources */,
+				D2752F4C261D07C30083AF27 /* AcknowledgementsView.swift in Sources */,
 				E235077724F7082700CC1899 /* SceneDelegate.swift in Sources */,
 				D253D12D250CF9C400A363E4 /* CKSignInWithAppleStep.swift in Sources */,
 				D286EC97250DC02F00815EED /* LaunchContainerView.swift in Sources */,
@@ -971,6 +999,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		D2752F46261CFD8B0083AF27 /* XCRemoteSwiftPackageReference "AcknowList" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vtourraine/AcknowList.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		D2B2A0C9261BB14600A9A790 /* XCRemoteSwiftPackageReference "CareKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/carekit-apple/CareKit.git";
@@ -994,6 +1030,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D2BF1B7C260AB3D200B28CDC /* XCRemoteSwiftPackageReference "EFStorage" */;
 			productName = EFStorageUserDefaults;
+		};
+		D2752F47261CFD8B0083AF27 /* AcknowList */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D2752F46261CFD8B0083AF27 /* XCRemoteSwiftPackageReference "AcknowList" */;
+			productName = AcknowList;
 		};
 		D2B2A0CA261BB14600A9A790 /* CareKitFHIR */ = {
 			isa = XCSwiftPackageProductDependency;

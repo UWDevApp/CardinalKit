@@ -187,7 +187,9 @@ struct OnboardingVC: UIViewControllerRepresentable {
          *  that will be required to use this app!
          **************************************************************/
         // use the `ORKPasscodeStep` from ResearchKit.
-        let passcodeStep = ORKPasscodeStep(identifier: "Passcode") //NOTE: requires NSFaceIDUsageDescription in info.plist
+        let passcodeStep = ORKPasscodeStep(identifier: "Passcode")
+        // NOTE: requires NSFaceIDUsageDescription in info.plist
+        passcodeStep.useBiometrics = true
         let type = config.read(query: "Passcode Type")
         if type == "6" {
             passcodeStep.passcodeType = .type6Digit

@@ -40,21 +40,21 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>TODO: Used In ResearchKit Active Tasks.</string>
+	<string>Your camera will be used to take pictures when you&apos;d like to.</string>
 	<key>NSFaceIDUsageDescription</key>
-	<string>TODO: Used for data security purposes.</string>
+	<string>You may use Face ID to quickly unlock the app.</string>
 	<key>NSHealthClinicalHealthRecordsShareUsageDescription</key>
 	<string>Your health records will be used to make medical suggestions.</string>
 	<key>NSHealthShareUsageDescription</key>
-	<string>TODO: Used for data security purposes.</string>
+	<string>Your data currently saved in the Health app will be used to populate your research responses.</string>
 	<key>NSHealthUpdateUsageDescription</key>
-	<string>TODO: Used for data security purposes.</string>
+	<string>Research findings will be saved to your Health app, so you can find all your health data in one place.</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>TODO: Used In ResearchKit Active Tasks.</string>
+	<string>Your microphone will be used to record your responses to research tasks.</string>
 	<key>NSMotionUsageDescription</key>
-	<string>TODO: Used In ResearchKit Active Tasks.</string>
+	<string>Your motion sensor will be used to collect data as a part of your research tasks.</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>TODO: Used In ResearchKit Active Tasks.</string>
+	<string>Your spoken content will be used to evaluate your cognitive functions as a part of the research tasks.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
