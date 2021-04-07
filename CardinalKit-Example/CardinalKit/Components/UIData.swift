@@ -27,6 +27,12 @@ extension Notification {
         case "Spatial Memory": return StudyItem(study: .spatial)
         case "Speech Recognition": return StudyItem(study: .speechRecognition)
         case "Amsler Grid": return StudyItem(study: .amslerGrid)
+        case "Reaction Time": return StudyItem(study: .reaction)
+        case "Tower of Hanoi": return StudyItem(study: .tower)
+        case "PSAT": return StudyItem(study: .psat)
+        case "Stroop Test": return StudyItem(study: .stroop)
+        case "9-Hole Peg": return StudyItem(study: .nine)
+        case "Tone Audiometry": return StudyItem(study: .tone)
         default:
             fatalError("Unrecognized test \(testName)")
         }
@@ -42,6 +48,9 @@ struct Result: Identifiable {
 class NotificationsAndResults: ObservableObject {
     @Published var currNotifications: [Notification]
     @Published var upcomingNotifications: [Notification]
+    
+    @Published var cogTests:[Notification]
+    @Published var otherTests:[Notification]
     @Published var results: [Result] = []
     @Published var done = Set<UUID>()
     @Published var shouldSeeDoctor = false
@@ -58,6 +67,21 @@ class NotificationsAndResults: ObservableObject {
             Notification(testName: "Trailmaking A", text: "Test can be taken starting tomorrow.", action: false),
             Notification(testName: "Spatial Memory", text: "Test is coming up in 3 days, please consume a moderate amount of caffeine only.", action: false),
             Notification(testName: "Amsler Grid", text: "Test is coming up next week, please be mindful of eyes usage.", action: false)
+        ]
+        
+        cogTests = [
+            Notification(testName: "User Survey", text: "Test is ready to be taken.", action: true),
+            Notification(testName: "Trailmaking B", text: "Test is ready to be taken.", action: true),
+            Notification(testName: "Spatial Memory", text: "Test will be ready on 04/09/21", action: false),
+            Notification(testName: "Reaction Time", text: "Test will be ready on 05/01/21.", action: false),
+            Notification(testName: "Tower of Hanoi", text: "Test will be ready on 05/03/21.", action: false),
+            Notification(testName: "PSAT", text: "Test will be ready on 05/07/21.", action: false),
+            Notification(testName: "Stroop Test", text: "Test will be ready on 06/01/21.", action: false)
+        ]
+        otherTests = [
+            Notification(testName: "Amsler Grid", text: "Test will be ready tomorrow", action: false),
+            Notification(testName: "9-Hole Peg", text: "Test will be ready on 05/01/21", action: false),
+            Notification(testName: "Tone Audiometry", text: "Test will be ready on 05/01/21", action: false)
         ]
         guard let authCollection = CKStudyUser.shared.authCollection else {
             print("Not signed in")
@@ -107,9 +131,23 @@ class NotificationsAndResults: ObservableObject {
                                 .first!
                         )
                     case "Amsler Grid":
-                        return nil
+                        return .amsler(info: Info(payload))
                     case "Survey":
                         return .survey(info: Info(payload))
+                    case "Reaction Time":
+                        return .reaction(info: Info(payload))
+                    case "Tower of Hanoi":
+                        return .tower(info: Info(payload))
+                    case "PSAT":
+                        return .psat(info: Info(payload))
+                    case "Stroop Test":
+                        return .stroop(info: Info(payload))
+                    case "Spatial Memory":
+                        return .spatial(info: Info(payload))
+                    case "9-Hole Peg":
+                        return .nine(info: Info(payload))
+                    case "Tone Audiometry":
+                        return .tone(info: Info(payload))
                     default:
                         print(payload)
                         return nil
@@ -143,6 +181,13 @@ class NotificationsAndResults: ObservableObject {
         case memory(info: Info)
         case speech(info: Info, text: String)
         case amsler(info: Info)
+        case reaction(info: Info)
+        case tower(info: Info)
+        case psat(info: Info)
+        case stroop(info: Info)
+        case spatial(info: Info)
+        case nine(info: Info)
+        case tone(info: Info)
 
         var score: Double? {
             return error.map {
@@ -165,6 +210,20 @@ class NotificationsAndResults: ObservableObject {
                 return Double(text.levenshtein(from: target)) / Double(target.count)
             case .amsler:
                 return -1
+            case .reaction:
+                return -1
+            case .tower:
+                return -1
+            case .psat:
+                return -1
+            case .stroop:
+                return -1
+            case .spatial:
+                return -1
+            case .nine:
+                return -1
+            case .tone:
+                return -1
             }
         }
 
@@ -181,6 +240,20 @@ class NotificationsAndResults: ObservableObject {
             case .speech(info: let info, _):
                 return info.endDate
             case .amsler(info: let info):
+                return info.endDate
+            case .reaction(info: let info):
+                return info.endDate
+            case .tower(info: let info):
+                return info.endDate
+            case .psat(info: let info):
+                return info.endDate
+            case .stroop(info: let info):
+                return info.endDate
+            case .spatial(info: let info):
+                return info.endDate
+            case .nine(info: let info):
+                return info.endDate
+            case .tone(info: let info):
                 return info.endDate
             }
         }
@@ -199,6 +272,20 @@ class NotificationsAndResults: ObservableObject {
                 return "Speech Recognition"
             case .amsler:
                 return "Amsler Grid"
+            case .reaction:
+                return "Reaction Time"
+            case .tower:
+                return "Tower of Hanoi"
+            case .psat:
+                return "PSAT"
+            case .stroop:
+                return "Stroop Test"
+            case .spatial:
+                return "Spatial Memory"
+            case .nine:
+                return "9-Hole Peg"
+            case .tone:
+                return "Tone Audiometry"
             }
         }
     }

@@ -12,7 +12,7 @@ import ResearchKit
 
 enum StudyTableItem: Int, CaseIterable {
     // table items
-    case survey, trailMakingA, trailMakingB, spatial, speechRecognition, amslerGrid
+    case survey, trailMakingA, trailMakingB, spatial, speechRecognition, amslerGrid, reaction, tower, psat, stroop, nine, tone
 
     var task: ORKOrderedTask {
         switch self {
@@ -28,6 +28,18 @@ enum StudyTableItem: Int, CaseIterable {
             return StudyTasks.speechRecognition
         case .amslerGrid:
             return StudyTasks.amslerGrid
+        case .reaction:
+            return StudyTasks.reaction
+        case .tower:
+            return StudyTasks.tower
+        case .psat:
+            return StudyTasks.psat
+        case .stroop:
+            return StudyTasks.stroop
+        case .nine:
+            return StudyTasks.nine
+        case .tone:
+            return StudyTasks.tone
         }
     }
 
@@ -45,6 +57,18 @@ enum StudyTableItem: Int, CaseIterable {
             return "Speech Recognition"
         case .amslerGrid:
             return "Amsler Grid"
+        case .reaction:
+            return "Reaction Time"
+        case .tower:
+            return "Tower of Hanoi"
+        case .psat:
+            return "PSAT"
+        case .stroop:
+            return "Stroop Test"
+        case .nine:
+            return "9-Hole Peg"
+        case .tone:
+            return "Tone Audiometry"
         }
     }
 
@@ -62,6 +86,18 @@ enum StudyTableItem: Int, CaseIterable {
             return "This activity records your speech"
         case .amslerGrid:
             return "This activity helps with detecting problems in your vision"
+        case .reaction:
+            return "This activity evaluates your reaction speed"
+        case .tower:
+            return "This activity measures your problem solving skills."
+        case .psat:
+            return "This activity measures your cognitive function that assesses auditory and/or visual information processing speed, flexibility, and the calculation ability"
+        case .stroop:
+            return "This activity assesses your cognitive responsive ability"
+        case .nine:
+            return "This activity of hand dexterity measures your MSFC score in Multiple Sclerosis, or signs of Parkinson’s disease or stroke"
+        case .tone:
+            return "This activity measures different properties of your hearing ability, based on your reaction to a wide range of frequencies"
         }
     }
 
@@ -93,6 +129,43 @@ enum StudyTableItem: Int, CaseIterable {
             } else {
                 return Image(systemName: "dot.square")
             }
+        case .reaction:
+            if #available(iOS 14, *) {
+                return Image(systemName: "clock")
+            } else {
+                return Image(systemName: "clock.fill")
+            }
+        case .tower:
+            if #available(iOS 14, *) {
+                return Image(systemName: "tray.2.fill")
+            } else {
+                return Image(systemName: "tray.2")
+            }
+        case .psat:
+            if #available(iOS 14, *) {
+                return Image(systemName: "plus.diamond.fill")
+            } else {
+                return Image(systemName: "plus.diamond")
+            }
+        case .stroop:
+            if #available(iOS 14, *) {
+                return Image(systemName: "textformat.abc.dottedunderline")
+            } else {
+                return Image(systemName: "abc")
+            }
+        case .nine:
+            if #available(iOS 14, *) {
+                return Image(systemName: "hand.point.up.braille.fill")
+            } else {
+                return Image(systemName: "hand.point.up.braille")
+            }
+        case .tone:
+            if #available(iOS 14, *) {
+                return Image(systemName: "ear.fill")
+            } else {
+                return Image(systemName: "ear")
+            }
         }
+        
     }
 }
