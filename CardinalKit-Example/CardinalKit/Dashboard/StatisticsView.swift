@@ -7,35 +7,28 @@
 //
 
 import SwiftUI
+import CareKit
 import CareKitUI
+import CareKitStore
 
 struct StatisticsView: View {
     @EnvironmentObject var data: NotificationsAndResults
     let date = DateFormatter.mediumDate.string(from: Date())
     
-
     let color: Color
     
     /**
      Example data used to generate a stats summary section
      */
-//    var trendView: some View {
-//        let trend = OCKCartesianChartView(type: .line)
-//
-//        func updateTrend() {
-//            trend.graphView.yMinimum = 0
-//            trend.graphView.yMaximum = 10
-//            trend.graphView.xMinimum = 0
-//            trend.graphView.xMaximum = 7
-//        }
-//
-//        Section(header: Text("Here, you can review your scores and trends")) {
-//            trendView
-//
-//        }
-//
-//        return self
-//    }
+    var trendView: some View {
+        Section(header: Text("Your score overview is here")){
+            GeometryReader { geometry in
+                CareKitChartViews(weekOfDate: Date())
+                    .frame(width: geometry.size.width)
+            }
+            .frame(height: 320)
+    }
+}
     
     var cogTestsView: some View {
         /**
@@ -88,9 +81,11 @@ struct StatisticsView: View {
     }
     
     var body: some View {
+        
+        
         PlainList {
             #warning("TODO: Sync chart view test score data")
-            //trendView
+            trendView
             testsView
         }
         .background(Color(UIColor.systemGroupedBackground))
