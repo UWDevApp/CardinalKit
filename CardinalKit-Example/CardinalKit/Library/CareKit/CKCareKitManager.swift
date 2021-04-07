@@ -20,7 +20,7 @@ class CKCareKitManager: NSObject {
     override init() {
         super.init()
         
-        initStore()
+        initStore(forceUpdate: true)
 
         let coordinator = OCKStoreCoordinator()
         coordinator.attach(eventStore: healthKitStore)

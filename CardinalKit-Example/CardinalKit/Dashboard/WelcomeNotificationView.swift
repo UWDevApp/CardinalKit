@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import CareKitStore
 import CareKitUI
 
 struct WelcomeNotificationView: View {
@@ -20,10 +21,10 @@ struct WelcomeNotificationView: View {
             Section(header: Text(data.shouldSeeDoctor ? "Your tests' performances suggest that you should visit your doctor" : "Stay Connected")) {
             }
             GeometryReader { geometry in
-                DetailedContactView(contactID: "oliver")
+                DetailedContactView(contactID: OCKContact.ID.KathleenPoston.rawValue)
                     .frame(width: geometry.size.width)
             }
-            .frame(height: 320)
+            .frame(height: 230)
         }
     }
 

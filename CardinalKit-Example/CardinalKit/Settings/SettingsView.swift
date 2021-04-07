@@ -11,12 +11,6 @@ import SwiftUI
 struct SettingsView: View {
     @EnvironmentObject var config: CKPropertyReader
 
-    var footer: some View {
-        Text(config.read(query: "Copyright"))
-            .padding(.top)
-            .frame(maxWidth: .infinity)
-    }
-
     var appVersion: String? {
         return Bundle.main
             .infoDictionary?["CFBundleShortVersionString"] as? String
@@ -31,6 +25,17 @@ struct SettingsView: View {
                isOn: $data.shouldSeeDoctor)
     }
 
+    var header: some View {
+        Text("App \(appVersion.map { "version v\($0)" } ?? "")")
+    }
+
+    var footer: some View {
+        Text(config.read(query: "Copyright"))
+            .padding(.top)
+            .frame(maxWidth: .infinity)
+    }
+
+
     var list: some View {
         List {
             Section(header: Text("General")) {
@@ -43,15 +48,29 @@ struct SettingsView: View {
                 ChangePasscodeView()
             }
 
-            Section(header: Text("App \(appVersion.map { "version v\($0)" } ?? "")")) {
-                WebsiteView(site: config.read(query: "Website"))
-                EmailView(title: "Contact Developers",
-                          email: config.read(query: "Email"))
-            }
+            Section(header: header, footer: footer) {
+                WebsiteView(site: config.read(query: "Website"),
+                            title: "Visit TrialX Website",
+                            description: "Learn more about TrialX",
+                            icon: Image(systemName: "globe"))
+                WebsiteView(site: "https://udallcenter.stanford.edu/about/center-researchers/",
+                            title: "Pacific Udall Center",
+                            description: "Excellence for Parkinson's Research",
+                            icon: SFSymbol(iOS14Name: "stethoscope",
+                                           iOS13Name: "h.square"))
+                WebsiteView(site: "https://uwapp.dev/",
+                            title: "Mobile Development Club",
+                            description: "RSO at University of Washington",
+                            icon: Image(systemName: "hammer"))
 
-            Section(footer: footer) {
-                WithdrawView()
-                    .frame(maxWidth: .infinity)
+                NavigationLink("Acknowledgments",
+                               destination: AcknowledgementsView())
+
+                NavigationLink("Special Thanks",
+                               destination: SpecialThanksView())
+
+                // EmailView(title: "Contact Developers",
+                //           email: config.read(query: "Email"))
             }
         }
         .navigationBarItems(trailing: CurrentDate())

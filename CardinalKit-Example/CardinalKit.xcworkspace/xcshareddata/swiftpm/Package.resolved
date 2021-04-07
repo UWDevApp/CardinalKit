@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "AcknowList",
+        "repositoryURL": "https://github.com/vtourraine/AcknowList.git",
+        "state": {
+          "branch": "main",
+          "revision": "8317486574cc5339be52922e2b74d19429893dff",
+          "version": null
+        }
+      },
+      {
         "package": "CareKit",
         "repositoryURL": "https://github.com/carekit-apple/CareKit.git",
         "state": {
