@@ -81,11 +81,10 @@ struct StatisticsView: View {
     }
     
     var body: some View {
-        
-        
         PlainList {
             #warning("TODO: Sync chart view test score data")
             trendView
+            Spacer().padding(.bottom)
             testsView
         }
         .background(Color(UIColor.systemGroupedBackground))
