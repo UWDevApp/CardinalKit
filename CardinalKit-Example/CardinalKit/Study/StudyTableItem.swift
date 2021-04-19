@@ -130,41 +130,17 @@ enum StudyTableItem: Int, CaseIterable {
                 return Image(systemName: "dot.square")
             }
         case .reaction:
-            if #available(iOS 14, *) {
-                return Image(systemName: "clock")
-            } else {
-                return Image(systemName: "clock.fill")
-            }
+            return systemImage(iOS14Name: "clock", iOS13Name: "clock")
         case .tower:
-            if #available(iOS 14, *) {
-                return Image(systemName: "tray.2.fill")
-            } else {
-                return Image(systemName: "tray.2")
-            }
+            return systemImage(iOS14Name: "tray.2", iOS13Name: "tray.2")
         case .psat:
-            if #available(iOS 14, *) {
-                return Image(systemName: "plus.diamond.fill")
-            } else {
-                return Image(systemName: "plus.diamond")
-            }
+            return systemImage(iOS14Name: "plus.diamond.fill", iOS13Name: "plus.diamond.fill")
         case .stroop:
-            if #available(iOS 14, *) {
-                return Image(systemName: "textformat.abc.dottedunderline")
-            } else {
-                return Image(systemName: "abc")
-            }
+            return systemImage(iOS14Name: "textformat.abc.dottedunderline", iOS13Name: "textformat.abc.dottedunderline")
         case .nine:
-            if #available(iOS 14, *) {
-                return Image(systemName: "hand.point.up.braille.fill")
-            } else {
-                return Image(systemName: "hand.point.up.braille")
-            }
+            return systemImage(iOS14Name: "hand.point.up.braille.fill", iOS13Name: "hand.point.up.braille.fill")
         case .tone:
-            if #available(iOS 14, *) {
-                return Image(systemName: "ear.fill")
-            } else {
-                return Image(systemName: "ear")
-            }
+            return systemImage(iOS14Name: "ear.fill", iOS13Name: "ear.fill")
         }
         
     }

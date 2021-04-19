@@ -27,7 +27,7 @@ struct SpecialThanksView: View {
                 site: "https://www.linkedin.com/in/gladys-wang-4b14841ba/",
                 title: "Gladys Wang",
                 description: "Designer of the app icon.",
-                icon: SFSymbol(iOS14Name: "paintpalette",
+                icon: systemImage(iOS14Name: "paintpalette",
                                iOS13Name: "paintbrush")
             )
         }

@@ -12,6 +12,7 @@ target 'TrialX' do
   pod 'Firebase/Auth'
   pod 'Firebase/DynamicLinks'
   pod 'Firebase/Storage'
+  pod 'SFSafeSymbols', '~> 2.1.3'
 
 
   # https://stackoverflow.com/questions/63056454

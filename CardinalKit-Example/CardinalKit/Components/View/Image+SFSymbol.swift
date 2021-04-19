@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-func SFSymbol(iOS14Name: String, iOS13Name: String) -> Image {
+func systemImage(iOS14Name: String, iOS13Name: String) -> Image {
     if #available(iOS 14, *) {
         return Image(systemName: iOS14Name)
     } else {
