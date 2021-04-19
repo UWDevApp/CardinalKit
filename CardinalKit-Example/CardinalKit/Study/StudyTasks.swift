@@ -241,4 +241,40 @@ struct StudyTasks {
 
         return ORKOrderedTask.amslerGridTask(withIdentifier: "Amsler Grid", intendedUseDescription: intendedUseDescription, options: [])
     }()
+    
+    static let reaction: ORKOrderedTask = {
+        let intendedUseDescription = "Reaction Time"
+        
+        return ORKOrderedTask.reactionTime(withIdentifier: "Reaction Time", intendedUseDescription: intendedUseDescription, maximumStimulusInterval: 10, minimumStimulusInterval: 1, thresholdAcceleration: 0.5, numberOfAttempts: 3, timeout: 3, successSound: 1, timeoutSound: 0, failureSound: UInt32(kSystemSoundID_Vibrate), options: [])
+    }()
+    
+    static let tower: ORKOrderedTask = {
+        let intendedUseDescription = "Tower of Hanoi"
+       
+        return ORKOrderedTask.towerOfHanoiTask(withIdentifier: "Tower of Hanoi", intendedUseDescription: intendedUseDescription, numberOfDisks: 4, options: [])
+    }()
+    
+    static let psat: ORKOrderedTask = {
+        let intendedUseDescription = "PSAT"
+       
+        return ORKOrderedTask.psatTask(withIdentifier: "PSAT", intendedUseDescription: intendedUseDescription, presentationMode: ORKPSATPresentationMode.visual, interStimulusInterval: 3, stimulusDuration: 3, seriesLength: 10, options: [])
+    }()
+    
+    static let stroop: ORKOrderedTask = {
+        let intendedUseDescription = "Stroop Test"
+       
+        return ORKOrderedTask.stroopTask(withIdentifier: "Stroop Test", intendedUseDescription: intendedUseDescription, numberOfAttempts: 10, options: [])
+    }()
+    
+    static let nine: ORKOrderedTask = {
+        let intendedUseDescription = "9-Hole Peg"
+       
+        return ORKOrderedTask.holePegTest(withIdentifier: "9-Hole Peg", intendedUseDescription: intendedUseDescription, dominantHand: ORKBodySagittal.right, numberOfPegs: 9, threshold: 1.0, rotated: true, timeLimit: 10, options: [])
+    }()
+    
+    static let tone: ORKOrderedTask = {
+        let intendedUseDescription = "Tone Audiometry"
+       
+        return ORKOrderedTask.toneAudiometryTask(withIdentifier: "Tone Audiometry", intendedUseDescription: intendedUseDescription, speechInstruction: nil, shortSpeechInstruction: nil, toneDuration: 5, options: [])
+    }()
 }

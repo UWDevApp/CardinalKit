@@ -56,7 +56,7 @@ struct SettingsView: View {
                 WebsiteView(site: "https://udallcenter.stanford.edu/about/center-researchers/",
                             title: "Pacific Udall Center",
                             description: "Excellence for Parkinson's Research",
-                            icon: SFSymbol(iOS14Name: "stethoscope",
+                            icon: systemImage(iOS14Name: "stethoscope",
                                            iOS13Name: "h.square"))
                 WebsiteView(site: "https://uwapp.dev/",
                             title: "Mobile Development Club",

@@ -93,6 +93,7 @@
 		E2DF9F062500B9F000A93B93 /* LoginStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DF9F052500B9F000A93B93 /* LoginStep.swift */; };
 		E2DF9F0A2500C9CE00A93B93 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DF9F092500C9CE00A93B93 /* LoginViewController.swift */; };
 		E2F1FD7824D62064006C39DF /* CKConfiguration.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2F1FD7724D62064006C39DF /* CKConfiguration.plist */; };
+		F7962D8C261E3E5C00DA30B1 /* CareKitChartViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7962D8B261E3E5C00DA30B1 /* CareKitChartViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -191,6 +192,7 @@
 		E2DF9F092500C9CE00A93B93 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E2F1FD7724D62064006C39DF /* CKConfiguration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CKConfiguration.plist; sourceTree = "<group>"; };
 		F30ABA7020E91EBA421A80F9 /* Pods-CardinalKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardinalKit_Example.debug.xcconfig"; path = "Target Support Files/Pods-CardinalKit_Example/Pods-CardinalKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		F7962D8B261E3E5C00DA30B1 /* CareKitChartViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareKitChartViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -502,6 +504,7 @@
 				D286ECC2250E0ABF00815EED /* TaskVC.swift */,
 				D244F4F6261ACB7A0027D011 /* CareKitContactViews.swift */,
 				D244F561261B8EBA0027D011 /* CurrentDate.swift */,
+				F7962D8B261E3E5C00DA30B1 /* CareKitChartViews.swift */,
 				D2752F44261CEFAD0083AF27 /* Image+SFSymbol.swift */,
 				D2752F4B261D07C30083AF27 /* AcknowledgementsView.swift */,
 				D2E95302261D2F8B00BD147B /* List+GroupedStyle.swift */,
@@ -781,6 +784,7 @@
 				D283AAF826094C8900637663 /* CKUploadToGCPTaskViewControllerDelegate.swift in Sources */,
 				8E0A43B5244A4A0400656518 /* StudyTableItem.swift in Sources */,
 				D283AAF726094C8900637663 /* ConsentDocument.swift in Sources */,
+				F7962D8C261E3E5C00DA30B1 /* CareKitChartViews.swift in Sources */,
 				8E0A43AD244A4A0400656518 /* Constants.swift in Sources */,
 				D244F562261B8EBA0027D011 /* CurrentDate.swift in Sources */,
 				D2093CCA250EC8FF001583A8 /* PlainNavigationLink.swift in Sources */,
@@ -869,6 +873,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
+				NEW_SETTING = "";
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -919,6 +924,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				NEW_SETTING = "";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
