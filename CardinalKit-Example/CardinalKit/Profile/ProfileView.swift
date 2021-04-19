@@ -30,15 +30,19 @@ struct TapToReveal<Content: View>: View {
     @Binding
     var redactDetails: Bool
 
-    @ViewBuilder
-    let content: () -> Content
+    let content: Content
+    
+    public init(redactDetails:Binding<Bool>, @ViewBuilder content:()-> Content){
+        self._redactDetails = redactDetails
+        self.content = content()
+    }
 
     var body: some View {
         if #available(iOS 14.0, *), redactDetails {
-            content()
+            content
                 .redacted(reason: .placeholder)
         } else {
-            content()
+            content
         }
     }
 }
