@@ -21,9 +21,10 @@ struct StatisticsView: View {
      Example data used to generate a stats summary section
      */
     var trendView: some View {
-        Section(header: Text("Your score overview is here")){
+        Section {
             GeometryReader { geometry in
-                CareKitChartViews(weekOfDate: Date())
+                CareKitChartViews()
+                    .foregroundColor(.accentColor)
                     .frame(width: geometry.size.width)
             }
             .frame(height: 320)
