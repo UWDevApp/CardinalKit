@@ -57,7 +57,7 @@ struct AcknowledgementsView: View {
     @State
     var acknowledgements: [Acknow] = {
         let cocoapodsPath = Bundle.main
-            .path(forResource: "Pods-TrialX-acknowledgements", ofType: "plist")!
+            .path(forResource: "Pods-Cognostic-acknowledgements", ofType: "plist")!
         let parser = AcknowParser(plistPath: cocoapodsPath)
         let swiftpmURL = Bundle.main.url(forResource: "Package",
                                         withExtension: "resolved")!

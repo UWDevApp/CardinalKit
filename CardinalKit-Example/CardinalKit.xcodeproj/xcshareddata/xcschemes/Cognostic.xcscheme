@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1200"
+   LastUpgradeVersion = "1250"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,22 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-               BuildableName = "CardinalKit Example.app"
-               BlueprintName = "TrialX"
-               ReferencedContainer = "container:CardinalKit.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "CardinalKit_Tests.xctest"
-               BlueprintName = "CardinalKit_Tests"
+               BuildableName = "Cognostic.app"
+               BlueprintName = "Cognostic"
                ReferencedContainer = "container:CardinalKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -42,16 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "CardinalKit_Tests.xctest"
-               BlueprintName = "CardinalKit_Tests"
-               ReferencedContainer = "container:CardinalKit.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -69,17 +45,11 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "CardinalKit Example.app"
-            BlueprintName = "TrialX"
+            BuildableName = "Cognostic.app"
+            BlueprintName = "Cognostic"
             ReferencedContainer = "container:CardinalKit.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = "-didCompleteOnboarding 1"
-            isEnabled = "NO">
-         </CommandLineArgument>
-      </CommandLineArguments>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -92,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "CardinalKit Example.app"
-            BlueprintName = "TrialX"
+            BuildableName = "Cognostic.app"
+            BlueprintName = "Cognostic"
             ReferencedContainer = "container:CardinalKit.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

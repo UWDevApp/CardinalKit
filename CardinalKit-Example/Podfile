@@ -2,9 +2,9 @@ platform :ios, '13.0'
 use_frameworks!
 inhibit_all_warnings!
 
-target 'TrialX' do
+target 'Cognostic' do
   pod 'CardinalKit', :path => '../'
-  
+
   # CK Sample Pods
   pod 'ResearchKit', :git => 'https://github.com/ResearchKit/ResearchKit.git', :branch => 'main'
 

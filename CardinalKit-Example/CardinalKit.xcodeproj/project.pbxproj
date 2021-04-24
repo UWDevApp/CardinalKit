@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		69DC6BB1DB8FF78AE696891C /* Pods_TrialX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67775C73890913676E2A3907 /* Pods_TrialX.framework */; };
 		8E0A43AD244A4A0400656518 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0A4384244A4A0400656518 /* Constants.swift */; };
 		8E0A43AF244A4A0400656518 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E0A4388244A4A0400656518 /* Assets.xcassets */; };
 		8E0A43B0244A4A0400656518 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E0A4389244A4A0400656518 /* LaunchScreen.storyboard */; };
@@ -25,6 +24,7 @@
 		A04B9C5F250E9597006D0D3F /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04B9C5E250E9597006D0D3F /* StatisticsView.swift */; };
 		A04B9C61250E96DE006D0D3F /* StatisticsBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04B9C60250E96DE006D0D3F /* StatisticsBubble.swift */; };
 		A04B9C63250E9B57006D0D3F /* DetailGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04B9C62250E9B57006D0D3F /* DetailGraphView.swift */; };
+		CFC78D74A65150BD60DB05F8 /* Pods_Cognostic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24DE60C64367F51D20338349 /* Pods_Cognostic.framework */; };
 		D2093CCA250EC8FF001583A8 /* PlainNavigationLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2093CC9250EC8FF001583A8 /* PlainNavigationLink.swift */; };
 		D244F4F7261ACB7A0027D011 /* CareKitContactViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D244F4F6261ACB7A0027D011 /* CareKitContactViews.swift */; };
 		D244F562261B8EBA0027D011 /* CurrentDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D244F561261B8EBA0027D011 /* CurrentDate.swift */; };
@@ -44,7 +44,6 @@
 		D253D12D250CF9C400A363E4 /* CKSignInWithAppleStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = D253D12C250CF9C400A363E4 /* CKSignInWithAppleStep.swift */; };
 		D2752F45261CEFAD0083AF27 /* Image+SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2752F44261CEFAD0083AF27 /* Image+SFSymbol.swift */; };
 		D2752F48261CFD8B0083AF27 /* AcknowList in Frameworks */ = {isa = PBXBuildFile; productRef = D2752F47261CFD8B0083AF27 /* AcknowList */; };
-		D2752F4A261CFEEB0083AF27 /* Pods-TrialX-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2752F49261CFEEB0083AF27 /* Pods-TrialX-acknowledgements.plist */; };
 		D2752F4C261D07C30083AF27 /* AcknowledgementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2752F4B261D07C30083AF27 /* AcknowledgementsView.swift */; };
 		D2752F4E261D13C60083AF27 /* Package.resolved in Resources */ = {isa = PBXBuildFile; fileRef = D2752F4D261D13C60083AF27 /* Package.resolved */; };
 		D283AAF326094C8900637663 /* CKConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D283AADB26094C8900637663 /* CKConfig.swift */; };
@@ -80,6 +79,7 @@
 		D28BBADA261A915A0074C560 /* ScheduleViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28BBAD4261A915A0074C560 /* ScheduleViewControllerRepresentable.swift */; };
 		D28BBADB261A915A0074C560 /* TipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28BBAD6261A915A0074C560 /* TipView.swift */; };
 		D28BBADC261A915A0074C560 /* SurveyItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28BBAD7261A915A0074C560 /* SurveyItemViewController.swift */; };
+		D2A725D32633A81C00298FF4 /* Pods-Cognostic-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2A725D22633A81C00298FF4 /* Pods-Cognostic-acknowledgements.plist */; };
 		D2B2A0CB261BB14600A9A790 /* CareKitFHIR in Frameworks */ = {isa = PBXBuildFile; productRef = D2B2A0CA261BB14600A9A790 /* CareKitFHIR */; };
 		D2B2A0CD261BB14600A9A790 /* CareKit in Frameworks */ = {isa = PBXBuildFile; productRef = D2B2A0CC261BB14600A9A790 /* CareKit */; };
 		D2B2A0CF261BB14600A9A790 /* CareKitStore in Frameworks */ = {isa = PBXBuildFile; productRef = D2B2A0CE261BB14600A9A790 /* CareKitStore */; };
@@ -97,20 +97,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		00480E2D79186BE9405F0F72 /* Pods-CardinalKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardinalKit_Tests.release.xcconfig"; path = "Target Support Files/Pods-CardinalKit_Tests/Pods-CardinalKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		07D78DA16FC9C3C7709EA243 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../CardinalKit/LICENSE; sourceTree = "<group>"; };
-		1D31556B648F48DA664CEE80 /* Pods_CardinalKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardinalKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24DE60C64367F51D20338349 /* Pods_Cognostic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cognostic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41DC264876E45FE5A3FD8701 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../CardinalKit/README.md; sourceTree = "<group>"; };
-		58275A0CAB0C7223B21F375D /* Pods-CardinalKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardinalKit_Tests.debug.xcconfig"; path = "Target Support Files/Pods-CardinalKit_Tests/Pods-CardinalKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		607FACD01AFB9204008FA782 /* CardinalKit Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CardinalKit Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		607FACD01AFB9204008FA782 /* Cognostic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Cognostic.app"; path = Cognostic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62AA5CD1C2188D392530510F /* CardinalKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CardinalKit.podspec; path = ../CardinalKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		630884219A5CB1E45383122C /* Pods-CardinalKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardinalKit_Example.release.xcconfig"; path = "Target Support Files/Pods-CardinalKit_Example/Pods-CardinalKit_Example.release.xcconfig"; sourceTree = "<group>"; };
-		67775C73890913676E2A3907 /* Pods_TrialX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrialX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84B1BC9619F880C84FC5CF25 /* Pods-Cognostic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cognostic.release.xcconfig"; path = "Target Support Files/Pods-Cognostic/Pods-Cognostic.release.xcconfig"; sourceTree = "<group>"; };
 		8E0A4378244A4A0300656518 /* TrialX-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TrialX-Bridging-Header.h"; sourceTree = "<group>"; };
 		8E0A4384244A4A0400656518 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8E0A4388244A4A0400656518 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E0A438A244A4A0400656518 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8E0A438B244A4A0400656518 /* TrialX.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = TrialX.entitlements; sourceTree = "<group>"; };
+		8E0A438B244A4A0400656518 /* Cognostic.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Cognostic.entitlements; sourceTree = "<group>"; };
 		8E0A438F244A4A0400656518 /* StudyTasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyTasks.swift; sourceTree = "<group>"; };
 		8E0A4391244A4A0400656518 /* StudyTableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyTableItem.swift; sourceTree = "<group>"; };
 		8E0A4396244A4A0400656518 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,8 +123,6 @@
 		A04B9C5E250E9597006D0D3F /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		A04B9C60250E96DE006D0D3F /* StatisticsBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsBubble.swift; sourceTree = "<group>"; };
 		A04B9C62250E9B57006D0D3F /* DetailGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGraphView.swift; sourceTree = "<group>"; };
-		CB97C14C759E56B88E4E3941 /* Pods_CardinalKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardinalKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE9A73F2B93DE400D855AADD /* Pods-TrialX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrialX.release.xcconfig"; path = "Target Support Files/Pods-TrialX/Pods-TrialX.release.xcconfig"; sourceTree = "<group>"; };
 		D2093CC9250EC8FF001583A8 /* PlainNavigationLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainNavigationLink.swift; sourceTree = "<group>"; };
 		D244F4F6261ACB7A0027D011 /* CareKitContactViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareKitContactViews.swift; sourceTree = "<group>"; };
 		D244F561261B8EBA0027D011 /* CurrentDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDate.swift; sourceTree = "<group>"; };
@@ -145,7 +140,6 @@
 		D253D12A250CD16400A363E4 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		D253D12C250CF9C400A363E4 /* CKSignInWithAppleStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKSignInWithAppleStep.swift; sourceTree = "<group>"; };
 		D2752F44261CEFAD0083AF27 /* Image+SFSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+SFSymbol.swift"; sourceTree = "<group>"; };
-		D2752F49261CFEEB0083AF27 /* Pods-TrialX-acknowledgements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "Pods-TrialX-acknowledgements.plist"; path = "Pods/Target Support Files/Pods-TrialX/Pods-TrialX-acknowledgements.plist"; sourceTree = SOURCE_ROOT; };
 		D2752F4B261D07C30083AF27 /* AcknowledgementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementsView.swift; sourceTree = "<group>"; };
 		D2752F4D261D13C60083AF27 /* Package.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; name = Package.resolved; path = CardinalKit.xcworkspace/xcshareddata/swiftpm/Package.resolved; sourceTree = SOURCE_ROOT; };
 		D283AADB26094C8900637663 /* CKConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKConfig.swift; sourceTree = "<group>"; };
@@ -182,17 +176,17 @@
 		D28BBAD4261A915A0074C560 /* ScheduleViewControllerRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewControllerRepresentable.swift; sourceTree = "<group>"; };
 		D28BBAD6261A915A0074C560 /* TipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipView.swift; sourceTree = "<group>"; };
 		D28BBAD7261A915A0074C560 /* SurveyItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyItemViewController.swift; sourceTree = "<group>"; };
+		D2A725D22633A81C00298FF4 /* Pods-Cognostic-acknowledgements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "Pods-Cognostic-acknowledgements.plist"; path = "Pods/Target Support Files/Pods-Cognostic/Pods-Cognostic-acknowledgements.plist"; sourceTree = SOURCE_ROOT; };
 		D2E95302261D2F8B00BD147B /* List+GroupedStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "List+GroupedStyle.swift"; sourceTree = "<group>"; };
 		D2E95304261D317600BD147B /* SpecialThanksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialThanksView.swift; sourceTree = "<group>"; };
-		DF8FAFB3C7221261A7397AFD /* Pods-TrialX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrialX.debug.xcconfig"; path = "Target Support Files/Pods-TrialX/Pods-TrialX.debug.xcconfig"; sourceTree = "<group>"; };
 		E235077624F7082700CC1899 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E290FB1C24FF4BBA00D19BE9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E29143FB24E74AD100EE97B2 /* OnboardingUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingUI.swift; sourceTree = "<group>"; };
 		E2DF9F052500B9F000A93B93 /* LoginStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStep.swift; sourceTree = "<group>"; };
 		E2DF9F092500C9CE00A93B93 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E2F1FD7724D62064006C39DF /* CKConfiguration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CKConfiguration.plist; sourceTree = "<group>"; };
-		F30ABA7020E91EBA421A80F9 /* Pods-CardinalKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardinalKit_Example.debug.xcconfig"; path = "Target Support Files/Pods-CardinalKit_Example/Pods-CardinalKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		F7962D8B261E3E5C00DA30B1 /* CareKitChartViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareKitChartViews.swift; sourceTree = "<group>"; };
+		FEE7C07430DAE66902B2AA79 /* Pods-Cognostic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cognostic.debug.xcconfig"; path = "Target Support Files/Pods-Cognostic/Pods-Cognostic.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,7 +202,7 @@
 				D2BF1B7E260AB3D200B28CDC /* EFStorageKeychainAccess in Frameworks */,
 				D24ED841260BAA27004A454F /* EFStorageUserDefaults in Frameworks */,
 				D2B2A0CB261BB14600A9A790 /* CareKitFHIR in Frameworks */,
-				69DC6BB1DB8FF78AE696891C /* Pods_TrialX.framework in Frameworks */,
+				CFC78D74A65150BD60DB05F8 /* Pods_Cognostic.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,8 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				8E0A43D4244A693D00656518 /* HealthKit.framework */,
-				CB97C14C759E56B88E4E3941 /* Pods_CardinalKit_Tests.framework */,
-				67775C73890913676E2A3907 /* Pods_TrialX.framework */,
+				24DE60C64367F51D20338349 /* Pods_Cognostic.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -228,20 +221,19 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
-				8E0A438B244A4A0400656518 /* TrialX.entitlements */,
+				8E0A438B244A4A0400656518 /* Cognostic.entitlements */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* CardinalKit-Example */,
 				607FACD11AFB9204008FA782 /* Products */,
 				A562A578C883F67F0DAE1385 /* Pods */,
 				2C45A885E8BD0CAC5349997A /* Frameworks */,
-				D253D112250C90F600A363E4 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
 		607FACD11AFB9204008FA782 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				607FACD01AFB9204008FA782 /* CardinalKit Example.app */,
+				607FACD01AFB9204008FA782 /* Cognostic.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -295,7 +287,7 @@
 				8E0A43C9244A4C6500656518 /* Info.plist */,
 				E290FB1C24FF4BBA00D19BE9 /* GoogleService-Info.plist */,
 				E2F1FD7724D62064006C39DF /* CKConfiguration.plist */,
-				D2752F49261CFEEB0083AF27 /* Pods-TrialX-acknowledgements.plist */,
+				D2A725D22633A81C00298FF4 /* Pods-Cognostic-acknowledgements.plist */,
 				D2752F4D261D13C60083AF27 /* Package.resolved */,
 			);
 			path = "Supporting Files";
@@ -355,12 +347,8 @@
 		A562A578C883F67F0DAE1385 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F30ABA7020E91EBA421A80F9 /* Pods-CardinalKit_Example.debug.xcconfig */,
-				630884219A5CB1E45383122C /* Pods-CardinalKit_Example.release.xcconfig */,
-				58275A0CAB0C7223B21F375D /* Pods-CardinalKit_Tests.debug.xcconfig */,
-				00480E2D79186BE9405F0F72 /* Pods-CardinalKit_Tests.release.xcconfig */,
-				DF8FAFB3C7221261A7397AFD /* Pods-TrialX.debug.xcconfig */,
-				CE9A73F2B93DE400D855AADD /* Pods-TrialX.release.xcconfig */,
+				FEE7C07430DAE66902B2AA79 /* Pods-Cognostic.debug.xcconfig */,
+				84B1BC9619F880C84FC5CF25 /* Pods-Cognostic.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -379,14 +367,6 @@
 				D2E95304261D317600BD147B /* SpecialThanksView.swift */,
 			);
 			path = Settings;
-			sourceTree = "<group>";
-		};
-		D253D112250C90F600A363E4 /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				1D31556B648F48DA664CEE80 /* Pods_CardinalKit_Example.framework */,
-			);
-			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		D283AAD926094C8900637663 /* Library */ = {
@@ -553,9 +533,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		607FACCF1AFB9204008FA782 /* TrialX */ = {
+		607FACCF1AFB9204008FA782 /* Cognostic */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "TrialX" */;
+			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Cognostic" */;
 			buildPhases = (
 				8A9C87B89C8DE46EAC03121F /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
@@ -567,7 +547,7 @@
 			);
 			dependencies = (
 			);
-			name = TrialX;
+			name = Cognostic;
 			packageProductDependencies = (
 				D2BF1B7D260AB3D200B28CDC /* EFStorageKeychainAccess */,
 				D24ED840260BAA27004A454F /* EFStorageUserDefaults */,
@@ -578,7 +558,7 @@
 				D2752F47261CFD8B0083AF27 /* AcknowList */,
 			);
 			productName = CardinalKit;
-			productReference = 607FACD01AFB9204008FA782 /* CardinalKit Example.app */;
+			productReference = 607FACD01AFB9204008FA782 /* Cognostic.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -616,7 +596,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				607FACCF1AFB9204008FA782 /* TrialX */,
+				607FACCF1AFB9204008FA782 /* Cognostic */,
 			);
 		};
 /* End PBXProject section */
@@ -626,11 +606,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2A725D32633A81C00298FF4 /* Pods-Cognostic-acknowledgements.plist in Resources */,
 				8E0A43AF244A4A0400656518 /* Assets.xcassets in Resources */,
 				8E0A43B0244A4A0400656518 /* LaunchScreen.storyboard in Resources */,
 				D2752F4E261D13C60083AF27 /* Package.resolved in Resources */,
 				E2F1FD7824D62064006C39DF /* CKConfiguration.plist in Resources */,
-				D2752F4A261CFEEB0083AF27 /* Pods-TrialX-acknowledgements.plist in Resources */,
 				8E0A43C1244A4A0400656518 /* LoginCustomWaitStepView.xib in Resources */,
 				E290FB1D24FF4BBA00D19BE9 /* GoogleService-Info.plist in Resources */,
 			);
@@ -654,7 +634,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TrialX-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Cognostic-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -667,7 +647,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TrialX/Pods-TrialX-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Cognostic/Pods-Cognostic-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/CardinalKit/CardinalKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseAuth/FirebaseAuth.framework",
@@ -724,7 +704,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TrialX/Pods-TrialX-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Cognostic/Pods-Cognostic-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -934,11 +914,11 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF8FAFB3C7221261A7397AFD /* Pods-TrialX.debug.xcconfig */;
+			baseConfigurationReference = FEE7C07430DAE66902B2AA79 /* Pods-Cognostic.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = TrialX.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Cognostic.entitlements;
 				DEVELOPMENT_TEAM = 2H866F22W7;
 				INFOPLIST_FILE = "CardinalKit/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -946,9 +926,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MODULE_NAME = TrialX;
+				MODULE_NAME = Cognostic;
 				PRODUCT_BUNDLE_IDENTIFIER = edu.uw.appdev.trialx;
-				PRODUCT_NAME = "CardinalKit Example";
+				PRODUCT_NAME = Cognostic;
 				SWIFT_OBJC_BRIDGING_HEADER = "CardinalKit/Supporting Files/TrialX-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -959,11 +939,11 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CE9A73F2B93DE400D855AADD /* Pods-TrialX.release.xcconfig */;
+			baseConfigurationReference = 84B1BC9619F880C84FC5CF25 /* Pods-Cognostic.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = TrialX.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Cognostic.entitlements;
 				DEVELOPMENT_TEAM = 2H866F22W7;
 				INFOPLIST_FILE = "CardinalKit/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -971,9 +951,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MODULE_NAME = TrialX;
+				MODULE_NAME = Cognostic;
 				PRODUCT_BUNDLE_IDENTIFIER = edu.uw.appdev.trialx;
-				PRODUCT_NAME = "CardinalKit Example";
+				PRODUCT_NAME = Cognostic;
 				SWIFT_OBJC_BRIDGING_HEADER = "CardinalKit/Supporting Files/TrialX-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
@@ -993,7 +973,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "TrialX" */ = {
+		607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Cognostic" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				607FACF01AFB9204008FA782 /* Debug */,
