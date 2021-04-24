@@ -100,10 +100,10 @@
 		07D78DA16FC9C3C7709EA243 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../CardinalKit/LICENSE; sourceTree = "<group>"; };
 		24DE60C64367F51D20338349 /* Pods_Cognostic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cognostic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41DC264876E45FE5A3FD8701 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../CardinalKit/README.md; sourceTree = "<group>"; };
-		607FACD01AFB9204008FA782 /* Cognostic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Cognostic.app"; path = Cognostic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		607FACD01AFB9204008FA782 /* Cognostic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cognostic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62AA5CD1C2188D392530510F /* CardinalKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CardinalKit.podspec; path = ../CardinalKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		84B1BC9619F880C84FC5CF25 /* Pods-Cognostic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cognostic.release.xcconfig"; path = "Target Support Files/Pods-Cognostic/Pods-Cognostic.release.xcconfig"; sourceTree = "<group>"; };
-		8E0A4378244A4A0300656518 /* TrialX-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TrialX-Bridging-Header.h"; sourceTree = "<group>"; };
+		8E0A4378244A4A0300656518 /* Cognostic-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cognostic-Bridging-Header.h"; sourceTree = "<group>"; };
 		8E0A4384244A4A0400656518 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8E0A4388244A4A0400656518 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E0A438A244A4A0400656518 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -283,7 +283,7 @@
 				8E0A4388244A4A0400656518 /* Assets.xcassets */,
 				8E0A4389244A4A0400656518 /* LaunchScreen.storyboard */,
 				8E0A4384244A4A0400656518 /* Constants.swift */,
-				8E0A4378244A4A0300656518 /* TrialX-Bridging-Header.h */,
+				8E0A4378244A4A0300656518 /* Cognostic-Bridging-Header.h */,
 				8E0A43C9244A4C6500656518 /* Info.plist */,
 				E290FB1C24FF4BBA00D19BE9 /* GoogleService-Info.plist */,
 				E2F1FD7724D62064006C39DF /* CKConfiguration.plist */,
@@ -569,7 +569,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 1200;
-				ORGANIZATIONNAME = TrialX;
+				ORGANIZATIONNAME = Cognostic;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -918,7 +918,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Cognostic.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "$(MODULE_NAME).entitlements";
 				DEVELOPMENT_TEAM = 2H866F22W7;
 				INFOPLIST_FILE = "CardinalKit/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -929,9 +929,8 @@
 				MODULE_NAME = Cognostic;
 				PRODUCT_BUNDLE_IDENTIFIER = edu.uw.appdev.trialx;
 				PRODUCT_NAME = Cognostic;
-				SWIFT_OBJC_BRIDGING_HEADER = "CardinalKit/Supporting Files/TrialX-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "CardinalKit/Supporting Files/$(MODULE_NAME)-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -943,7 +942,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Cognostic.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "$(MODULE_NAME).entitlements";
 				DEVELOPMENT_TEAM = 2H866F22W7;
 				INFOPLIST_FILE = "CardinalKit/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -954,8 +953,7 @@
 				MODULE_NAME = Cognostic;
 				PRODUCT_BUNDLE_IDENTIFIER = edu.uw.appdev.trialx;
 				PRODUCT_NAME = Cognostic;
-				SWIFT_OBJC_BRIDGING_HEADER = "CardinalKit/Supporting Files/TrialX-Bridging-Header.h";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_OBJC_BRIDGING_HEADER = "CardinalKit/Supporting Files/$(MODULE_NAME)-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
