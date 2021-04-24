@@ -3,7 +3,7 @@
 //  Cognostic
 //
 //  Created by Apollo Zhu on 4/5/21.
-//  Copyright © 2021 Cognostic. All rights reserved.
+//  Copyright © 2020-2021 Cognostic. All rights reserved.
 //
 
 import SwiftUI

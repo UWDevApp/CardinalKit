@@ -3,7 +3,7 @@
 //  Cognostic
 //
 //  Created by Apollo Zhu on 9/13/20.
-//  Copyright © 2020 Cognostic. All rights reserved.
+//  Copyright © 2020-2021 Cognostic. All rights reserved.
 //
 
 import ResearchKit
