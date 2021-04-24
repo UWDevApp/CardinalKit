@@ -1,9 +1,9 @@
 //
 //  EmailView.swift
-//  TrialX
+//  Cognostic
 //
 //  Created by Apollo Zhu on 9/12/20.
-//  Copyright © 2020 CocoaPods. All rights reserved.
+//  Copyright © 2020 Cognostic. All rights reserved.
 //
 
 import SwiftUI
@@ -30,7 +30,7 @@ struct EmailView: View {
         .onTapGesture {
             EmailHelper.shared
                 .sendEmail(subject: self.email,
-                           body: "Regarding TrialX, ",
+                           body: "Regarding Cognostic, ",
                            to: "Enter your question/support request here.")
         }
     }
@@ -38,6 +38,6 @@ struct EmailView: View {
 
 struct EmailView_Previews: PreviewProvider {
     static var previews: some View {
-        EmailView(title: "Email", email: "test@trialx.uwdev.app")
+        EmailView(title: "Email", email: "test@uwdev.app")
     }
 }

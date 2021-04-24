@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>Study Title</key>
-	<string>TrialX</string>
+	<string>Cognostic</string>
 	<key>Team Name</key>
 	<string>UWAppDev × Stanford</string>
 	<key>Email</key>
-	<string>trialx@uwdev.app</string>
+	<string>Cognostic@uwdev.app</string>
 	<key>Phone</key>
 	<string>650-123-4567</string>
 	<key>Copyright</key>
-	<string>Made by TrialX team with 💜♥️</string>
+	<string>Made by Cognostic team with 💜♥️</string>
 	<key>Website</key>
-	<string>https://uwdev.app/projects/trialx</string>
+	<string>https://uwdev.app/projects/Cognostic</string>
 	<key>Tint Color</key>
 	<string>#b6133f</string>
 	<key>Primary Color</key>
@@ -21,7 +21,7 @@
 	<key>Review Consent Step Text</key>
 	<string>Review Consent Form</string>
 	<key>Reason for Consent Text</key>
-	<string>Consent to join the TrialX Study.</string>
+	<string>Consent to join the Cognostic Study.</string>
 	<key>Consent File Name</key>
 	<string>My Consent Form</string>
 	<key>Passcode Text</key>
@@ -31,7 +31,7 @@
 	<key>Completion Step Title</key>
 	<string>Welcome aboard.</string>
 	<key>Completion Step Text</key>
-	<string>Thank you for joining TrialX.</string>
+	<string>Thank you for joining Cognostic.</string>
 	<key>Failed Login Title</key>
 	<string>Unable to Login 😔</string>
 	<key>Failed Login Text</key>
@@ -57,14 +57,14 @@
 	<key>Passcode On Return Text</key>
 	<string>Welcome back!</string>
 	<key>Consent Title</key>
-	<string>TrialX Research Study Consent Form</string>
+	<string>Cognostic Research Study Consent Form</string>
 	<key>HealthKit Data to Read</key>
 	<array/>
 	<key>Onboarding</key>
 	<array>
 		<dict>
 			<key>Title</key>
-			<string>Welcome to TrialX</string>
+			<string>Welcome to Cognostic</string>
 			<key>Description</key>
 			<string>Current clinical trials have ~50-70% failure rate (costing $5.7B for Alzheimer disease) because the participant does not meet the inclusion/exclusion criteria, not to mention the time consumption and requirements of costly in-person meetings</string>
 			<key>Logo</key>
@@ -104,9 +104,9 @@
 			<key>Title</key>
 			<string>Hi there! 👋🏽</string>
 			<key>Summary</key>
-			<string>Welcome to TrialX study. Enrollment for cognitive impairment clinical trials, such as Parkinson’s and Alzhiemer’s, is time consuming and requires in person meetings which is costly and especially difficult during COVID-19. TrialX&apos;s goal is to provide a digital, simpler way to screen candidates for clinical trials for neuro-degenerative diseases. You would be able to access this consent form in settings at any time.</string>
+			<string>Welcome to Cognostic study. Enrollment for cognitive impairment clinical trials, such as Parkinson’s and Alzhiemer’s, is time consuming and requires in person meetings which is costly and especially difficult during COVID-19. Cognostic&apos;s goal is to provide a digital, simpler way to screen candidates for clinical trials for neuro-degenerative diseases. You would be able to access this consent form in settings at any time.</string>
 			<key>Content</key>
-			<string>Welcome to TrialX study. Enrollment for cognitive impairment clinical trials, such as Parkinson’s and Alzhiemer’s, is time consuming and requires in person meetings which is costly and especially difficult during COVID-19. TrialX&apos;s goal is to provide a digital, simpler way to screen candidates for clinical trials for neuro-degenerative diseases. You would be able to access this consent form in settings at any time.</string>
+			<string>Welcome to Cognostic study. Enrollment for cognitive impairment clinical trials, such as Parkinson’s and Alzhiemer’s, is time consuming and requires in person meetings which is costly and especially difficult during COVID-19. Cognostic&apos;s goal is to provide a digital, simpler way to screen candidates for clinical trials for neuro-degenerative diseases. You would be able to access this consent form in settings at any time.</string>
 		</dict>
 		<key>DataGathering</key>
 		<dict>
@@ -122,18 +122,18 @@
 			<key>Title</key>
 			<string>Privacy 🔒</string>
 			<key>Summary</key>
-			<string>Your data privacy matters the most to us. We use information to help improve the safety and reliability of our services. This includes detecting, preventing, and responding to fraud, abuse, security risks and technical issues that could harm TrialX, our users or the public.</string>
+			<string>Your data privacy matters the most to us. We use information to help improve the safety and reliability of our services. This includes detecting, preventing, and responding to fraud, abuse, security risks and technical issues that could harm Cognostic, our users or the public.</string>
 			<key>Content</key>
-			<string>Your data privacy matters the most to us. We use information to help improve the safety and reliability of our services. This includes detecting, preventing, and responding to fraud, abuse, security risks and technical issues that could harm TrialX, our users or the public.</string>
+			<string>Your data privacy matters the most to us. We use information to help improve the safety and reliability of our services. This includes detecting, preventing, and responding to fraud, abuse, security risks and technical issues that could harm Cognostic, our users or the public.</string>
 		</dict>
 		<key>DataUse</key>
 		<dict>
 			<key>Title</key>
 			<string>Data Use ⚙️</string>
 			<key>Summary</key>
-			<string>Focusing on preventive care, TrialX looks beyond your symptoms to consider how environmental and lifestyle factors impact your health.</string>
+			<string>Focusing on preventive care, Cognostic looks beyond your symptoms to consider how environmental and lifestyle factors impact your health.</string>
 			<key>Content</key>
-			<string>Focusing on preventive care, TrialX looks beyond your symptoms to consider how environmental and lifestyle factors impact your health.</string>
+			<string>Focusing on preventive care, Cognostic looks beyond your symptoms to consider how environmental and lifestyle factors impact your health.</string>
 		</dict>
 		<key>TimeCommitment</key>
 		<dict>
@@ -149,9 +149,9 @@
 			<key>Title</key>
 			<string>Study Survey 📋</string>
 			<key>Summary</key>
-			<string>Study surveys provide more information to your health condition and help TrialX identify and track cognitive performance.</string>
+			<string>Study surveys provide more information to your health condition and help Cognostic identify and track cognitive performance.</string>
 			<key>Content</key>
-			<string>Study surveys provide more information to your health condition and help TrialX identify and track cognitive performance.</string>
+			<string>Study surveys provide more information to your health condition and help Cognostic identify and track cognitive performance.</string>
 		</dict>
 		<key>StudyTasks</key>
 		<dict>
@@ -167,9 +167,9 @@
 			<key>Title</key>
 			<string>Withdrawing 🛑</string>
 			<key>Summary</key>
-			<string>At any time of using TrialX, you can opt to withdraw from the study. You will have the option to entirely erase your test data.</string>
+			<string>At any time of using Cognostic, you can opt to withdraw from the study. You will have the option to entirely erase your test data.</string>
 			<key>Content</key>
-			<string>At any time of using TrialX, you can opt to withdraw from the study. You will have the option to entirely erase your test data.</string>
+			<string>At any time of using Cognostic, you can opt to withdraw from the study. You will have the option to entirely erase your test data.</string>
 		</dict>
 	</dict>
 </dict>

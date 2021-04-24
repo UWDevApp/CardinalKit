@@ -1,9 +1,9 @@
 //
 //  CareKitChartViews.swift
-//  TrialX
+//  Cognostic
 //
 //  Created by Vicky Xiang on 4/7/21.
-//  Copyright © 2021 TrialX. All rights reserved.
+//  Copyright © 2021 Cognostic. All rights reserved.
 //
 
 import SwiftUI

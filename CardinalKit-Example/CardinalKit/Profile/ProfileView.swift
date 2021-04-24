@@ -1,9 +1,9 @@
 //
 //  ProfileView.swift
-//  TrialX
+//  Cognostic
 //
 //  Created by Apollo Zhu on 9/11/20.
-//  Copyright © 2020 CocoaPods. All rights reserved.
+//  Copyright © 2020 Cognostic. All rights reserved.
 //
 
 import SwiftUI
@@ -171,7 +171,7 @@ struct ProfileView: View {
         Section(header: Text("Clinical Information"),
                 footer: Group {
                     if  HKHealthStore.isHealthDataAvailable() {
-                        Text("To manage which health data categories are accessible by TrialX, go to the system Health app.")
+                        Text("To manage which health data categories are accessible by Cognostic, go to the system Health app.")
                     } else {
                         EmptyView()
                     }

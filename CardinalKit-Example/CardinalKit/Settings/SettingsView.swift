@@ -1,9 +1,9 @@
 //
 //  SettingsView.swift
-//  TrialX
+//  Cognostic
 //
 //  Created by Apollo Zhu on 3/24/21.
-//  Copyright © 2021 TrialX. All rights reserved.
+//  Copyright © 2021 Cognostic. All rights reserved.
 //
 
 import SwiftUI
@@ -50,8 +50,8 @@ struct SettingsView: View {
 
             Section(header: header, footer: footer) {
                 WebsiteView(site: config.read(query: "Website"),
-                            title: "Visit TrialX Website",
-                            description: "Learn more about TrialX",
+                            title: "Visit Cognostic Website",
+                            description: "Learn more about Cognostic",
                             icon: Image(systemName: "globe"))
                 WebsiteView(site: "https://udallcenter.stanford.edu/about/center-researchers/",
                             title: "Pacific Udall Center",

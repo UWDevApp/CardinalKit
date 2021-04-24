@@ -1,9 +1,9 @@
 //
 //  CareKitContactViews.swift
-//  TrialX
+//  Cognostic
 //
 //  Created by Apollo Zhu on 4/5/21.
-//  Copyright © 2021 TrialX. All rights reserved.
+//  Copyright © 2021 Cognostic. All rights reserved.
 //
 
 import SwiftUI

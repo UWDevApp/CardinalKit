@@ -1,9 +1,9 @@
 //
 //  DetailGraphView.swift
-//  TrialX
+//  Cognostic
 //
 //  Created by Lucas Wang on 2020-09-13.
-//  Copyright © 2020 TrialX. All rights reserved.
+//  Copyright © 2020 Cognostic. All rights reserved.
 //
 
 import SwiftUI
