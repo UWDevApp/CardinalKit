@@ -79,11 +79,17 @@ struct WelcomeNotificationView: View {
                     .edgesIgnoringSafeArea(.all)
 
                 PlainList {
-                    // Optional state doesn't update unless displayed.
-                    // https://developer.apple.com/forums/thread/652080
-                    Text(currentNotification?.testName ?? "")
-                        .frame(maxHeight: 0)
-                        .hidden()
+                    if #available(iOS 14, *) {
+                        // Optional state doesn't update unless displayed.
+                        // https://developer.apple.com/forums/thread/652080
+                        Text(currentNotification?.testName ?? "")
+                            .frame(maxHeight: 0)
+                            // hidden is required, otherwise takes screen space
+                            .hidden()
+                    }
+                    // Seems to be working in iOS 13,
+                    // so don't do hidden if that crashes the app :(
+                    // https://stackoverflow.com/questions/60920651
 
                     if data.shouldSeeDoctor {
                         contacts
